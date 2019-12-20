@@ -1,0 +1,16 @@
+PODS:
+  - libffi-core (1.2.0)
+
+DEPENDENCIES:
+  - libffi-core
+
+SPEC REPOS:
+  trunk:
+    - libffi-core
+
+SPEC CHECKSUMS:
+  libffi-core: c4049ed88381fee5c0a31d26c860fc427d3c301c
+
+PODFILE CHECKSUM: 05506c99c2f76352efc3cb77ea39428b48c1b167
+
+COCOAPODS: 1.8.4
