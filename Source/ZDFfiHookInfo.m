@@ -73,4 +73,50 @@
     return model;
 }
 
+- (void)addHookInfo:(ZDFfiHookInfo *)callbackInfo {
+    if (!callbackInfo) {
+        return;
+    }
+    
+    switch (callbackInfo.option) {
+        case ZDHookOption_Befor: {
+            self.beforeCallbacks = [(self.beforeCallbacks ?: @[]) arrayByAddingObject:callbackInfo];
+        } break;
+        case ZDHookOption_Instead: {
+            self.insteadCallbacks = [(self.insteadCallbacks ?: @[]) arrayByAddingObject:callbackInfo];
+        } break;
+        case ZDHookOption_After:
+        default: {
+            self.afterCallbacks = [(self.afterCallbacks ?: @[]) arrayByAddingObject:callbackInfo];
+        } break;
+    }
+}
+
+- (BOOL)removeHookInfo:(ZDFfiHookInfo *)callbackInfo {
+    __block BOOL finded = NO;
+    __auto_type block = ^(NSString *keyPath){
+        NSArray *targetArray = [self valueForKey:keyPath];
+        NSMutableArray *mutBeforInfos = [NSMutableArray arrayWithArray:targetArray];
+        NSUInteger targetIndex = [mutBeforInfos indexOfObjectIdenticalTo:callbackInfo];
+        if (targetIndex != NSNotFound) {
+            [mutBeforInfos removeObjectAtIndex:targetIndex];
+            [self setValue:mutBeforInfos forKey:keyPath];
+            finded = YES;
+        }
+    };
+    switch (callbackInfo.option) {
+        case ZDHookOption_Befor: {
+            block(NSStringFromSelector(@selector(beforeCallbacks)));
+        } break;
+        case ZDHookOption_Instead: {
+            block(NSStringFromSelector(@selector(insteadCallbacks)));
+        } break;
+        case ZDHookOption_After:
+        default: {
+            block(NSStringFromSelector(@selector(afterCallbacks)));
+        } break;
+    }
+    return finded;
+}
+
 @end

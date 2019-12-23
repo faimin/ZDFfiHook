@@ -14,11 +14,11 @@ static NSString *const ZD_Prefix = @"ZDAOP_";
 #define ZDOptionFilter 0x07
 
 // 生成关联的key
-static const char *ZD_AssociatedKey(SEL selector) {
+static const SEL ZD_AssociatedKey(SEL selector) {
     NSCAssert(selector != NULL, @"selector不能为NULL");
     NSString *selectorString = [ZD_Prefix stringByAppendingString:NSStringFromSelector(selector)];
-    const char *key = selectorString.UTF8String;
-    return key;
+    SEL keySelector = NSSelectorFromString(selectorString);
+    return keySelector;
 }
 
 #pragma mark - Core Func
@@ -96,7 +96,7 @@ void ZD_CoreHookFunc(id obj, Method method, ZDHookOption option, id callback) {
         return;
     }
     
-    const char *key = ZD_AssociatedKey(method_getName(method));
+    const SEL key = ZD_AssociatedKey(method_getName(method));
     ZDFfiHookInfo *hookInfo = objc_getAssociatedObject(obj, key);
     if (!hookInfo) {
         hookInfo = [ZDFfiHookInfo infoWithObject:obj method:method];
@@ -136,7 +136,7 @@ void ZD_CoreHookFunc(id obj, Method method, ZDHookOption option, id callback) {
             hookInfo->_closure = cloure;
             hookInfo->_newIMP = newIMP;
         };
-        ffi_status prepClosureStatus = ffi_prep_closure_loc(cloure, cif, ZD_ffi_closure_func, (__bridge void *)obj, newIMP);
+        ffi_status prepClosureStatus = ffi_prep_closure_loc(cloure, cif, ZD_ffi_closure_func, (__bridge void *)hookInfo, newIMP);
         if (prepClosureStatus != FFI_OK) {
             NSCAssert1(NO, @"ffi_prep_closure_loc failed = %d", prepClosureStatus);
             return;
@@ -174,7 +174,7 @@ void ZD_CoreHookFunc(id obj, Method method, ZDHookOption option, id callback) {
     if (ffi_prep_cif(callbackCif, FFI_DEFAULT_ABI, blockArgsCount, &ffi_type_void, blockArgTypes) == FFI_OK) {
         callbackInfo->_cif = callbackCif;
         
-        [hookInfo addHookInfo:callbackInfo option:option];
+        [hookInfo addHookInfo:callbackInfo];
     }
     else {
         NSCAssert(NO, @"💔");

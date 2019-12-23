@@ -26,7 +26,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) const char *typeEncoding;
 @property (nonatomic, weak) id obj;
 @property (nonatomic, strong) NSMethodSignature *signature;
-@property (nonatomic, assign) ZDHookOption hookOption;
 @property (nonatomic, assign) BOOL isBlock;
 
 @property (nonatomic, copy) NSArray<T> *beforeCallbacks;
@@ -43,8 +42,9 @@ NS_ASSUME_NONNULL_BEGIN
 // 解析callBack回调的
 + (instancetype)infoWithCallback:(id)callback option:(ZDHookOption)option;
 
-- (void)addHookInfo:(T)info option:(ZDHookOption)option;
-- (BOOL)removeHookInfo:(T)info;
+// 增删callbackModel
+- (void)addHookInfo:(T)callbackInfo;
+- (BOOL)removeHookInfo:(T)callbackInfo;
 
 @end
 

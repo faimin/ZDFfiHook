@@ -7,10 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ZDFfiDefine.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NSObject (ZDFfiHook)
+
++ (void)zd_hookInstanceMethod:(SEL)selector option:(ZDHookOption)option callback:(id)callback;
+
++ (void)zd_hookClassMethod:(SEL)selector option:(ZDHookOption)option callback:(id)callback;
 
 @end
 
