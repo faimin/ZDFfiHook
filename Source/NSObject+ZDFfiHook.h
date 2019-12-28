@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)zd_hookClassMethod:(SEL)selector option:(ZDHookOption)option callback:(id)callback;
 
+- (void)zd_hookInstanceMethod:(SEL)selector option:(ZDHookOption)option callback:(id)callback;
+
 @end
 
 NS_ASSUME_NONNULL_END

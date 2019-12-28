@@ -24,9 +24,8 @@
 }
 
 - (void)zd_hookInstanceMethod:(SEL)selector option:(ZDHookOption)option callback:(id)callback {
-//    Method method = class_getInstanceMethod(self.class, selector);
-//    ZD_CoreHookFunc(self, method, option, callback);
-    //TODO: 客官莫急
+    Method method = class_getInstanceMethod(self.class, selector);
+    ZD_CoreHookFunc(self, method, option, callback);
 }
 
 @end

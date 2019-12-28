@@ -7,6 +7,8 @@
 //
 
 #import <XCTest/XCTest.h>
+@import ObjectiveC;
+@import Messages;
 #import "NSObject+ZDFfiHook.h"
 
 @interface ZDFfiHookTests : XCTestCase
@@ -26,6 +28,14 @@
 - (void)testExample {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    Class a = NSObject.class;
+    id b = NSArray.new;
+    XCTAssertTrue(object_isClass(a));
+    XCTAssertFalse(object_isClass(b));
+    id xxx = object_getClass(NSArray.class);
+    XCTAssertTrue(object_isClass(xxx));
+    XCTAssertTrue(class_isMetaClass(xxx));
 }
 
 - (void)testPerformanceExample {

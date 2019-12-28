@@ -11,6 +11,7 @@
 #import "ZDFfiFunctions.h"
 
 static NSString *const ZD_Prefix = @"ZDAOP_";
+static void *ZD_SubclassAssociationKey = &ZD_SubclassAssociationKey;
 #define ZDOptionFilter 0x07
 
 // 生成关联的key
@@ -19,6 +20,55 @@ static const SEL ZD_AssociatedKey(SEL selector) {
     NSString *selectorString = [ZD_Prefix stringByAppendingString:NSStringFromSelector(selector)];
     SEL keySelector = NSSelectorFromString(selectorString);
     return keySelector;
+}
+
+static void ZD_SwizzleGetClass(Class class, Class statedClass) {
+    SEL selector = @selector(class);
+    Method method = class_getInstanceMethod(class, selector);
+    IMP newIMP = imp_implementationWithBlock(^(id self) {
+        return statedClass;
+    });
+    class_replaceMethod(class, selector, newIMP, method_getTypeEncoding(method));
+}
+
+// refer from `NSObject+RACSelectorSignal`
+static Class ZD_CreateDynamicSubClass(id self) {
+    Class statedClass = [self class];
+    Class baseClass = object_getClass(self);
+    
+    Class knownDynamicSubclass = objc_getAssociatedObject(self, ZD_SubclassAssociationKey);
+    if (knownDynamicSubclass != Nil) {
+        return knownDynamicSubclass;
+    }
+    
+    const char *subClassName = [ZD_Prefix stringByAppendingString:NSStringFromClass(baseClass)].UTF8String;
+    Class subClass = objc_getClass(subClassName);
+    if (!subClass) {
+        subClass = objc_allocateClassPair(baseClass, subClassName, 0);
+        {
+            ZD_SwizzleGetClass(subClass, statedClass);
+        }
+        objc_registerClassPair(subClass);
+    }
+    object_setClass(self, subClass);
+    objc_setAssociatedObject(self, ZD_SubclassAssociationKey, subClass, OBJC_ASSOCIATION_ASSIGN);
+    
+    return subClass;
+}
+
+static void ZD_CreateDynamicSubClassIfNeed(id *obj, Method *method) {
+    NSCAssert(obj, @"can't be nil");
+    
+    id self = *obj; // instance
+    BOOL isHookSigleInstance = !object_isClass(self);
+    if (isHookSigleInstance) {
+        Class aSubClass = ZD_CreateDynamicSubClass(self);
+        Method tempMethod = *method;
+        SEL aSelector = method_getName(tempMethod);
+        
+        *obj = aSubClass;
+        *method = class_getInstanceMethod(aSubClass, aSelector);
+    }
 }
 
 #pragma mark - Core Func
@@ -90,18 +140,22 @@ static void ZD_ffi_closure_func(ffi_cif *cif, void *ret, void **args, void *user
     }
 }
 
-void ZD_CoreHookFunc(id obj, Method method, ZDHookOption option, id callback) {
-    if (!obj || !method) {
+void ZD_CoreHookFunc(id self, Method method, ZDHookOption option, id callback) {
+    if (!self || !method) {
         NSCAssert(NO, @"参数错误");
         return;
     }
     
+    if (self && method) {
+        ZD_CreateDynamicSubClassIfNeed(&self, &method);
+    }
+    
     const SEL key = ZD_AssociatedKey(method_getName(method));
-    ZDFfiHookInfo *hookInfo = objc_getAssociatedObject(obj, key);
+    ZDFfiHookInfo *hookInfo = objc_getAssociatedObject(self, key);
     if (!hookInfo) {
-        hookInfo = [ZDFfiHookInfo infoWithObject:obj method:method];
+        hookInfo = [ZDFfiHookInfo infoWithObject:self method:method];
         // info需要被强引用，否则会出现内存crash
-        objc_setAssociatedObject(obj, key, hookInfo, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        objc_setAssociatedObject(self, key, hookInfo, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         
         // 构造参数类型列表
         const unsigned int argsCount = method_getNumberOfArguments(method);
@@ -143,7 +197,7 @@ void ZD_CoreHookFunc(id obj, Method method, ZDHookOption option, id callback) {
         }
 
         //替换IMP实现
-        Class hookClass = [obj class];
+        Class hookClass = [self class];
         SEL aSelector = method_getName(method);
         const char *typeEncoding = method_getTypeEncoding(method);
         if (!class_addMethod(hookClass, aSelector, newIMP, typeEncoding)) {
