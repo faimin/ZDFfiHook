@@ -24,6 +24,8 @@
 		FABB7B4623ACBECD009FBCCF /* ZDFfiFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = FABB7B4523ACBECD009FBCCF /* ZDFfiFunctions.m */; };
 		FABB7B4923ACC62B009FBCCF /* NSObject+ZDFfiHook.m in Sources */ = {isa = PBXBuildFile; fileRef = FABB7B4823ACC62B009FBCCF /* NSObject+ZDFfiHook.m */; };
 		FAC573E524A0A14F00921A82 /* NSObject+ZDAutoFree.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC573E424A0A14F00921A82 /* NSObject+ZDAutoFree.m */; };
+		FAC573FA24A0FCE400921A82 /* ZDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC573F924A0FCE400921A82 /* ZDViewController.m */; };
+		FAC573FD24A0FD6600921A82 /* AController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC573FC24A0FD6600921A82 /* AController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,10 @@
 		FABB7B4823ACC62B009FBCCF /* NSObject+ZDFfiHook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ZDFfiHook.m"; sourceTree = "<group>"; };
 		FAC573E324A0A14F00921A82 /* NSObject+ZDAutoFree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+ZDAutoFree.h"; sourceTree = "<group>"; };
 		FAC573E424A0A14F00921A82 /* NSObject+ZDAutoFree.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ZDAutoFree.m"; sourceTree = "<group>"; };
+		FAC573F824A0FCE400921A82 /* ZDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDViewController.h; sourceTree = "<group>"; };
+		FAC573F924A0FCE400921A82 /* ZDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDViewController.m; sourceTree = "<group>"; };
+		FAC573FB24A0FD6600921A82 /* AController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AController.h; sourceTree = "<group>"; };
+		FAC573FC24A0FD6600921A82 /* AController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +173,10 @@
 				FABB7B0B23ACB568009FBCCF /* SceneDelegate.m */,
 				FABB7B0D23ACB568009FBCCF /* ViewController.h */,
 				FABB7B0E23ACB568009FBCCF /* ViewController.m */,
+				FAC573F824A0FCE400921A82 /* ZDViewController.h */,
+				FAC573F924A0FCE400921A82 /* ZDViewController.m */,
+				FAC573FB24A0FD6600921A82 /* AController.h */,
+				FAC573FC24A0FD6600921A82 /* AController.m */,
 				FABB7B1023ACB568009FBCCF /* Main.storyboard */,
 				FABB7B1323ACB56A009FBCCF /* Assets.xcassets */,
 				FABB7B1523ACB56A009FBCCF /* LaunchScreen.storyboard */,
@@ -418,9 +428,11 @@
 				FABB7B0923ACB568009FBCCF /* AppDelegate.m in Sources */,
 				FABB7B1A23ACB56A009FBCCF /* main.m in Sources */,
 				FABB7B0C23ACB568009FBCCF /* SceneDelegate.m in Sources */,
+				FAC573FA24A0FCE400921A82 /* ZDViewController.m in Sources */,
 				FABB7B4323ACBD31009FBCCF /* ZDFfiHookInfo.m in Sources */,
 				FABB7B4023ACBCEC009FBCCF /* ZDFfiHook.m in Sources */,
 				FABB7B4923ACC62B009FBCCF /* NSObject+ZDFfiHook.m in Sources */,
+				FAC573FD24A0FD6600921A82 /* AController.m in Sources */,
 				FABB7B4623ACBECD009FBCCF /* ZDFfiFunctions.m in Sources */,
 				FAC573E524A0A14F00921A82 /* NSObject+ZDAutoFree.m in Sources */,
 			);
