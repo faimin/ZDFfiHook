@@ -23,6 +23,7 @@
 		FABB7B4323ACBD31009FBCCF /* ZDFfiHookInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FABB7B4223ACBD31009FBCCF /* ZDFfiHookInfo.m */; };
 		FABB7B4623ACBECD009FBCCF /* ZDFfiFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = FABB7B4523ACBECD009FBCCF /* ZDFfiFunctions.m */; };
 		FABB7B4923ACC62B009FBCCF /* NSObject+ZDFfiHook.m in Sources */ = {isa = PBXBuildFile; fileRef = FABB7B4823ACC62B009FBCCF /* NSObject+ZDFfiHook.m */; };
+		FAC573E524A0A14F00921A82 /* NSObject+ZDAutoFree.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC573E424A0A14F00921A82 /* NSObject+ZDAutoFree.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,8 @@
 		FABB7B4523ACBECD009FBCCF /* ZDFfiFunctions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDFfiFunctions.m; sourceTree = "<group>"; };
 		FABB7B4723ACC62B009FBCCF /* NSObject+ZDFfiHook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+ZDFfiHook.h"; sourceTree = "<group>"; };
 		FABB7B4823ACC62B009FBCCF /* NSObject+ZDFfiHook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ZDFfiHook.m"; sourceTree = "<group>"; };
+		FAC573E324A0A14F00921A82 /* NSObject+ZDAutoFree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+ZDAutoFree.h"; sourceTree = "<group>"; };
+		FAC573E424A0A14F00921A82 /* NSObject+ZDAutoFree.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ZDAutoFree.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +204,8 @@
 				FABB7B4223ACBD31009FBCCF /* ZDFfiHookInfo.m */,
 				FABB7B3E23ACBCEC009FBCCF /* ZDFfiHook.h */,
 				FABB7B3F23ACBCEC009FBCCF /* ZDFfiHook.m */,
+				FAC573E324A0A14F00921A82 /* NSObject+ZDAutoFree.h */,
+				FAC573E424A0A14F00921A82 /* NSObject+ZDAutoFree.m */,
 				FABB7B4723ACC62B009FBCCF /* NSObject+ZDFfiHook.h */,
 				FABB7B4823ACC62B009FBCCF /* NSObject+ZDFfiHook.m */,
 			);
@@ -417,6 +422,7 @@
 				FABB7B4023ACBCEC009FBCCF /* ZDFfiHook.m in Sources */,
 				FABB7B4923ACC62B009FBCCF /* NSObject+ZDFfiHook.m in Sources */,
 				FABB7B4623ACBECD009FBCCF /* ZDFfiFunctions.m in Sources */,
+				FAC573E524A0A14F00921A82 /* NSObject+ZDAutoFree.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
