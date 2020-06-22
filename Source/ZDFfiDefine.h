@@ -66,19 +66,22 @@ typedef void * ZDBlockIMP;
 
 //*******************************************************
 
+/*
 typedef NS_ENUM(NSInteger, ZDHookMethodType) {
     ZDHookMethodType_None           = 0,
     ZDHookMethodType_Instance       = 1,        // 类的实例方法
     ZDHookMethodType_Class          = 2,        // 类方法
     ZDHookMethodType_SingleInstance = 3,        // 单个实例
 };
+ */
 
 typedef NS_OPTIONS(NSInteger, ZDHookOption) {
-    ZDHookOption_Default            = 0,
+    ZDHookOption_None               = 0,
+    ZDHookOption_Default            = 1 << 0,
     ZDHookOption_After              = ZDHookOption_Default,// Called after the original implementation
-    ZDHookOption_Instead            = 1,        // Will replace the original implementation.
-    ZDHookOption_Befor              = 2,        // Called before the original implementation.
-//    ZDHookOption_AutoRemoval        = 1 << 3,   // Will remove the hook after the first execution.
+    ZDHookOption_Instead            = 1 << 1,        // Will replace the original implementation.
+    ZDHookOption_Befor              = 1 << 2,        // Called before the original implementation.
+    //ZDHookOption_AutoRemoval        = 1 << 3,        // Will remove the hook after the first execution.
 };
 
 //*******************************************************

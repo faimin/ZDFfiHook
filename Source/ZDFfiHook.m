@@ -12,7 +12,7 @@
 
 static NSString *const ZD_Prefix = @"ZDAOP_";
 static void *ZD_SubclassAssociationKey = &ZD_SubclassAssociationKey;
-#define ZDOptionFilter 0x07
+//#define ZDOptionFilter 0x07
 
 // 生成关联的key
 static const SEL ZD_AssociatedKey(SEL selector) {
@@ -25,7 +25,7 @@ static const SEL ZD_AssociatedKey(SEL selector) {
 static void ZD_SwizzleGetClass(Class class, Class statedClass) {
     SEL selector = @selector(class);
     Method method = class_getInstanceMethod(class, selector);
-    IMP newIMP = imp_implementationWithBlock(^(id self) {
+    IMP newIMP = imp_implementationWithBlock(^Class(id self) {
         return statedClass;
     });
     class_replaceMethod(class, selector, newIMP, method_getTypeEncoding(method));
@@ -60,13 +60,20 @@ static void ZD_CreateDynamicSubClassIfNeed(id *obj, Method *method) {
     NSCAssert(obj, @"can't be nil");
     
     id self = *obj; // instance
-    BOOL isHookSigleInstance = !object_isClass(self);
-    if (isHookSigleInstance) {
-        Class aSubClass = ZD_CreateDynamicSubClass(self);
-        Method tempMethod = *method;
-        SEL aSelector = method_getName(tempMethod);
-        
+    BOOL isInstance = !object_isClass(self);
+    if (!isInstance) {
+        return;
+    }
+    
+    // only instance hook need kvo's operation which create subclass dynamiced
+    Class aSubClass = ZD_CreateDynamicSubClass(self);
+    Method tempMethod = *method;
+    SEL aSelector = method_getName(tempMethod);
+    
+    if (obj) {
         *obj = aSubClass;
+    }
+    if (method) {
         *method = class_getInstanceMethod(aSubClass, aSelector);
     }
 }
@@ -146,7 +153,7 @@ void ZD_CoreHookFunc(id self, Method method, ZDHookOption option, id callback) {
         return;
     }
     
-    if (self && method) {
+    if (!object_isClass(self)) {
         ZD_CreateDynamicSubClassIfNeed(&self, &method);
     }
     
