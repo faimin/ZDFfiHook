@@ -57,7 +57,7 @@ static Class ZD_CreateDynamicSubClass(id self) {
 }
 
 static void ZD_CreateDynamicSubClassIfNeed(id *obj, Method *method) {
-    NSCAssert(obj, @"can't be nil");
+    NSCAssert(obj && method, @"can't be nil");
     
     id self = *obj; // instance
     BOOL isInstance = !object_isClass(self);
@@ -153,16 +153,14 @@ void ZD_CoreHookFunc(id self, Method method, ZDHookOption option, id callback) {
         return;
     }
     
-    if (!object_isClass(self)) {
-        ZD_CreateDynamicSubClassIfNeed(&self, &method);
-    }
-    
     const SEL key = ZD_AssociatedKey(method_getName(method));
     ZDFfiHookInfo *hookInfo = objc_getAssociatedObject(self, key);
     if (!hookInfo) {
         hookInfo = [ZDFfiHookInfo infoWithObject:self method:method];
         // info需要被强引用，否则会出现内存crash
         objc_setAssociatedObject(self, key, hookInfo, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        
+        ZD_CreateDynamicSubClassIfNeed(&self, &method);
         
         // 构造参数类型列表
         const unsigned int argsCount = method_getNumberOfArguments(method);
@@ -215,7 +213,9 @@ void ZD_CoreHookFunc(id self, Method method, ZDHookOption option, id callback) {
             }
         }
     }
-    
+    else {
+        ZD_CreateDynamicSubClassIfNeed(&self, &method);
+    }
     
     if (!callback) {
         return;
@@ -241,3 +241,41 @@ void ZD_CoreHookFunc(id self, Method method, ZDHookOption option, id callback) {
         NSCAssert(NO, @"💔");
     }
 }
+
+
+//========================================================
+#pragma mark ZDWeakSelf
+//========================================================
+typedef void(^MD_FreeBlock)(id unsafeSelf);
+
+@interface ZDWeakSelf : NSObject
+
+@property (nonatomic, copy, readonly) MD_FreeBlock deallocBlock;
+@property (nonatomic, unsafe_unretained, readonly) id realTarget;
+
+- (instancetype)initWithBlock:(MD_FreeBlock)deallocBlock realTarget:(id)realTarget;
+
+@end
+
+@implementation ZDWeakSelf
+
+- (instancetype)initWithBlock:(MD_FreeBlock)deallocBlock realTarget:(id)realTarget {
+    self = [super init];
+    if (self) {
+        //属性设为readonly,并用指针指向方式,是参照RACDynamicSignal中的写法
+        self->_deallocBlock = [deallocBlock copy];
+        self->_realTarget = realTarget;
+    }
+    return self;
+}
+
+- (void)dealloc {
+    if (nil != self.deallocBlock) {
+        self.deallocBlock(self.realTarget);
+#if DEBUG
+        NSLog(@"成功移除对象");
+#endif
+    }
+}
+
+@end
