@@ -9,6 +9,9 @@
 #import "NSObject+ZDAutoFree.h"
 #import <objc/runtime.h>
 
+@interface ZD_AVOID_ALL_LOAD_FLAG_FOR_CATEGORY_NSObject_ZDAutoFree : NSObject @end
+@implementation ZD_AVOID_ALL_LOAD_FLAG_FOR_CATEGORY_NSObject_ZDAutoFree @end
+
 //========================================================
 #pragma mark ZDWrapSelf
 //========================================================

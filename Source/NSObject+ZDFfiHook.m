@@ -10,6 +10,9 @@
 #import <objc/runtime.h>
 #import "ZDFfiHook.h"
 
+@interface ZD_AVOID_ALL_LOAD_FLAG_FOR_CATEGORY_NSObject_ZDFfiHook : NSObject @end
+@implementation ZD_AVOID_ALL_LOAD_FLAG_FOR_CATEGORY_NSObject_ZDFfiHook @end
+
 @implementation NSObject (ZDFfiHook)
 
 + (ZDFfiHookInfo *)zd_hookInstanceMethod:(SEL)selector option:(ZDHookOption)option callback:(id)callback {
