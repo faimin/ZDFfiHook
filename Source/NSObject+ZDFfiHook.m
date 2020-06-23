@@ -12,20 +12,28 @@
 
 @implementation NSObject (ZDFfiHook)
 
-+ (void)zd_hookInstanceMethod:(SEL)selector option:(ZDHookOption)option callback:(id)callback {
++ (ZDFfiHookInfo *)zd_hookInstanceMethod:(SEL)selector option:(ZDHookOption)option callback:(id)callback {
     Method method = class_getInstanceMethod(self, selector);
-    ZD_CoreHookFunc(self, method, option, callback);
+    return ZD_CoreHookFunc(self, method, option, callback);
 }
 
-+ (void)zd_hookClassMethod:(SEL)selector option:(ZDHookOption)option callback:(id)callback {
++ (ZDFfiHookInfo *)zd_hookClassMethod:(SEL)selector option:(ZDHookOption)option callback:(id)callback {
     Class realClass = object_getClass(self);
     Method method = class_getClassMethod(realClass, selector);
-    ZD_CoreHookFunc(realClass, method, option, callback);
+    return ZD_CoreHookFunc(realClass, method, option, callback);
 }
 
-- (void)zd_hookInstanceMethod:(SEL)selector option:(ZDHookOption)option callback:(id)callback {
+- (ZDFfiHookInfo *)zd_hookInstanceMethod:(SEL)selector option:(ZDHookOption)option callback:(id)callback {
     Method method = class_getInstanceMethod(self.class, selector);
-    ZD_CoreHookFunc(self, method, option, callback);
+    return ZD_CoreHookFunc(self, method, option, callback);
+}
+
++ (BOOL)zd_removeHookToken:(ZDFfiHookInfo *)token {
+    return ZD_RemoveHookTokenFunc(self, token);
+}
+
+- (BOOL)zd_removeHookToken:(ZDFfiHookInfo *)token {
+    return ZD_RemoveHookTokenFunc(self, token);
 }
 
 @end

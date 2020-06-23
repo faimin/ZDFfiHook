@@ -11,13 +11,19 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class ZDFfiHookInfo;
 @interface NSObject (ZDFfiHook)
 
-+ (void)zd_hookInstanceMethod:(SEL)selector option:(ZDHookOption)option callback:(id)callback;
++ (ZDFfiHookInfo *)zd_hookInstanceMethod:(SEL)selector option:(ZDHookOption)option callback:(id)callback;
 
-+ (void)zd_hookClassMethod:(SEL)selector option:(ZDHookOption)option callback:(id)callback;
++ (ZDFfiHookInfo *)zd_hookClassMethod:(SEL)selector option:(ZDHookOption)option callback:(id)callback;
 
-- (void)zd_hookInstanceMethod:(SEL)selector option:(ZDHookOption)option callback:(id)callback;
+- (ZDFfiHookInfo *)zd_hookInstanceMethod:(SEL)selector option:(ZDHookOption)option callback:(id)callback;
+
++ (BOOL)zd_removeHookToken:(ZDFfiHookInfo *)token;
+
+/// normaly don't need remove instance hook manually, it will auto remove at dealloc
+- (BOOL)zd_removeHookToken:(ZDFfiHookInfo *)token;
 
 @end
 
