@@ -9,6 +9,7 @@
 #import "ZDFfiHook.h"
 #import "ZDFfiDefine.h"
 #import "ZDFfiFunctions.h"
+#import "NSObject+ZDAutoFree.h"
 
 static NSString *const ZD_Prefix = @"ZDAOP_";
 static void *ZD_SubclassAssociationKey = &ZD_SubclassAssociationKey;
@@ -33,13 +34,13 @@ static void ZD_SwizzleGetClass(Class class, Class statedClass) {
 
 // refer from `NSObject+RACSelectorSignal`
 static Class ZD_CreateDynamicSubClass(id self) {
-    Class statedClass = [self class];
-    Class baseClass = object_getClass(self);
-    
     Class knownDynamicSubclass = objc_getAssociatedObject(self, ZD_SubclassAssociationKey);
     if (knownDynamicSubclass != Nil) {
         return knownDynamicSubclass;
     }
+    
+    Class statedClass = [self class];
+    Class baseClass = object_getClass(self);
     
     const char *subClassName = [ZD_Prefix stringByAppendingString:NSStringFromClass(baseClass)].UTF8String;
     Class subClass = objc_getClass(subClassName);
@@ -56,13 +57,15 @@ static Class ZD_CreateDynamicSubClass(id self) {
     return subClass;
 }
 
-static void ZD_CreateDynamicSubClassIfNeed(id *obj, Method *method) {
-    NSCAssert(obj && method, @"can't be nil");
+static Class ZD_CreateDynamicSubClassIfNeed(id self, Method *method, BOOL *hookedInstance) {
+    NSCAssert(self && method, @"can't be nil");
     
-    id self = *obj; // instance
     BOOL isInstance = !object_isClass(self);
+    if (hookedInstance) {
+        *hookedInstance = isInstance;
+    }
     if (!isInstance) {
-        return;
+        return self;
     }
     
     // only instance hook need kvo's operation which create subclass dynamiced
@@ -70,12 +73,10 @@ static void ZD_CreateDynamicSubClassIfNeed(id *obj, Method *method) {
     Method tempMethod = *method;
     SEL aSelector = method_getName(tempMethod);
     
-    if (obj) {
-        *obj = aSubClass;
-    }
     if (method) {
         *method = class_getInstanceMethod(aSubClass, aSelector);
     }
+    return aSubClass;
 }
 
 #pragma mark - Core Func
@@ -147,20 +148,24 @@ static void ZD_ffi_closure_func(ffi_cif *cif, void *ret, void **args, void *user
     }
 }
 
-void ZD_CoreHookFunc(id self, Method method, ZDHookOption option, id callback) {
+#pragma mark - Public
+
+ZDFfiHookInfo *ZD_CoreHookFunc(id self, Method method, ZDHookOption option, id callback) {
     if (!self || !method) {
         NSCAssert(NO, @"参数错误");
-        return;
+        return nil;
     }
     
+    //如果self是实例，则认为hook的是单个实例变量，此时会动态创建subclass进行hook
+    BOOL hookedInstance = NO;
+    id willBeHookedClass = ZD_CreateDynamicSubClassIfNeed(self, &method, &hookedInstance);
+    
     const SEL key = ZD_AssociatedKey(method_getName(method));
-    ZDFfiHookInfo *hookInfo = objc_getAssociatedObject(self, key);
+    ZDFfiHookInfo *hookInfo = objc_getAssociatedObject(willBeHookedClass, key);
     if (!hookInfo) {
-        hookInfo = [ZDFfiHookInfo infoWithObject:self method:method];
+        hookInfo = [ZDFfiHookInfo infoWithObject:willBeHookedClass method:method];
         // info需要被强引用，否则会出现内存crash
-        objc_setAssociatedObject(self, key, hookInfo, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        
-        ZD_CreateDynamicSubClassIfNeed(&self, &method);
+        objc_setAssociatedObject(willBeHookedClass, key, hookInfo, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         
         // 构造参数类型列表
         const unsigned int argsCount = method_getNumberOfArguments(method);
@@ -183,7 +188,7 @@ void ZD_CoreHookFunc(id self, Method method, ZDHookOption option, id callback) {
         ffi_status prepCifStatus = ffi_prep_cif(cif, FFI_DEFAULT_ABI, argsCount, retType, argTypes);
         if (prepCifStatus != FFI_OK) {
             NSCAssert1(NO, @"ffi_prep_cif failed = %d", prepCifStatus);
-            return;
+            return nil;
         }
         
         // 生成新的IMP
@@ -198,11 +203,11 @@ void ZD_CoreHookFunc(id self, Method method, ZDHookOption option, id callback) {
         ffi_status prepClosureStatus = ffi_prep_closure_loc(cloure, cif, ZD_ffi_closure_func, (__bridge void *)hookInfo, newIMP);
         if (prepClosureStatus != FFI_OK) {
             NSCAssert1(NO, @"ffi_prep_closure_loc failed = %d", prepClosureStatus);
-            return;
+            return nil;
         }
 
         //替换IMP实现
-        Class hookClass = [self class];
+        Class hookClass = [willBeHookedClass class];
         SEL aSelector = method_getName(method);
         const char *typeEncoding = method_getTypeEncoding(method);
         if (!class_addMethod(hookClass, aSelector, newIMP, typeEncoding)) {
@@ -213,14 +218,12 @@ void ZD_CoreHookFunc(id self, Method method, ZDHookOption option, id callback) {
             }
         }
     }
-    else {
-        ZD_CreateDynamicSubClassIfNeed(&self, &method);
-    }
     
     if (!callback) {
-        return;
+        return nil;
     }
-    ZDFfiHookInfo *callbackInfo = [ZDFfiHookInfo infoWithCallback:callback option:option];
+    
+    ZDFfiHookInfo *callbackInfo = [ZDFfiHookInfo infoWithCallback:callback option:option method:method];
     // 组装callback block
     const unsigned int argsCount = method_getNumberOfArguments(method);
     uint blockArgsCount = argsCount - 1;
@@ -236,46 +239,40 @@ void ZD_CoreHookFunc(id self, Method method, ZDHookOption option, id callback) {
         callbackInfo->_cif = callbackCif;
         
         [hookInfo addHookInfo:callbackInfo];
+        
+        // hook实例对象时，在实例释放时移除callBack
+        if (hookedInstance) {
+            __weak typeof(hookInfo) weakHookInfo = hookInfo;
+            __weak typeof(callbackInfo) weakCallbackInfo = callbackInfo;
+            [self zdAutoFree_deallocBlock:^(id  _Nonnull unsafeSelf) {
+                __strong typeof(weakHookInfo) hookInfo = weakHookInfo;
+                __strong typeof(weakCallbackInfo) callbackInfo = weakCallbackInfo;
+                [hookInfo removeHookInfo:callbackInfo];
+            }];
+        }
     }
     else {
         NSCAssert(NO, @"💔");
+        return nil;
     }
+    
+    return callbackInfo;
 }
 
-
-//========================================================
-#pragma mark ZDWeakSelf
-//========================================================
-typedef void(^MD_FreeBlock)(id unsafeSelf);
-
-@interface ZDWeakSelf : NSObject
-
-@property (nonatomic, copy, readonly) MD_FreeBlock deallocBlock;
-@property (nonatomic, unsafe_unretained, readonly) id realTarget;
-
-- (instancetype)initWithBlock:(MD_FreeBlock)deallocBlock realTarget:(id)realTarget;
-
-@end
-
-@implementation ZDWeakSelf
-
-- (instancetype)initWithBlock:(MD_FreeBlock)deallocBlock realTarget:(id)realTarget {
-    self = [super init];
-    if (self) {
-        //属性设为readonly,并用指针指向方式,是参照RACDynamicSignal中的写法
-        self->_deallocBlock = [deallocBlock copy];
-        self->_realTarget = realTarget;
+BOOL ZD_RemoveHookTokenFunc(id self, ZDFfiHookInfo *token) {
+    if (!self || !token) {
+        return NO;
     }
-    return self;
-}
-
-- (void)dealloc {
-    if (nil != self.deallocBlock) {
-        self.deallocBlock(self.realTarget);
-#if DEBUG
-        NSLog(@"成功移除对象");
-#endif
+    Class knownDynamicSubclass = objc_getAssociatedObject(self, ZD_SubclassAssociationKey);
+    if (knownDynamicSubclass) {
+        self = knownDynamicSubclass;
     }
+    const SEL key = ZD_AssociatedKey(method_getName(token.method));;
+    ZDFfiHookInfo *hookInfo = objc_getAssociatedObject(self, key);
+    if (!hookInfo) {
+        return NO;
+    }
+    
+    BOOL ret = [hookInfo removeHookInfo:token];
+    return ret;
 }
-
-@end

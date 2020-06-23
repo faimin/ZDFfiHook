@@ -12,6 +12,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-FOUNDATION_EXPORT void ZD_CoreHookFunc(id obj, Method method, ZDHookOption option, id callback);
+FOUNDATION_EXPORT ZDFfiHookInfo *ZD_CoreHookFunc(id obj, Method method, ZDHookOption option, id callback);
+
+FOUNDATION_EXPORT BOOL ZD_RemoveHookTokenFunc(id self, ZDFfiHookInfo *token);
 
 NS_ASSUME_NONNULL_END

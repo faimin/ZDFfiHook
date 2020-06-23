@@ -52,7 +52,7 @@
     return model;
 }
 
-+ (instancetype)infoWithCallback:(id)callback option:(ZDHookOption)option {
++ (instancetype)infoWithCallback:(id)callback option:(ZDHookOption)option method:(Method)method {
     if (!callback) {
         return nil;
     }
@@ -61,6 +61,7 @@
     model.isBlock = [callback isKindOfClass:objc_lookUpClass("NSBlock")];
     model.callback = callback;
     model.option = option;
+    model.method = method;
     if (model.isBlock) {
         const char *typeEncoding = ZDFfi_ReduceBlockSignatureCodingType(ZDFfi_BlockSignatureTypes(callback)).UTF8String;
         NSMethodSignature *signature = [NSMethodSignature signatureWithObjCTypes:typeEncoding];
