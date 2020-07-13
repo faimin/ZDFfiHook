@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AController : UIViewController
 
+- (id)exe;
+
 @end
 
 NS_ASSUME_NONNULL_END

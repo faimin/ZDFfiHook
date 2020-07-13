@@ -47,13 +47,27 @@
 
 #pragma mark -
 
-- (void)testFfiHook {
+- (void)testHookClassInstance {
+    // hook class
     [self.class zd_hookInstanceMethod:@selector(exeA:b:c:) option:ZDHookOption_After callback:^(NSInteger a, NSString *b, id c){
         NSLog(@"~~~~~~后hook");
     }];
     
     [self.class zd_hookInstanceMethod:@selector(exeA:b:c:) option:ZDHookOption_Befor callback:^(NSInteger a, NSString *b, id c){
         NSLog(@"~~~~~~先hook");
+    }];
+    
+    id v = [self exeA:100 b:@"啦啦啦" c:NSObject.new];
+    NSLog(@"***************** %@", v);
+}
+
+- (void)testHookInstance {
+    [self zd_hookInstanceMethod:@selector(exeA:b:c:) option:ZDHookOption_After callback:^(NSInteger a, NSString *b, id c){
+        NSLog(@"后hook instance");
+    }];
+    
+    [self.class zd_hookInstanceMethod:@selector(exeA:b:c:) option:ZDHookOption_Befor callback:^(NSInteger a, NSString *b, id c){
+        NSLog(@"先hook instance");
     }];
     
     id v = [self exeA:100 b:@"啦啦啦" c:NSObject.new];

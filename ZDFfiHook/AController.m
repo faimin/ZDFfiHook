@@ -23,6 +23,10 @@
     // Do any additional setup after loading the view.
 }
 
+- (id)exe {
+    return @(1);
+}
+
 /*
 #pragma mark - Navigation
 

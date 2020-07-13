@@ -16,19 +16,33 @@
 
 @implementation ZDViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
+- (instancetype)initWithCoder:(NSCoder *)coder {
+    if (self = [super initWithCoder:coder]) {
+        [self hook];
+    }
+    return self;
+}
+
+- (void)hook {
     self.aController = [AController new];
     
+    __weak typeof(self) weakTarget = self;
     [self.aController zd_hookInstanceMethod:@selector(viewDidLoad) option:ZDHookOption_After callback:^{
         NSLog(@"viewDidLoad");
+        __strong typeof(weakTarget) self = weakTarget;
+        id v = [self.aController exe];
+        NSLog(@"%@", v);
     }];
     
     [self.aController zd_hookInstanceMethod:@selector(viewWillAppear:) option:ZDHookOption_After callback:^(BOOL animated){
         NSLog(@"viewWillAppear:%d", animated);
     }];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    
 }
 
 - (IBAction)push:(UIButton *)sender {

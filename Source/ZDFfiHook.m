@@ -11,9 +11,8 @@
 #import "ZDFfiFunctions.h"
 #import "NSObject+ZDAutoFree.h"
 
-static NSString *const ZD_Prefix = @"ZDAOP_";
+static NSString *const ZD_Prefix = @"ZD_AOP_";
 static void *ZD_SubclassAssociationKey = &ZD_SubclassAssociationKey;
-//#define ZDOptionFilter 0x07
 
 // 生成关联的key
 static const SEL ZD_AssociatedKey(SEL selector) {
@@ -87,21 +86,21 @@ static void ZD_ffi_closure_func(ffi_cif *cif, void *ret, void **args, void *user
     
     NSMethodSignature *methodSignature = info.signature;
     
-#if DEBUG && 1
-    int argCount = 0;
-    while (args[argCount]) {
-        argCount++;
+#if DEBUG
+    NSUInteger argCount = 0;
+    while (info.typeEncoding[argCount]) {
+        ++argCount;
     };
-    printf("参数个数：-------- %d\n", argCount);
+    printf("参数个数：-------- %zd\n", argCount);
     
     // 打印参数
-    int beginIndex = 2;
+    NSUInteger beginIndex = 2;
     if (info.isBlock) {
         beginIndex = 1;
     }
-    for (int i = beginIndex; i < methodSignature.numberOfArguments; ++i) {
+    for (NSUInteger i = beginIndex; i < methodSignature.numberOfArguments; ++i) {
         id argValue = ZDFfi_ArgumentAtIndex(methodSignature, args, i);
-        NSLog(@"arg ==> index: %d, value: %@", i, argValue);
+        NSLog(@"arg ==> index: %zd, value: %@", i, argValue);
     }
 #endif
     
@@ -110,7 +109,7 @@ static void ZD_ffi_closure_func(ffi_cif *cif, void *ret, void **args, void *user
         void **callbackArgs = calloc(methodSignature.numberOfArguments - 1, sizeof(void *));
         id block = callbackInfo.callback;
         callbackArgs[0] = (void *)&block;
-        // 从index=2位置开始把args中的数据拷贝到callbackArgs(从index=1开始，第0个位置留给block自己)中
+        // 从index=2位置开始把args中的数据拷贝到callbackArgs中(从index=1开始，第0个位置留给block自己)
         memcpy(callbackArgs + 1, args + 2, sizeof(*args)*(methodSignature.numberOfArguments - 2));
         /*
         for (NSInteger i = 2; i < methodSignature.numberOfArguments; ++i) {
