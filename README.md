@@ -1,7 +1,7 @@
 # ZDFfiHook
-使用libffi实现hook
+使用`libffi`实现`hook Objective-C`
 
-[libffi demo](https://github.com/faimin/ZDLibffiDemo)
+[libffi 基本用法](https://github.com/faimin/ZDLibffiDemo)
 
 ```objc
 - (void)testFfiHook {
