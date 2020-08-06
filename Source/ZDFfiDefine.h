@@ -30,20 +30,20 @@ typedef NS_OPTIONS(NSUInteger, ZDBlockDescriptionFlags) {
 
 // revised new layout
 
-#define BLOCK_DESCRIPTOR_1 1
+#define ZDBLOCK_DESCRIPTOR_1 1
 struct ZDBlock_descriptor_1 {
-    uintptr_t reserved;
-    uintptr_t size;
+    unsigned long int reserved;
+    unsigned long int size;
 };
 
-#define BLOCK_DESCRIPTOR_2 1
+#define ZDBLOCK_DESCRIPTOR_2 1
 struct ZDBlock_descriptor_2 {
     // requires BLOCK_HAS_COPY_DISPOSE
     void (*copy)(void *dst, const void *src);
     void (*dispose)(const void *);
 };
 
-#define BLOCK_DESCRIPTOR_3 1
+#define ZDBLOCK_DESCRIPTOR_3 1
 struct ZDBlock_descriptor_3 {
     // requires BLOCK_HAS_SIGNATURE
     const char *signature;
@@ -55,7 +55,7 @@ struct ZDBlock_layout {
     volatile int flags; // contains ref count
     int reserved;
     void (*invoke)(void *, ...);
-    struct Block_descriptor_1 *descriptor;
+    struct ZDBlock_descriptor_1 *descriptor;
     // imported variables
 };
 
