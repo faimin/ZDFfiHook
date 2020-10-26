@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
-#import <ffi.h>
+#import <libffi-core/ffi.h>
 #import "ZDFfiDefine.h"
 
 NS_ASSUME_NONNULL_BEGIN
