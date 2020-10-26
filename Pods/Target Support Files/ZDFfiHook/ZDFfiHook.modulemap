@@ -1,0 +1,6 @@
+module ZDFfiHook {
+  umbrella header "ZDFfiHook-umbrella.h"
+
+  export *
+  module * { export * }
+}

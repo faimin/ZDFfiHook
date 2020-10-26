@@ -9,7 +9,7 @@
 /* Begin PBXAggregateTarget section */
 		0D5A4E553434A7796A437A4E9719F506 /* libffi-core */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 37C4339F51DA8C2D64F7BB84D73CCCB9 /* Build configuration list for PBXAggregateTarget "libffi-core" */;
+			buildConfigurationList = 19030C85353F5D42E4180DAA5A6144CF /* Build configuration list for PBXAggregateTarget "libffi-core" */;
 			buildPhases = (
 			);
 			dependencies = (
@@ -19,27 +19,61 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		2EC46DD66F97B2343E39F7F99AA6DC5A /* Pods-ZDFfiHook-ZDFfiHookUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F7338ADDC8036DCC6EF990468943F09A /* Pods-ZDFfiHook-ZDFfiHookUITests-dummy.m */; };
-		86426947D56D5EC77119DA91159802BE /* Pods-ZDFfiHook-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F6305C5A9CDD1B07D673595C22177B03 /* Pods-ZDFfiHook-dummy.m */; };
-		C9CCE02D2E46098EBFD153656AA7250E /* Pods-ZDFfiHookTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C83AC592B25FCAC7234646A0CEE0D55 /* Pods-ZDFfiHookTests-dummy.m */; };
+		0CFE894B475168D089AE67D4C0D0DA1A /* ZDFfiHookInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = E17078D1D2438F8D107E21B42AE4A4CB /* ZDFfiHookInfo.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		16794309A5EA6F794499D69541D0798B /* ZDFfiHookInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A65F4C627BFC1AB2D8832703C8E62A /* ZDFfiHookInfo.m */; };
+		2CE0009D1D4F448744E81D6A2B642BB6 /* ZDFfiHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BEF4CDCE70B5CBDE1E511A71F098D98 /* ZDFfiHook.m */; };
+		397DDD6628F926E8F1D655EDE4380CE7 /* ZDFfiFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DA7D38F944FC0E40A35DF346D1AAB85 /* ZDFfiFunctions.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		5CE3E03782A639E4DAC91B587F915F78 /* ZDFfiFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E7BE8729370B629DC80B2E29999E6B /* ZDFfiFunctions.m */; };
+		7C9B517FFBF6321AEDA472A78E2A8C0F /* Pods-ZDFfiHookDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 774B438A7360AE7F8E36E28F7B38B0E8 /* Pods-ZDFfiHookDemo-dummy.m */; };
+		87175E3C5EA43A4026986D5AE5375815 /* NSObject+ZDAutoFree.h in Headers */ = {isa = PBXBuildFile; fileRef = 12208DD332D3DCEE6678F9CE51AACAAC /* NSObject+ZDAutoFree.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		89DCBD73DCC5250B0388888EC1329D7E /* ZDFfiHook.h in Headers */ = {isa = PBXBuildFile; fileRef = F83481348C4E093F58EA9A69D0129465 /* ZDFfiHook.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A05358286D02A15F1F594D3FB65083CD /* Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FAA20F20E90AD4BE2178679BDAB384F /* Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests-dummy.m */; };
+		AFA9A446EC26D3F0909BFBB8D0FBCFF5 /* NSObject+ZDFfiHook.m in Sources */ = {isa = PBXBuildFile; fileRef = C8CE631CC5C5A08CADAA0D28709D299F /* NSObject+ZDFfiHook.m */; };
+		C41450D03F7726B4A939C32B96713CA9 /* NSObject+ZDAutoFree.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D6BF2B6BBD7D0F8AE6AF8CD795E933 /* NSObject+ZDAutoFree.m */; };
+		C7E4C7C963A9ACA482F7FB4D31C09300 /* NSObject+ZDFfiHook.h in Headers */ = {isa = PBXBuildFile; fileRef = D7C1812E82B03B530B5E410F65472B08 /* NSObject+ZDFfiHook.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		CBF2EB7EA989071D015C48B4862501A3 /* Pods-ZDFfiHookDemoTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 312B5C77020150601E1BA4E3F65EC9F4 /* Pods-ZDFfiHookDemoTests-dummy.m */; };
+		EA1ACF2C3B0C43A1F14FADB66604354C /* ZDFfiDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = A77FC7CDA98606A81452AD202BB73CE0 /* ZDFfiDefine.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F63CC3CB776A356BB08E90610D0C755D /* ZDFfiHook-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 23009C089C197ABF2E94D2F27857B7BB /* ZDFfiHook-dummy.m */; };
+		FE02E999FE5DE4239A13A936CE499E6E /* ZDFfiHookKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 91F813783E9A910A3A24454E317489A9 /* ZDFfiHookKit.h */; settings = {ATTRIBUTES = (Project, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		38048BEAC0D45EFEE761CD0C4F5E3A0C /* PBXContainerItemProxy */ = {
+		51197FFF223193B6C69437632B9F3025 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0D5A4E553434A7796A437A4E9719F506;
 			remoteInfo = "libffi-core";
 		};
-		9ECD1759EB4C6FEDE311696389683189 /* PBXContainerItemProxy */ = {
+		5997ACFE7BBCA7481E95D110D5613D34 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 51B38C366E526208DDBDE289C0FC1C2A;
-			remoteInfo = "Pods-ZDFfiHook";
+			remoteGlobalIDString = 2D67ADD56F545013DA6AFFBEA664F44B;
+			remoteInfo = ZDFfiHook;
 		};
-		F9727C064D66BEFC651C81F2E9E4E2A1 /* PBXContainerItemProxy */ = {
+		7C104E28669F137D98AAC779E3D9DEA4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE7FC7CC0B02F1FD8839CD745DF28CBA;
+			remoteInfo = "Pods-ZDFfiHookDemo";
+		};
+		7C7358CA593168E3BDCFEC1C0384F2B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2D67ADD56F545013DA6AFFBEA664F44B;
+			remoteInfo = ZDFfiHook;
+		};
+		902C31BEBB1F5043C88DF55936F72ABE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D5A4E553434A7796A437A4E9719F506;
+			remoteInfo = "libffi-core";
+		};
+		B8E14404EE71F8BCC789E97665118DD1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -49,56 +83,83 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		019D84AC3E5579CAEBA72515CAB1ACF2 /* Pods-ZDFfiHook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZDFfiHook.release.xcconfig"; sourceTree = "<group>"; };
-		08BB7C209B3ACC441F9D71ADA06937A1 /* ffitarget.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ffitarget.h; path = "libffi-core/ffitarget.h"; sourceTree = "<group>"; };
-		0FE3D662A5E43CEB96D173C50A775DA9 /* Pods-ZDFfiHookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZDFfiHookTests.debug.xcconfig"; sourceTree = "<group>"; };
-		1F51D35E338CC42E12D4DD90E35B4EA0 /* libffi.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libffi.a; path = "libffi-core/libffi.a"; sourceTree = "<group>"; };
-		1FD2014832B775C03E73921083D84325 /* ffitarget_arm.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ffitarget_arm.h; path = "libffi-core/ffitarget_arm.h"; sourceTree = "<group>"; };
-		26F8ADFD9309FACC62DD8B7B59D8547A /* ffi_arm64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ffi_arm64.h; path = "libffi-core/ffi_arm64.h"; sourceTree = "<group>"; };
-		2C83AC592B25FCAC7234646A0CEE0D55 /* Pods-ZDFfiHookTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ZDFfiHookTests-dummy.m"; sourceTree = "<group>"; };
-		2D7E9E991A52496123EF6E9841D91415 /* Pods-ZDFfiHook-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ZDFfiHook-acknowledgements.markdown"; sourceTree = "<group>"; };
-		349FB9FB563E9710553BED60C1CA8849 /* Pods-ZDFfiHookTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ZDFfiHookTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		38B18421750947B0740DC87E9EA4A7F0 /* Pods-ZDFfiHook-ZDFfiHookUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZDFfiHook-ZDFfiHookUITests.release.xcconfig"; sourceTree = "<group>"; };
-		43EDB933F2AC423E233CDD7DE0185794 /* ffitarget_arm64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ffitarget_arm64.h; path = "libffi-core/ffitarget_arm64.h"; sourceTree = "<group>"; };
-		46B3DCA20245852291674D378304F934 /* ffi_x86_64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ffi_x86_64.h; path = "libffi-core/ffi_x86_64.h"; sourceTree = "<group>"; };
-		561DEC0DCF5B139FF86C9770F0EE57C6 /* Pods-ZDFfiHookTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ZDFfiHookTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		594FBB8C1C60801A8755A1BF0895242F /* ffi_common.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ffi_common.h; path = "libffi-core/ffi_common.h"; sourceTree = "<group>"; };
-		5AC79A8D5B5408F308A8E354D58346BB /* Pods-ZDFfiHook-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ZDFfiHook-acknowledgements.plist"; sourceTree = "<group>"; };
-		5B6F29F6C7318074A311F6C9ADC7B8EE /* Pods-ZDFfiHook-ZDFfiHookUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZDFfiHook-ZDFfiHookUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		7443EB8DBF4170B1E642BB2F7B0EAA5E /* ffi_i386.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ffi_i386.h; path = "libffi-core/ffi_i386.h"; sourceTree = "<group>"; };
-		7BE11843159913149DCDA3FC148196BE /* ffi_arm.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ffi_arm.h; path = "libffi-core/ffi_arm.h"; sourceTree = "<group>"; };
-		8640E2F3408BE6C9C43BEB8375772B47 /* Pods-ZDFfiHook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZDFfiHook.debug.xcconfig"; sourceTree = "<group>"; };
-		8FB3A16AFCBC87A9FFDFA8E3528C97DF /* Pods-ZDFfiHookTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZDFfiHookTests.release.xcconfig"; sourceTree = "<group>"; };
+		03504128F5912745AF11C2CF0405B126 /* ffi_common.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ffi_common.h; path = "libffi-core/ffi_common.h"; sourceTree = "<group>"; };
+		0766D9C5A9D5F0268B8684DBDA5F332F /* libffi-core.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "libffi-core.release.xcconfig"; sourceTree = "<group>"; };
+		0B9F578B2431A1C6B1C36A60AE6A0A56 /* libPods-ZDFfiHookDemo-ZDFfiHookDemoUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-ZDFfiHookDemo-ZDFfiHookDemoUITests.a"; path = "libPods-ZDFfiHookDemo-ZDFfiHookDemoUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BEF4CDCE70B5CBDE1E511A71F098D98 /* ZDFfiHook.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZDFfiHook.m; path = Source/ZDFfiHook.m; sourceTree = "<group>"; };
+		12208DD332D3DCEE6678F9CE51AACAAC /* NSObject+ZDAutoFree.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+ZDAutoFree.h"; path = "Source/NSObject+ZDAutoFree.h"; sourceTree = "<group>"; };
+		23009C089C197ABF2E94D2F27857B7BB /* ZDFfiHook-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ZDFfiHook-dummy.m"; sourceTree = "<group>"; };
+		2842F62768F4E3F698679D279F0553B9 /* libffi-core.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "libffi-core.debug.xcconfig"; sourceTree = "<group>"; };
+		288B5109C528A3B6C6D1FFA375D5BCC9 /* Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		2C2B91D163D8D88FC20ACEE612FAE26D /* Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2DA7D38F944FC0E40A35DF346D1AAB85 /* ZDFfiFunctions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZDFfiFunctions.h; path = Source/ZDFfiFunctions.h; sourceTree = "<group>"; };
+		312B5C77020150601E1BA4E3F65EC9F4 /* Pods-ZDFfiHookDemoTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ZDFfiHookDemoTests-dummy.m"; sourceTree = "<group>"; };
+		31C9818A83F6A2C8EE59DDBA2D353C93 /* Pods-ZDFfiHookDemoTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ZDFfiHookDemoTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		3455A84B63AC346F9B8F5261FDF51E36 /* ZDFfiHook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ZDFfiHook.debug.xcconfig; sourceTree = "<group>"; };
+		37D6BF2B6BBD7D0F8AE6AF8CD795E933 /* NSObject+ZDAutoFree.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+ZDAutoFree.m"; path = "Source/NSObject+ZDAutoFree.m"; sourceTree = "<group>"; };
+		3A3DFA53CAEAEB2D6C276156207E8537 /* Pods-ZDFfiHookDemoTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ZDFfiHookDemoTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		3A62A86B338713C111882C0414518F6B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		43424799B2AB54CC81EC1958C740AE80 /* ffitarget_i386.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ffitarget_i386.h; path = "libffi-core/ffitarget_i386.h"; sourceTree = "<group>"; };
+		4411F6D8F9CEE3DF5B21FE0011804DC7 /* ffitarget.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ffitarget.h; path = "libffi-core/ffitarget.h"; sourceTree = "<group>"; };
+		5E9FF887E1CDD62EECA4E9954C9A997F /* Pods-ZDFfiHookDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZDFfiHookDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		616A27B776EEBFF2781D567590AD2C62 /* Pods-ZDFfiHookDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ZDFfiHookDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
+		69E7BE8729370B629DC80B2E29999E6B /* ZDFfiFunctions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZDFfiFunctions.m; path = Source/ZDFfiFunctions.m; sourceTree = "<group>"; };
+		6FC4A2BF2C9951FB5C2E93B671188E36 /* Pods-ZDFfiHookDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZDFfiHookDemo.release.xcconfig"; sourceTree = "<group>"; };
+		774B438A7360AE7F8E36E28F7B38B0E8 /* Pods-ZDFfiHookDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ZDFfiHookDemo-dummy.m"; sourceTree = "<group>"; };
+		7993F6E3A1D50CD9407D817050196668 /* ffi_arm.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ffi_arm.h; path = "libffi-core/ffi_arm.h"; sourceTree = "<group>"; };
+		8FAA20F20E90AD4BE2178679BDAB384F /* Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests-dummy.m"; sourceTree = "<group>"; };
+		91F813783E9A910A3A24454E317489A9 /* ZDFfiHookKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZDFfiHookKit.h; path = Source/ZDFfiHookKit.h; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		AE280CB7073BCD9A04A2A69B637846B0 /* ffi.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ffi.h; path = "libffi-core/ffi.h"; sourceTree = "<group>"; };
-		B58B43279C2BEFABA7A960B626AC8A8A /* ffitarget_x86_64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ffitarget_x86_64.h; path = "libffi-core/ffitarget_x86_64.h"; sourceTree = "<group>"; };
-		B98B167312DEA00846A075DB95D5F296 /* Pods-ZDFfiHook-ZDFfiHookUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ZDFfiHook-ZDFfiHookUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		CCE1AB0E73B50806BCF82A763F7F0995 /* libPods-ZDFfiHookTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-ZDFfiHookTests.a"; path = "libPods-ZDFfiHookTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E333027F7FFEC505FC922E2F561EAAF8 /* libPods-ZDFfiHook-ZDFfiHookUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-ZDFfiHook-ZDFfiHookUITests.a"; path = "libPods-ZDFfiHook-ZDFfiHookUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E93863A25347E685C94AAFDE1073E3F7 /* libPods-ZDFfiHook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-ZDFfiHook.a"; path = "libPods-ZDFfiHook.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F196E3FB6A595ED776E317EFBBA24B27 /* Pods-ZDFfiHook-ZDFfiHookUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ZDFfiHook-ZDFfiHookUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		F323B71799BF8CCF4AE6E2EDEE091EF0 /* ffitarget_i386.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ffitarget_i386.h; path = "libffi-core/ffitarget_i386.h"; sourceTree = "<group>"; };
-		F505768954E52394E024071A5381081D /* libffi-core.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "libffi-core.xcconfig"; sourceTree = "<group>"; };
-		F6305C5A9CDD1B07D673595C22177B03 /* Pods-ZDFfiHook-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ZDFfiHook-dummy.m"; sourceTree = "<group>"; };
-		F7338ADDC8036DCC6EF990468943F09A /* Pods-ZDFfiHook-ZDFfiHookUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ZDFfiHook-ZDFfiHookUITests-dummy.m"; sourceTree = "<group>"; };
+		9F0CBDEAA40C9763623CC7FE1A081FDB /* Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A56550E1782C1631CD451C395C6EF202 /* ZDFfiHook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ZDFfiHook.release.xcconfig; sourceTree = "<group>"; };
+		A77FC7CDA98606A81452AD202BB73CE0 /* ZDFfiDefine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZDFfiDefine.h; path = Source/ZDFfiDefine.h; sourceTree = "<group>"; };
+		AE04DF7982B529D395644F7B25EF5D44 /* ffi.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ffi.h; path = "libffi-core/ffi.h"; sourceTree = "<group>"; };
+		B198EB0A3184316BF85051AC400BB7C0 /* ffitarget_arm.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ffitarget_arm.h; path = "libffi-core/ffitarget_arm.h"; sourceTree = "<group>"; };
+		B2E28DF42AEF84700D6888E004726A34 /* ffitarget_arm64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ffitarget_arm64.h; path = "libffi-core/ffitarget_arm64.h"; sourceTree = "<group>"; };
+		B3CDCCDE187AD8AB9C3B45103D1AB300 /* Pods-ZDFfiHookDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZDFfiHookDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C01086539BF199840EA1650AC0ED69B4 /* ZDFfiHook.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ZDFfiHook.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C2CE90A21A81D349E542B37B9F994A11 /* libPods-ZDFfiHookDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-ZDFfiHookDemo.a"; path = "libPods-ZDFfiHookDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C76FCDC7E733B01F3846497D1EC54636 /* ffi_arm64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ffi_arm64.h; path = "libffi-core/ffi_arm64.h"; sourceTree = "<group>"; };
+		C8CE631CC5C5A08CADAA0D28709D299F /* NSObject+ZDFfiHook.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+ZDFfiHook.m"; path = "Source/NSObject+ZDFfiHook.m"; sourceTree = "<group>"; };
+		C9A65F4C627BFC1AB2D8832703C8E62A /* ZDFfiHookInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZDFfiHookInfo.m; path = Source/ZDFfiHookInfo.m; sourceTree = "<group>"; };
+		CF663FC4DFA21759740E483B71A0C2A4 /* ffi_x86_64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ffi_x86_64.h; path = "libffi-core/ffi_x86_64.h"; sourceTree = "<group>"; };
+		D7C1812E82B03B530B5E410F65472B08 /* NSObject+ZDFfiHook.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+ZDFfiHook.h"; path = "Source/NSObject+ZDFfiHook.h"; sourceTree = "<group>"; };
+		D876C5E3A3A8141E930A234DBD3CF165 /* ffi_i386.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ffi_i386.h; path = "libffi-core/ffi_i386.h"; sourceTree = "<group>"; };
+		D8BF4B6C6447D4E94A5C42FE813DA50C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		DE613E765D6410048B5B254B7526F72A /* libffi.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libffi.a; path = "libffi-core/libffi.a"; sourceTree = "<group>"; };
+		E17078D1D2438F8D107E21B42AE4A4CB /* ZDFfiHookInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZDFfiHookInfo.h; path = Source/ZDFfiHookInfo.h; sourceTree = "<group>"; };
+		E340D2AE70414D917C696906339DA28C /* Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		EC2EEC091EF685E9156C24402F5A4AED /* libPods-ZDFfiHookDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-ZDFfiHookDemoTests.a"; path = "libPods-ZDFfiHookDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F00A226B61181BF4EFF2F5B3D7D270AB /* libZDFfiHook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libZDFfiHook.a; path = libZDFfiHook.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2370E311DC2FB5689407D0C907EB77F /* ffitarget_x86_64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ffitarget_x86_64.h; path = "libffi-core/ffitarget_x86_64.h"; sourceTree = "<group>"; };
+		F3176F3605892F9C82F7844EB1881328 /* Pods-ZDFfiHookDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ZDFfiHookDemo-acknowledgements.plist"; sourceTree = "<group>"; };
+		F83481348C4E093F58EA9A69D0129465 /* ZDFfiHook.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZDFfiHook.h; path = Source/ZDFfiHook.h; sourceTree = "<group>"; };
+		FF930CD893D992517B46D0DC2D0FB4BF /* Pods-ZDFfiHookDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZDFfiHookDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		96205BBBAA41FEC7F4453AE40DD98978 /* Frameworks */ = {
+		04FA87FC70EDE293F96C5B453B92E217 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DB7A0B7D7BDBE244463A750936207F8D /* Frameworks */ = {
+		233D05F3B29734DDAB88F08A9F1A0B10 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F604D98445C36F9F06BD66C1B45CA89B /* Frameworks */ = {
+		F25B1201AFA26965DDAFD5B4111CEB4D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA27F70268A8F2AA01DC009A62102BA6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -108,69 +169,117 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3DB16D59E3B4A3C8AD8DCBF0CBEAEB59 /* Frameworks */ = {
+		154610C05C41DF2748B036793FED000F /* Pods-ZDFfiHookDemo */ = {
 			isa = PBXGroup;
 			children = (
-				1F51D35E338CC42E12D4DD90E35B4EA0 /* libffi.a */,
+				616A27B776EEBFF2781D567590AD2C62 /* Pods-ZDFfiHookDemo-acknowledgements.markdown */,
+				F3176F3605892F9C82F7844EB1881328 /* Pods-ZDFfiHookDemo-acknowledgements.plist */,
+				774B438A7360AE7F8E36E28F7B38B0E8 /* Pods-ZDFfiHookDemo-dummy.m */,
+				FF930CD893D992517B46D0DC2D0FB4BF /* Pods-ZDFfiHookDemo.debug.xcconfig */,
+				6FC4A2BF2C9951FB5C2E93B671188E36 /* Pods-ZDFfiHookDemo.release.xcconfig */,
 			);
-			name = Frameworks;
+			name = "Pods-ZDFfiHookDemo";
+			path = "Target Support Files/Pods-ZDFfiHookDemo";
 			sourceTree = "<group>";
 		};
-		7BCC1003DA38090533D0B17808D53400 /* Targets Support Files */ = {
+		1AE5658C84F5634471C3856D40B80251 /* Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests */ = {
 			isa = PBXGroup;
 			children = (
-				BFADBF6704F00CE3B0919298FE32308A /* Pods-ZDFfiHook */,
-				FB7581681D98B588EEF8061E11A6E3D2 /* Pods-ZDFfiHook-ZDFfiHookUITests */,
-				7C943746837A65906A6A2604FBF17996 /* Pods-ZDFfiHookTests */,
+				9F0CBDEAA40C9763623CC7FE1A081FDB /* Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests-acknowledgements.markdown */,
+				288B5109C528A3B6C6D1FFA375D5BCC9 /* Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests-acknowledgements.plist */,
+				8FAA20F20E90AD4BE2178679BDAB384F /* Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests-dummy.m */,
+				E340D2AE70414D917C696906339DA28C /* Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests.debug.xcconfig */,
+				2C2B91D163D8D88FC20ACEE612FAE26D /* Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests.release.xcconfig */,
 			);
-			name = "Targets Support Files";
+			name = "Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests";
+			path = "Target Support Files/Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests";
 			sourceTree = "<group>";
 		};
-		7C943746837A65906A6A2604FBF17996 /* Pods-ZDFfiHookTests */ = {
+		32FE1198A9DB71370010DC13968C07BE /* Pods-ZDFfiHookDemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				349FB9FB563E9710553BED60C1CA8849 /* Pods-ZDFfiHookTests-acknowledgements.markdown */,
-				561DEC0DCF5B139FF86C9770F0EE57C6 /* Pods-ZDFfiHookTests-acknowledgements.plist */,
-				2C83AC592B25FCAC7234646A0CEE0D55 /* Pods-ZDFfiHookTests-dummy.m */,
-				0FE3D662A5E43CEB96D173C50A775DA9 /* Pods-ZDFfiHookTests.debug.xcconfig */,
-				8FB3A16AFCBC87A9FFDFA8E3528C97DF /* Pods-ZDFfiHookTests.release.xcconfig */,
+				3A3DFA53CAEAEB2D6C276156207E8537 /* Pods-ZDFfiHookDemoTests-acknowledgements.markdown */,
+				31C9818A83F6A2C8EE59DDBA2D353C93 /* Pods-ZDFfiHookDemoTests-acknowledgements.plist */,
+				312B5C77020150601E1BA4E3F65EC9F4 /* Pods-ZDFfiHookDemoTests-dummy.m */,
+				B3CDCCDE187AD8AB9C3B45103D1AB300 /* Pods-ZDFfiHookDemoTests.debug.xcconfig */,
+				5E9FF887E1CDD62EECA4E9954C9A997F /* Pods-ZDFfiHookDemoTests.release.xcconfig */,
 			);
-			name = "Pods-ZDFfiHookTests";
-			path = "Target Support Files/Pods-ZDFfiHookTests";
+			name = "Pods-ZDFfiHookDemoTests";
+			path = "Target Support Files/Pods-ZDFfiHookDemoTests";
 			sourceTree = "<group>";
 		};
-		BFADBF6704F00CE3B0919298FE32308A /* Pods-ZDFfiHook */ = {
+		483672B923E2CCD083013FCDD822AF2F /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				2D7E9E991A52496123EF6E9841D91415 /* Pods-ZDFfiHook-acknowledgements.markdown */,
-				5AC79A8D5B5408F308A8E354D58346BB /* Pods-ZDFfiHook-acknowledgements.plist */,
-				F6305C5A9CDD1B07D673595C22177B03 /* Pods-ZDFfiHook-dummy.m */,
-				8640E2F3408BE6C9C43BEB8375772B47 /* Pods-ZDFfiHook.debug.xcconfig */,
-				019D84AC3E5579CAEBA72515CAB1ACF2 /* Pods-ZDFfiHook.release.xcconfig */,
+				23009C089C197ABF2E94D2F27857B7BB /* ZDFfiHook-dummy.m */,
+				3455A84B63AC346F9B8F5261FDF51E36 /* ZDFfiHook.debug.xcconfig */,
+				A56550E1782C1631CD451C395C6EF202 /* ZDFfiHook.release.xcconfig */,
 			);
-			name = "Pods-ZDFfiHook";
-			path = "Target Support Files/Pods-ZDFfiHook";
+			name = "Support Files";
+			path = "Pods/Target Support Files/ZDFfiHook";
+			sourceTree = "<group>";
+		};
+		709AE9FC85B41E7988CB992498F16B2D /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				3A62A86B338713C111882C0414518F6B /* LICENSE */,
+				D8BF4B6C6447D4E94A5C42FE813DA50C /* README.md */,
+				C01086539BF199840EA1650AC0ED69B4 /* ZDFfiHook.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		AB8BBD662425B2176EB96A19290A6330 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AE9A046A6BF87F1906A66FC9E36935FC /* ZDFfiHook */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		AE9A046A6BF87F1906A66FC9E36935FC /* ZDFfiHook */ = {
+			isa = PBXGroup;
+			children = (
+				12208DD332D3DCEE6678F9CE51AACAAC /* NSObject+ZDAutoFree.h */,
+				37D6BF2B6BBD7D0F8AE6AF8CD795E933 /* NSObject+ZDAutoFree.m */,
+				D7C1812E82B03B530B5E410F65472B08 /* NSObject+ZDFfiHook.h */,
+				C8CE631CC5C5A08CADAA0D28709D299F /* NSObject+ZDFfiHook.m */,
+				A77FC7CDA98606A81452AD202BB73CE0 /* ZDFfiDefine.h */,
+				2DA7D38F944FC0E40A35DF346D1AAB85 /* ZDFfiFunctions.h */,
+				69E7BE8729370B629DC80B2E29999E6B /* ZDFfiFunctions.m */,
+				F83481348C4E093F58EA9A69D0129465 /* ZDFfiHook.h */,
+				0BEF4CDCE70B5CBDE1E511A71F098D98 /* ZDFfiHook.m */,
+				E17078D1D2438F8D107E21B42AE4A4CB /* ZDFfiHookInfo.h */,
+				C9A65F4C627BFC1AB2D8832703C8E62A /* ZDFfiHookInfo.m */,
+				91F813783E9A910A3A24454E317489A9 /* ZDFfiHookKit.h */,
+				709AE9FC85B41E7988CB992498F16B2D /* Pod */,
+				483672B923E2CCD083013FCDD822AF2F /* Support Files */,
+			);
+			name = ZDFfiHook;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		B471D9CA862D3EB5718A2D1F7B6ADCAF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C2CE90A21A81D349E542B37B9F994A11 /* libPods-ZDFfiHookDemo.a */,
+				0B9F578B2431A1C6B1C36A60AE6A0A56 /* libPods-ZDFfiHookDemo-ZDFfiHookDemoUITests.a */,
+				EC2EEC091EF685E9156C24402F5A4AED /* libPods-ZDFfiHookDemoTests.a */,
+				F00A226B61181BF4EFF2F5B3D7D270AB /* libZDFfiHook.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				AB8BBD662425B2176EB96A19290A6330 /* Development Pods */,
 				D89477F20FB1DE18A04690586D7808C4 /* Frameworks */,
 				F49ABC12A8EC7880B1B2F7A0D7E52FE9 /* Pods */,
-				D1F4E3AF51B088B7B0DE1103DDEFC948 /* Products */,
-				7BCC1003DA38090533D0B17808D53400 /* Targets Support Files */,
+				B471D9CA862D3EB5718A2D1F7B6ADCAF /* Products */,
+				EDAC9119EEC3121140101E29BB9C14E6 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		D1F4E3AF51B088B7B0DE1103DDEFC948 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				E93863A25347E685C94AAFDE1073E3F7 /* libPods-ZDFfiHook.a */,
-				E333027F7FFEC505FC922E2F561EAAF8 /* libPods-ZDFfiHook-ZDFfiHookUITests.a */,
-				CCE1AB0E73B50806BCF82A763F7F0995 /* libPods-ZDFfiHookTests.a */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		D89477F20FB1DE18A04690586D7808C4 /* Frameworks */ = {
@@ -180,136 +289,176 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DB2EC20654467D66EC766A9EA836D27A /* Support Files */ = {
+		E64CFFE914205416A30773964869C84A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F505768954E52394E024071A5381081D /* libffi-core.xcconfig */,
+				DE613E765D6410048B5B254B7526F72A /* libffi.a */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/libffi-core";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F49ABC12A8EC7880B1B2F7A0D7E52FE9 /* Pods */ = {
+		EA90951BE8A21389576159CE4A3FE493 /* libffi-core */ = {
 			isa = PBXGroup;
 			children = (
-				FEF3EECC54FE815D5025AEB8021FED6A /* libffi-core */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		FB7581681D98B588EEF8061E11A6E3D2 /* Pods-ZDFfiHook-ZDFfiHookUITests */ = {
-			isa = PBXGroup;
-			children = (
-				B98B167312DEA00846A075DB95D5F296 /* Pods-ZDFfiHook-ZDFfiHookUITests-acknowledgements.markdown */,
-				F196E3FB6A595ED776E317EFBBA24B27 /* Pods-ZDFfiHook-ZDFfiHookUITests-acknowledgements.plist */,
-				F7338ADDC8036DCC6EF990468943F09A /* Pods-ZDFfiHook-ZDFfiHookUITests-dummy.m */,
-				5B6F29F6C7318074A311F6C9ADC7B8EE /* Pods-ZDFfiHook-ZDFfiHookUITests.debug.xcconfig */,
-				38B18421750947B0740DC87E9EA4A7F0 /* Pods-ZDFfiHook-ZDFfiHookUITests.release.xcconfig */,
-			);
-			name = "Pods-ZDFfiHook-ZDFfiHookUITests";
-			path = "Target Support Files/Pods-ZDFfiHook-ZDFfiHookUITests";
-			sourceTree = "<group>";
-		};
-		FEF3EECC54FE815D5025AEB8021FED6A /* libffi-core */ = {
-			isa = PBXGroup;
-			children = (
-				AE280CB7073BCD9A04A2A69B637846B0 /* ffi.h */,
-				7BE11843159913149DCDA3FC148196BE /* ffi_arm.h */,
-				26F8ADFD9309FACC62DD8B7B59D8547A /* ffi_arm64.h */,
-				594FBB8C1C60801A8755A1BF0895242F /* ffi_common.h */,
-				7443EB8DBF4170B1E642BB2F7B0EAA5E /* ffi_i386.h */,
-				46B3DCA20245852291674D378304F934 /* ffi_x86_64.h */,
-				08BB7C209B3ACC441F9D71ADA06937A1 /* ffitarget.h */,
-				1FD2014832B775C03E73921083D84325 /* ffitarget_arm.h */,
-				43EDB933F2AC423E233CDD7DE0185794 /* ffitarget_arm64.h */,
-				F323B71799BF8CCF4AE6E2EDEE091EF0 /* ffitarget_i386.h */,
-				B58B43279C2BEFABA7A960B626AC8A8A /* ffitarget_x86_64.h */,
-				3DB16D59E3B4A3C8AD8DCBF0CBEAEB59 /* Frameworks */,
-				DB2EC20654467D66EC766A9EA836D27A /* Support Files */,
+				AE04DF7982B529D395644F7B25EF5D44 /* ffi.h */,
+				7993F6E3A1D50CD9407D817050196668 /* ffi_arm.h */,
+				C76FCDC7E733B01F3846497D1EC54636 /* ffi_arm64.h */,
+				03504128F5912745AF11C2CF0405B126 /* ffi_common.h */,
+				D876C5E3A3A8141E930A234DBD3CF165 /* ffi_i386.h */,
+				CF663FC4DFA21759740E483B71A0C2A4 /* ffi_x86_64.h */,
+				4411F6D8F9CEE3DF5B21FE0011804DC7 /* ffitarget.h */,
+				B198EB0A3184316BF85051AC400BB7C0 /* ffitarget_arm.h */,
+				B2E28DF42AEF84700D6888E004726A34 /* ffitarget_arm64.h */,
+				43424799B2AB54CC81EC1958C740AE80 /* ffitarget_i386.h */,
+				F2370E311DC2FB5689407D0C907EB77F /* ffitarget_x86_64.h */,
+				E64CFFE914205416A30773964869C84A /* Frameworks */,
+				FF690E048ABFA496BD90AFACC19161E9 /* Support Files */,
 			);
 			name = "libffi-core";
 			path = "libffi-core";
 			sourceTree = "<group>";
 		};
+		EDAC9119EEC3121140101E29BB9C14E6 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				154610C05C41DF2748B036793FED000F /* Pods-ZDFfiHookDemo */,
+				1AE5658C84F5634471C3856D40B80251 /* Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests */,
+				32FE1198A9DB71370010DC13968C07BE /* Pods-ZDFfiHookDemoTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		F49ABC12A8EC7880B1B2F7A0D7E52FE9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EA90951BE8A21389576159CE4A3FE493 /* libffi-core */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FF690E048ABFA496BD90AFACC19161E9 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2842F62768F4E3F698679D279F0553B9 /* libffi-core.debug.xcconfig */,
+				0766D9C5A9D5F0268B8684DBDA5F332F /* libffi-core.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/libffi-core";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		0C19C7C7C614DB8F034A781F37437156 /* Headers */ = {
+		1614712B74477437518D996B8B207049 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		69D13C0D82FB48EBB8D74534D6789468 /* Headers */ = {
+		289BA176E487278172AFD6EFC5573C21 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		77BA7DF5326D93A8338CD6E371FA31F3 /* Headers */ = {
+		7DFBDABF795E374ECF83C7FD60E09686 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B121400AEAA93E79891CFABFF83FE02E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87175E3C5EA43A4026986D5AE5375815 /* NSObject+ZDAutoFree.h in Headers */,
+				C7E4C7C963A9ACA482F7FB4D31C09300 /* NSObject+ZDFfiHook.h in Headers */,
+				EA1ACF2C3B0C43A1F14FADB66604354C /* ZDFfiDefine.h in Headers */,
+				397DDD6628F926E8F1D655EDE4380CE7 /* ZDFfiFunctions.h in Headers */,
+				89DCBD73DCC5250B0388888EC1329D7E /* ZDFfiHook.h in Headers */,
+				0CFE894B475168D089AE67D4C0D0DA1A /* ZDFfiHookInfo.h in Headers */,
+				FE02E999FE5DE4239A13A936CE499E6E /* ZDFfiHookKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		19EEDAE81570F6CFEE721B268C80B5F4 /* Pods-ZDFfiHookTests */ = {
+		2D67ADD56F545013DA6AFFBEA664F44B /* ZDFfiHook */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 97D78085676177042C99563CBE6F61A9 /* Build configuration list for PBXNativeTarget "Pods-ZDFfiHookTests" */;
+			buildConfigurationList = 48565A7CDE8347514E58B7551E705FD3 /* Build configuration list for PBXNativeTarget "ZDFfiHook" */;
 			buildPhases = (
-				0C19C7C7C614DB8F034A781F37437156 /* Headers */,
-				23D75BB72F748A4A64578EADD9A774ED /* Sources */,
-				DB7A0B7D7BDBE244463A750936207F8D /* Frameworks */,
+				B121400AEAA93E79891CFABFF83FE02E /* Headers */,
+				614E673C14D698AF5584376FC4E1ABE5 /* Sources */,
+				04FA87FC70EDE293F96C5B453B92E217 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F673EE7AD07E24719F5031E3AF4F415B /* PBXTargetDependency */,
+				940EEB81A9C4131A9EF5002480B3A7D0 /* PBXTargetDependency */,
 			);
-			name = "Pods-ZDFfiHookTests";
-			productName = "Pods-ZDFfiHookTests";
-			productReference = CCE1AB0E73B50806BCF82A763F7F0995 /* libPods-ZDFfiHookTests.a */;
+			name = ZDFfiHook;
+			productName = ZDFfiHook;
+			productReference = F00A226B61181BF4EFF2F5B3D7D270AB /* libZDFfiHook.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		51B38C366E526208DDBDE289C0FC1C2A /* Pods-ZDFfiHook */ = {
+		3724E7CF77E020C730CE28F54B004E1D /* Pods-ZDFfiHookDemoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 02B668A579BA4154EF961122E0E4CD2C /* Build configuration list for PBXNativeTarget "Pods-ZDFfiHook" */;
+			buildConfigurationList = 1AF6663475C93322D6500C41C2B492B0 /* Build configuration list for PBXNativeTarget "Pods-ZDFfiHookDemoTests" */;
 			buildPhases = (
-				77BA7DF5326D93A8338CD6E371FA31F3 /* Headers */,
-				E2879E4A146FDB98B9D9CFE5A5EE4232 /* Sources */,
-				F604D98445C36F9F06BD66C1B45CA89B /* Frameworks */,
+				289BA176E487278172AFD6EFC5573C21 /* Headers */,
+				111AB4C032B5313A41E5B2F35AC274C2 /* Sources */,
+				233D05F3B29734DDAB88F08A9F1A0B10 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				8F609D807CEA55183CB61382E610D77B /* PBXTargetDependency */,
+				118C1745B88343676181A5A240E29668 /* PBXTargetDependency */,
 			);
-			name = "Pods-ZDFfiHook";
-			productName = "Pods-ZDFfiHook";
-			productReference = E93863A25347E685C94AAFDE1073E3F7 /* libPods-ZDFfiHook.a */;
+			name = "Pods-ZDFfiHookDemoTests";
+			productName = "Pods-ZDFfiHookDemoTests";
+			productReference = EC2EEC091EF685E9156C24402F5A4AED /* libPods-ZDFfiHookDemoTests.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		F17AE02A0FAE2A115A13BD80C333C299 /* Pods-ZDFfiHook-ZDFfiHookUITests */ = {
+		D97698AD5FC1B06AD3831531A9EC9C24 /* Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 78911D158AC09342185101B31E06E9F3 /* Build configuration list for PBXNativeTarget "Pods-ZDFfiHook-ZDFfiHookUITests" */;
+			buildConfigurationList = E95147CF60D439F42411474084CB156A /* Build configuration list for PBXNativeTarget "Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests" */;
 			buildPhases = (
-				69D13C0D82FB48EBB8D74534D6789468 /* Headers */,
-				8F337898A0A818B973975B6EE1035501 /* Sources */,
-				96205BBBAA41FEC7F4453AE40DD98978 /* Frameworks */,
+				7DFBDABF795E374ECF83C7FD60E09686 /* Headers */,
+				D6866B73853AA18C3913B691314F8497 /* Sources */,
+				FA27F70268A8F2AA01DC009A62102BA6 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				27F49D926BD0CEE1D3A5FDB59C263C6E /* PBXTargetDependency */,
+				67099DB7B9FA8980FFF047FB67F09567 /* PBXTargetDependency */,
+				48C7115E7D8FE360D220E24A9FCCB4AC /* PBXTargetDependency */,
 			);
-			name = "Pods-ZDFfiHook-ZDFfiHookUITests";
-			productName = "Pods-ZDFfiHook-ZDFfiHookUITests";
-			productReference = E333027F7FFEC505FC922E2F561EAAF8 /* libPods-ZDFfiHook-ZDFfiHookUITests.a */;
+			name = "Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests";
+			productName = "Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests";
+			productReference = 0B9F578B2431A1C6B1C36A60AE6A0A56 /* libPods-ZDFfiHookDemo-ZDFfiHookDemoUITests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		FE7FC7CC0B02F1FD8839CD745DF28CBA /* Pods-ZDFfiHookDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53F9D4B6503DA85B68EE4197EE50DF6C /* Build configuration list for PBXNativeTarget "Pods-ZDFfiHookDemo" */;
+			buildPhases = (
+				1614712B74477437518D996B8B207049 /* Headers */,
+				BB0C7A918BDFC4534ACFD17A0A577432 /* Sources */,
+				F25B1201AFA26965DDAFD5B4111CEB4D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				60F114CF86A4233AE02171D8DC5AE9A6 /* PBXTargetDependency */,
+				A87400A5113AB4240B6EC4088DE34CBC /* PBXTargetDependency */,
+			);
+			name = "Pods-ZDFfiHookDemo";
+			productName = "Pods-ZDFfiHookDemo";
+			productReference = C2CE90A21A81D349E542B37B9F994A11 /* libPods-ZDFfiHookDemo.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -327,171 +476,107 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = D1F4E3AF51B088B7B0DE1103DDEFC948 /* Products */;
+			productRefGroup = B471D9CA862D3EB5718A2D1F7B6ADCAF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				0D5A4E553434A7796A437A4E9719F506 /* libffi-core */,
-				51B38C366E526208DDBDE289C0FC1C2A /* Pods-ZDFfiHook */,
-				F17AE02A0FAE2A115A13BD80C333C299 /* Pods-ZDFfiHook-ZDFfiHookUITests */,
-				19EEDAE81570F6CFEE721B268C80B5F4 /* Pods-ZDFfiHookTests */,
+				FE7FC7CC0B02F1FD8839CD745DF28CBA /* Pods-ZDFfiHookDemo */,
+				D97698AD5FC1B06AD3831531A9EC9C24 /* Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests */,
+				3724E7CF77E020C730CE28F54B004E1D /* Pods-ZDFfiHookDemoTests */,
+				2D67ADD56F545013DA6AFFBEA664F44B /* ZDFfiHook */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		23D75BB72F748A4A64578EADD9A774ED /* Sources */ = {
+		111AB4C032B5313A41E5B2F35AC274C2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9CCE02D2E46098EBFD153656AA7250E /* Pods-ZDFfiHookTests-dummy.m in Sources */,
+				CBF2EB7EA989071D015C48B4862501A3 /* Pods-ZDFfiHookDemoTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8F337898A0A818B973975B6EE1035501 /* Sources */ = {
+		614E673C14D698AF5584376FC4E1ABE5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2EC46DD66F97B2343E39F7F99AA6DC5A /* Pods-ZDFfiHook-ZDFfiHookUITests-dummy.m in Sources */,
+				C41450D03F7726B4A939C32B96713CA9 /* NSObject+ZDAutoFree.m in Sources */,
+				AFA9A446EC26D3F0909BFBB8D0FBCFF5 /* NSObject+ZDFfiHook.m in Sources */,
+				5CE3E03782A639E4DAC91B587F915F78 /* ZDFfiFunctions.m in Sources */,
+				F63CC3CB776A356BB08E90610D0C755D /* ZDFfiHook-dummy.m in Sources */,
+				2CE0009D1D4F448744E81D6A2B642BB6 /* ZDFfiHook.m in Sources */,
+				16794309A5EA6F794499D69541D0798B /* ZDFfiHookInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E2879E4A146FDB98B9D9CFE5A5EE4232 /* Sources */ = {
+		BB0C7A918BDFC4534ACFD17A0A577432 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86426947D56D5EC77119DA91159802BE /* Pods-ZDFfiHook-dummy.m in Sources */,
+				7C9B517FFBF6321AEDA472A78E2A8C0F /* Pods-ZDFfiHookDemo-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6866B73853AA18C3913B691314F8497 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A05358286D02A15F1F594D3FB65083CD /* Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		27F49D926BD0CEE1D3A5FDB59C263C6E /* PBXTargetDependency */ = {
+		118C1745B88343676181A5A240E29668 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-ZDFfiHookDemo";
+			target = FE7FC7CC0B02F1FD8839CD745DF28CBA /* Pods-ZDFfiHookDemo */;
+			targetProxy = 7C104E28669F137D98AAC779E3D9DEA4 /* PBXContainerItemProxy */;
+		};
+		48C7115E7D8FE360D220E24A9FCCB4AC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "libffi-core";
 			target = 0D5A4E553434A7796A437A4E9719F506 /* libffi-core */;
-			targetProxy = 38048BEAC0D45EFEE761CD0C4F5E3A0C /* PBXContainerItemProxy */;
+			targetProxy = B8E14404EE71F8BCC789E97665118DD1 /* PBXContainerItemProxy */;
 		};
-		8F609D807CEA55183CB61382E610D77B /* PBXTargetDependency */ = {
+		60F114CF86A4233AE02171D8DC5AE9A6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ZDFfiHook;
+			target = 2D67ADD56F545013DA6AFFBEA664F44B /* ZDFfiHook */;
+			targetProxy = 5997ACFE7BBCA7481E95D110D5613D34 /* PBXContainerItemProxy */;
+		};
+		67099DB7B9FA8980FFF047FB67F09567 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ZDFfiHook;
+			target = 2D67ADD56F545013DA6AFFBEA664F44B /* ZDFfiHook */;
+			targetProxy = 7C7358CA593168E3BDCFEC1C0384F2B1 /* PBXContainerItemProxy */;
+		};
+		940EEB81A9C4131A9EF5002480B3A7D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "libffi-core";
 			target = 0D5A4E553434A7796A437A4E9719F506 /* libffi-core */;
-			targetProxy = F9727C064D66BEFC651C81F2E9E4E2A1 /* PBXContainerItemProxy */;
+			targetProxy = 902C31BEBB1F5043C88DF55936F72ABE /* PBXContainerItemProxy */;
 		};
-		F673EE7AD07E24719F5031E3AF4F415B /* PBXTargetDependency */ = {
+		A87400A5113AB4240B6EC4088DE34CBC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "Pods-ZDFfiHook";
-			target = 51B38C366E526208DDBDE289C0FC1C2A /* Pods-ZDFfiHook */;
-			targetProxy = 9ECD1759EB4C6FEDE311696389683189 /* PBXContainerItemProxy */;
+			name = "libffi-core";
+			target = 0D5A4E553434A7796A437A4E9719F506 /* libffi-core */;
+			targetProxy = 51197FFF223193B6C69437632B9F3025 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1619F202997B509F17291394186850F5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F505768954E52394E024071A5381081D /* libffi-core.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		1E549593887372DC9BC58A749A19A531 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 38B18421750947B0740DC87E9EA4A7F0 /* Pods-ZDFfiHook-ZDFfiHookUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MACH_O_TYPE = staticlib;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		302588519EE4F8E971905CCF0C2AA79B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F505768954E52394E024071A5381081D /* libffi-core.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		39B36E74B09A8B28FF0A2A909A51784C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0FE3D662A5E43CEB96D173C50A775DA9 /* Pods-ZDFfiHookTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MACH_O_TYPE = staticlib;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		7B0C265B71DE86B0701539EE7082E12B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 019D84AC3E5579CAEBA72515CAB1ACF2 /* Pods-ZDFfiHook.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MACH_O_TYPE = staticlib;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		8F17DC3A99F99FBAD606CE6963886315 /* Release */ = {
+		25AD9454612BF454A1E3DC4CD4FA8C6D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -514,66 +599,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
-		};
-		916E0404255105F480DC4950B7625F7A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -612,12 +638,49 @@
 			};
 			name = Debug;
 		};
-		9C0055BAD00D8D57412D99358BA0F168 /* Debug */ = {
+		2739789814ED4F573FE732D8DD60F8CD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8640E2F3408BE6C9C43BEB8375772B47 /* Pods-ZDFfiHook.debug.xcconfig */;
+			baseConfigurationReference = A56550E1782C1631CD451C395C6EF202 /* ZDFfiHook.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ZDFfiHook;
+				PRODUCT_NAME = ZDFfiHook;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		426E124320F7EFF95952CEA2D82D3B2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2842F62768F4E3F698679D279F0553B9 /* libffi-core.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6286E2292D78837C985D76F98D3096D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3CDCCDE187AD8AB9C3B45103D1AB300 /* Pods-ZDFfiHookDemoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -633,12 +696,70 @@
 			};
 			name = Debug;
 		};
-		A04C26385C9FF42AD5ED2428677A7347 /* Debug */ = {
+		7161D6820FE82680C8C82E65B2242413 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B6F29F6C7318074A311F6C9ADC7B8EE /* Pods-ZDFfiHook-ZDFfiHookUITests.debug.xcconfig */;
+			baseConfigurationReference = 6FC4A2BF2C9951FB5C2E93B671188E36 /* Pods-ZDFfiHookDemo.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A60F95C1219876F444EDE24D95AE9BFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0766D9C5A9D5F0268B8684DBDA5F332F /* libffi-core.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AD6E2C3D16BE29040C4B6677499B41D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3455A84B63AC346F9B8F5261FDF51E36 /* ZDFfiHook.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ZDFfiHook;
+				PRODUCT_NAME = ZDFfiHook;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C2B616886544712125EFF76D7FAA7E2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E340D2AE70414D917C696906339DA28C /* Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -654,12 +775,114 @@
 			};
 			name = Debug;
 		};
-		B1A5C7FD06520D3C474C75923BFB1979 /* Release */ = {
+		CA547D2C7E9A8A153DC2B27FBE00B112 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8FB3A16AFCBC87A9FFDFA8E3528C97DF /* Pods-ZDFfiHookTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		CB0EE64B442B66D59451D017F951C74E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E9FF887E1CDD62EECA4E9954C9A997F /* Pods-ZDFfiHookDemoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D0A848A7EC6354553D8FA4C6FAAFDDD4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF930CD893D992517B46D0DC2D0FB4BF /* Pods-ZDFfiHookDemo.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EB1280776EEE8144B618D11A0174482D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C2B91D163D8D88FC20ACEE612FAE26D /* Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -679,20 +902,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		02B668A579BA4154EF961122E0E4CD2C /* Build configuration list for PBXNativeTarget "Pods-ZDFfiHook" */ = {
+		19030C85353F5D42E4180DAA5A6144CF /* Build configuration list for PBXAggregateTarget "libffi-core" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9C0055BAD00D8D57412D99358BA0F168 /* Debug */,
-				7B0C265B71DE86B0701539EE7082E12B /* Release */,
+				426E124320F7EFF95952CEA2D82D3B2E /* Debug */,
+				A60F95C1219876F444EDE24D95AE9BFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		37C4339F51DA8C2D64F7BB84D73CCCB9 /* Build configuration list for PBXAggregateTarget "libffi-core" */ = {
+		1AF6663475C93322D6500C41C2B492B0 /* Build configuration list for PBXNativeTarget "Pods-ZDFfiHookDemoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1619F202997B509F17291394186850F5 /* Debug */,
-				302588519EE4F8E971905CCF0C2AA79B /* Release */,
+				6286E2292D78837C985D76F98D3096D1 /* Debug */,
+				CB0EE64B442B66D59451D017F951C74E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -700,26 +923,35 @@
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				916E0404255105F480DC4950B7625F7A /* Debug */,
-				8F17DC3A99F99FBAD606CE6963886315 /* Release */,
+				25AD9454612BF454A1E3DC4CD4FA8C6D /* Debug */,
+				CA547D2C7E9A8A153DC2B27FBE00B112 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		78911D158AC09342185101B31E06E9F3 /* Build configuration list for PBXNativeTarget "Pods-ZDFfiHook-ZDFfiHookUITests" */ = {
+		48565A7CDE8347514E58B7551E705FD3 /* Build configuration list for PBXNativeTarget "ZDFfiHook" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A04C26385C9FF42AD5ED2428677A7347 /* Debug */,
-				1E549593887372DC9BC58A749A19A531 /* Release */,
+				AD6E2C3D16BE29040C4B6677499B41D0 /* Debug */,
+				2739789814ED4F573FE732D8DD60F8CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		97D78085676177042C99563CBE6F61A9 /* Build configuration list for PBXNativeTarget "Pods-ZDFfiHookTests" */ = {
+		53F9D4B6503DA85B68EE4197EE50DF6C /* Build configuration list for PBXNativeTarget "Pods-ZDFfiHookDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				39B36E74B09A8B28FF0A2A909A51784C /* Debug */,
-				B1A5C7FD06520D3C474C75923BFB1979 /* Release */,
+				D0A848A7EC6354553D8FA4C6FAAFDDD4 /* Debug */,
+				7161D6820FE82680C8C82E65B2242413 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E95147CF60D439F42411474084CB156A /* Build configuration list for PBXNativeTarget "Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2B616886544712125EFF76D7FAA7E2E /* Debug */,
+				EB1280776EEE8144B618D11A0174482D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -1,0 +1,6 @@
+framework module ZDFfiHookKit {
+  umbrella header "ZDFfiHookKit.h"
+
+  export *
+  module * { export * }
+}
