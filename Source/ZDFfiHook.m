@@ -12,6 +12,8 @@
 #import "NSObject+ZDAutoFree.h"
 
 static NSString *const ZD_Prefix = @"ZD_AOP_";
+static NSString *const ZD_KVO_Prefix = @"NSKVONotifying_";
+
 static void *ZD_SubclassAssociationKey = &ZD_SubclassAssociationKey;
 
 // 生成关联的key
@@ -40,6 +42,11 @@ static Class ZD_CreateDynamicSubClass(id self) {
     
     Class statedClass = [self class];
     Class baseClass = object_getClass(self);
+    
+    if ([NSStringFromClass(baseClass) hasPrefix:ZD_KVO_Prefix]) {
+        objc_setAssociatedObject(self, ZD_SubclassAssociationKey, baseClass, OBJC_ASSOCIATION_ASSIGN);
+        return baseClass;
+    }
     
     const char *subClassName = [ZD_Prefix stringByAppendingString:NSStringFromClass(baseClass)].UTF8String;
     Class subClass = objc_getClass(subClassName);
@@ -87,11 +94,13 @@ static void ZD_ffi_closure_func(ffi_cif *cif, void *ret, void **args, void *user
     NSMethodSignature *methodSignature = info.signature;
     
 #if DEBUG
+    const char *mapedTypeEncoding = ZDFfi_ReduceBlockSignatureCodingType(info.typeEncoding).UTF8String;
     NSUInteger argCount = 0;
-    while (info.typeEncoding[argCount]) {
+    while (mapedTypeEncoding[argCount]) {
         ++argCount;
     };
     printf("参数个数：-------- %zd\n", argCount);
+    printf("方法签名：%s\n", mapedTypeEncoding);
     
     // 打印参数
     NSUInteger beginIndex = 2;
@@ -210,6 +219,12 @@ ZDFfiHookInfo *ZD_CoreHookFunc(id self, Method method, ZDHookOption option, id c
         SEL aSelector = method_getName(method);
         const char *typeEncoding = method_getTypeEncoding(method);
         if (!class_addMethod(hookClass, aSelector, newIMP, typeEncoding)) {
+            // 如果方法添加失败而且是KVO类，说明此方法已经被KVO处理过，返回不做处理，避免crash
+            if ([NSStringFromClass(hookClass) hasPrefix:ZD_KVO_Prefix]) {
+                printf("⚠️ 此方法：[%s %s] 被KVO处理过，不处理\n", NSStringFromClass(hookClass).UTF8String, NSStringFromSelector(aSelector).UTF8String);
+                return nil;
+            }
+            
             //IMP originIMP = class_replaceMethod(hookClass, aSelector, newIMP, typeEncoding);
             IMP originIMP = method_setImplementation(method, newIMP);
             if (hookInfo->_originalIMP != originIMP) {

@@ -10,6 +10,7 @@
 		2E14708ADF285AFC3E76C8DB /* libPods-ZDFfiHookDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECA88E58BF840922BDEC66B2 /* libPods-ZDFfiHookDemo.a */; };
 		6F547EE401DD12471E75ABDA /* libPods-ZDFfiHookDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8D529CD2F76E80D0366DF53 /* libPods-ZDFfiHookDemoTests.a */; };
 		79309134F0CD718C47E017CB /* libPods-ZDFfiHookDemo-ZDFfiHookDemoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B15C31CBA58FAA109C855F88 /* libPods-ZDFfiHookDemo-ZDFfiHookDemoUITests.a */; };
+		DAD9B9D9257E8D91006E0AC7 /* ZDModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD9B9D8257E8D91006E0AC7 /* ZDModelTests.m */; };
 		FA66024B2546CA0600F7DCBB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA66024A2546CA0600F7DCBB /* AppDelegate.m */; };
 		FA66024E2546CA0600F7DCBB /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA66024D2546CA0600F7DCBB /* SceneDelegate.m */; };
 		FA6602512546CA0600F7DCBB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6602502546CA0600F7DCBB /* ViewController.m */; };
@@ -48,6 +49,8 @@
 		75686D795EF14ADEDA6AF2A0 /* Pods-ZDFfiHookDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZDFfiHookDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-ZDFfiHookDemoTests/Pods-ZDFfiHookDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B15C31CBA58FAA109C855F88 /* libPods-ZDFfiHookDemo-ZDFfiHookDemoUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZDFfiHookDemo-ZDFfiHookDemoUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDA35D688BD28047F409992B /* Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests/Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DAD9B9D7257E8D91006E0AC7 /* ZDModelTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDModelTests.h; sourceTree = "<group>"; };
+		DAD9B9D8257E8D91006E0AC7 /* ZDModelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDModelTests.m; sourceTree = "<group>"; };
 		E8D529CD2F76E80D0366DF53 /* libPods-ZDFfiHookDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZDFfiHookDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECA88E58BF840922BDEC66B2 /* libPods-ZDFfiHookDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZDFfiHookDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA6602462546CA0500F7DCBB /* ZDFfiHookDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZDFfiHookDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,6 +173,8 @@
 			isa = PBXGroup;
 			children = (
 				FA6602652546CA0700F7DCBB /* ZDFfiHookDemoTests.m */,
+				DAD9B9D7257E8D91006E0AC7 /* ZDModelTests.h */,
+				DAD9B9D8257E8D91006E0AC7 /* ZDModelTests.m */,
 				FA6602672546CA0700F7DCBB /* Info.plist */,
 			);
 			path = ZDFfiHookDemoTests;
@@ -410,6 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA6602662546CA0700F7DCBB /* ZDFfiHookDemoTests.m in Sources */,
+				DAD9B9D9257E8D91006E0AC7 /* ZDModelTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
