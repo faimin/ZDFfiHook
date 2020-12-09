@@ -127,7 +127,7 @@ static void ZD_ffi_closure_func(ffi_cif *cif, void *ret, void **args, void *user
          */
         IMP blockIMP = callbackInfo->_originalIMP;
         // 根据 cif模版，函数指针，返回值指针，函数参数 调用这个函数
-        ffi_call(callbackInfo->_cif, blockIMP, NULL, callbackArgs);
+        ffi_call(callbackInfo->_cif, FFI_FN(blockIMP), NULL, callbackArgs);
         free(callbackArgs);
     };
     
@@ -145,7 +145,7 @@ static void ZD_ffi_closure_func(ffi_cif *cif, void *ret, void **args, void *user
         }
     }
     else {
-        ffi_call(cif, info->_originalIMP, ret, args);
+        ffi_call(cif, FFI_FN(info->_originalIMP), ret, args);
     }
     
     // after
