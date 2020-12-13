@@ -13,6 +13,7 @@
 
 static NSString *const ZD_FFI_SubclassPrefix = @"ZD_AOP_";
 static NSString *const ZD_KVO_SubclassPrefix = @"NSKVONotifying_";
+static NSString *const ZD_Aspect_SubclassSuffix = @"_Aspects_";
 
 static void *ZD_SubclassAssociationKey = &ZD_SubclassAssociationKey;
 
@@ -43,7 +44,9 @@ static Class ZD_CreateDynamicSubClass(id self) {
     Class statedClass = [self class];
     Class baseClass = object_getClass(self);
     
-    if ([NSStringFromClass(baseClass) hasPrefix:ZD_KVO_SubclassPrefix]) {
+    NSString *baseClassName = NSStringFromClass(baseClass);
+    //if ([baseClassName hasPrefix:ZD_KVO_SubclassPrefix] || [baseClassName hasSuffix:ZD_Aspect_SubclassSuffix]) {
+    if (baseClass != statedClass) {
         objc_setAssociatedObject(self, ZD_SubclassAssociationKey, baseClass, OBJC_ASSOCIATION_ASSIGN);
         return baseClass;
     }
@@ -225,8 +228,8 @@ ZDFfiHookInfo *ZD_CoreHookFunc(id self, Method method, ZDHookOption option, id c
                 return nil;
             }
             
-            //IMP originIMP = class_replaceMethod(hookClass, aSelector, newIMP, typeEncoding);
-            IMP originIMP = method_setImplementation(method, newIMP);
+            IMP originIMP = class_replaceMethod(hookClass, aSelector, newIMP, typeEncoding);
+            //IMP originIMP = method_setImplementation(method, newIMP);
             if (hookInfo->_originalIMP != originIMP) {
                 hookInfo->_originalIMP = originIMP;
             }

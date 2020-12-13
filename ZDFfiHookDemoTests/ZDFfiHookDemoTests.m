@@ -9,6 +9,7 @@
 #import <objc/runtime.h>
 #import "ZDModelTests.h"
 #import <ZDFfiHook/NSObject+ZDFfiHook.h>
+#import <Aspects/Aspects.h>
 
 @interface ZDFfiHookDemoTests : XCTestCase
 @property (nonatomic, strong) ZDModelTests *model;
@@ -36,14 +37,17 @@
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
     
-    Class cls1 = object_getClass(self.model);
-    printf("真实class1 = %s\n", object_getClassName(cls1));
+//    Class cls1 = object_getClass(self.model);
+//    printf("真实class1 = %s\n", object_getClassName(cls1));
     
     self.model.name = @"小明";
     
     [self.model zd_hookInstanceMethod:@selector(setName:) option:ZDHookOption_After callback:^(NSString *name){
         NSLog(@"hooked name = %@", name);
     }];
+    
+    Class cls1 = object_getClass(self.model);
+    printf("真实class1 = %s\n", object_getClassName(cls1));
     
 //    [self.model zd_hookInstanceMethod:@selector(setAge:) option:ZDHookOption_After callback:^(NSInteger age){
 //        NSLog(@"hooked age = %zd", age);
@@ -54,6 +58,25 @@
     
     self.model.name = @"小黑";
     self.model.age = 19;
+    
+}
+
+- (void)testAspectHook {
+    [self.model aspect_hookSelector:@selector(setName:) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo> aspectInfo, NSString *name) {
+        NSLog(@"aspectname = %@", name);
+    } error:nil];
+    
+    Class cls1 = object_getClass(self.model);
+    printf("真实class1 = %s\n", object_getClassName(cls1));
+    
+    [self.model zd_hookInstanceMethod:@selector(setName:) option:ZDHookOption_After callback:^(NSString *name){
+        NSLog(@"hooked name = %@", name);
+    }];
+    
+    Class cls2 = object_getClass(self.model);
+    printf("真实class2 = %s\n", object_getClassName(cls2));
+    
+    self.model.name = @"小明";
     
 }
 

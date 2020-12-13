@@ -8,10 +8,12 @@ target 'ZDFfiHookDemo' do
   # Pods for ZDFfiHook
   # pod 'libffi-core'
   pod 'ZDFfiHook', :path => './ZDFfiHook.podspec'
+  pod 'Aspects'
 
   target 'ZDFfiHookDemoTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'Aspects'
   end
 
   target 'ZDFfiHookDemoUITests' do
