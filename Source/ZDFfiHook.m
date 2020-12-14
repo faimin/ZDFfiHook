@@ -11,15 +11,16 @@
 #import "ZDFfiFunctions.h"
 #import "NSObject+ZDAutoFree.h"
 
-static NSString *const ZD_Prefix = @"ZD_AOP_";
-static NSString *const ZD_KVO_Prefix = @"NSKVONotifying_";
+static NSString *const ZD_FFI_SubclassPrefix = @"ZD_AOP_";
+static NSString *const ZD_KVO_SubclassPrefix = @"NSKVONotifying_";
+static NSString *const ZD_Aspect_SubclassSuffix = @"_Aspects_";
 
 static void *ZD_SubclassAssociationKey = &ZD_SubclassAssociationKey;
 
 // 生成关联的key
 static const SEL ZD_AssociatedKey(SEL selector) {
     NSCAssert(selector != NULL, @"selector不能为NULL");
-    NSString *selectorString = [ZD_Prefix stringByAppendingString:NSStringFromSelector(selector)];
+    NSString *selectorString = [ZD_FFI_SubclassPrefix stringByAppendingString:NSStringFromSelector(selector)];
     SEL keySelector = NSSelectorFromString(selectorString);
     return keySelector;
 }
@@ -43,12 +44,14 @@ static Class ZD_CreateDynamicSubClass(id self) {
     Class statedClass = [self class];
     Class baseClass = object_getClass(self);
     
-    if ([NSStringFromClass(baseClass) hasPrefix:ZD_KVO_Prefix]) {
+    NSString *baseClassName = NSStringFromClass(baseClass);
+    //if ([baseClassName hasPrefix:ZD_KVO_SubclassPrefix] || [baseClassName hasSuffix:ZD_Aspect_SubclassSuffix]) {
+    if (baseClass != statedClass) {
         objc_setAssociatedObject(self, ZD_SubclassAssociationKey, baseClass, OBJC_ASSOCIATION_ASSIGN);
         return baseClass;
     }
     
-    const char *subClassName = [ZD_Prefix stringByAppendingString:NSStringFromClass(baseClass)].UTF8String;
+    const char *subClassName = [ZD_FFI_SubclassPrefix stringByAppendingString:NSStringFromClass(baseClass)].UTF8String;
     Class subClass = objc_getClass(subClassName);
     if (!subClass) {
         subClass = objc_allocateClassPair(baseClass, subClassName, 0);
@@ -220,13 +223,13 @@ ZDFfiHookInfo *ZD_CoreHookFunc(id self, Method method, ZDHookOption option, id c
         const char *typeEncoding = method_getTypeEncoding(method);
         if (!class_addMethod(hookClass, aSelector, newIMP, typeEncoding)) {
             // 如果方法添加失败而且是KVO类，说明此方法已经被KVO处理过，返回不做处理，避免crash
-            if ([NSStringFromClass(hookClass) hasPrefix:ZD_KVO_Prefix]) {
+            if ([NSStringFromClass(hookClass) hasPrefix:ZD_KVO_SubclassPrefix]) {
                 printf("⚠️ 此方法：[%s %s] 被KVO处理过，不处理\n", NSStringFromClass(hookClass).UTF8String, NSStringFromSelector(aSelector).UTF8String);
                 return nil;
             }
             
-            //IMP originIMP = class_replaceMethod(hookClass, aSelector, newIMP, typeEncoding);
-            IMP originIMP = method_setImplementation(method, newIMP);
+            IMP originIMP = class_replaceMethod(hookClass, aSelector, newIMP, typeEncoding);
+            //IMP originIMP = method_setImplementation(method, newIMP);
             if (hookInfo->_originalIMP != originIMP) {
                 hookInfo->_originalIMP = originIMP;
             }
