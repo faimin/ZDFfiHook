@@ -36,7 +36,13 @@
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
 #if TestKVO
-    [self.model removeObserver:self forKeyPath:@"name"];
+    @try {
+        [self.model removeObserver:self forKeyPath:@"name"];
+    } @catch (NSException *exception) {
+        NSLog(@"%@", exception.reason);
+    } @finally {
+        //
+    }
 #endif
 }
 

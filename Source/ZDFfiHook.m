@@ -13,7 +13,7 @@
 #import "NSObject+ZDAutoFree.h"
 
 static NSString *const ZD_FFI_SubclassPrefix = @"ZD_AOP_";
-//static NSString *const ZD_KVO_SubclassPrefix = @"NSKVONotifying_";
+static NSString *const ZD_KVO_SubclassPrefix = @"NSKVONotifying_";
 //static NSString *const ZD_Aspect_SubclassSuffix = @"_Aspects_";
 
 static void *ZD_SubclassAssociationKey = &ZD_SubclassAssociationKey;
@@ -247,6 +247,10 @@ ZDFfiHookInfo *ZD_CoreHookFunc(id self, Method method, ZDHookOption option, id c
         SEL aSelector = method_getName(method);
         const char *typeEncoding = method_getTypeEncoding(method);
         if (!class_addMethod(hookClass, aSelector, newIMP, typeEncoding)) {
+            if ([NSStringFromClass(hookClass) hasPrefix:ZD_KVO_SubclassPrefix]) {
+                NSCAssert(NO, @"暂不支持hook被KVO过的属性");
+                return nil;
+            }
             IMP originIMP = class_replaceMethod(hookClass, aSelector, newIMP, typeEncoding);
             //IMP originIMP = method_setImplementation(method, newIMP);
             if (hookInfo->_originalIMP != originIMP) {
