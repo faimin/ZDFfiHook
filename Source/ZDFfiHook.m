@@ -167,6 +167,9 @@ static void ZD_ffi_closure_func(ffi_cif *cif, void *ret, void **args, void *user
             if ([invocation respondsToSelector:@selector(invokeUsingIMP:)]) {
                 [invocation invokeUsingIMP:info->_originalIMP];
             }
+            else {
+                NSCAssert(NO, @"invokeUsingIMP: 私有方法失效了");
+            }
             if (ret && methodSignature.methodReturnLength > 0) {
                 [invocation getReturnValue:ret];
             }
@@ -246,13 +249,14 @@ ZDFfiHookInfo *ZD_CoreHookFunc(id self, Method method, ZDHookOption option, id c
         Class hookClass = willBeHookedClass;
         SEL aSelector = method_getName(method);
         const char *typeEncoding = method_getTypeEncoding(method);
+        // add method，or else replace the exists method's imp
         if (!class_addMethod(hookClass, aSelector, newIMP, typeEncoding)) {
             if ([NSStringFromClass(hookClass) hasPrefix:ZD_KVO_SubclassPrefix]) {
-                NSCAssert(NO, @"暂不支持hook被KVO过的属性");
+                NSCAssert(NO, @"暂不支持hook被KVO过的属性方法，请先hook再KVO");
                 return nil;
             }
-            IMP originIMP = class_replaceMethod(hookClass, aSelector, newIMP, typeEncoding);
-            //IMP originIMP = method_setImplementation(method, newIMP);
+            //IMP originIMP = class_replaceMethod(hookClass, aSelector, newIMP, typeEncoding);
+            IMP originIMP = method_setImplementation(method, newIMP);
             if (hookInfo->_originalIMP != originIMP) {
                 hookInfo->_originalIMP = originIMP;
             }
