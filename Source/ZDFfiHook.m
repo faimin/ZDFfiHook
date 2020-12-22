@@ -7,15 +7,20 @@
 //
 
 #import "ZDFfiHook.h"
+#import <objc/message.h>
 #import "ZDFfiDefine.h"
 #import "ZDFfiFunctions.h"
 #import "NSObject+ZDAutoFree.h"
 
 static NSString *const ZD_FFI_SubclassPrefix = @"ZD_AOP_";
 static NSString *const ZD_KVO_SubclassPrefix = @"NSKVONotifying_";
-static NSString *const ZD_Aspect_SubclassSuffix = @"_Aspects_";
+//static NSString *const ZD_Aspect_SubclassSuffix = @"_Aspects_";
 
 static void *ZD_SubclassAssociationKey = &ZD_SubclassAssociationKey;
+
+@interface NSInvocation (ZDFFiPrivateAPI)
+- (void)invokeUsingIMP:(IMP)imp;
+@end
 
 // 生成关联的key
 static const SEL ZD_AssociatedKey(SEL selector) {
@@ -44,8 +49,8 @@ static Class ZD_CreateDynamicSubClass(id self) {
     Class statedClass = [self class];
     Class baseClass = object_getClass(self);
     
-    NSString *baseClassName = NSStringFromClass(baseClass);
-    //if ([baseClassName hasPrefix:ZD_KVO_SubclassPrefix] || [baseClassName hasSuffix:ZD_Aspect_SubclassSuffix]) {
+    //NSString *baseClassName = NSStringFromClass(baseClass);
+    //if ([baseClassName hasPrefix:ZD_KVO_SubclassPrefix]) {
     if (baseClass != statedClass) {
         objc_setAssociatedObject(self, ZD_SubclassAssociationKey, baseClass, OBJC_ASSOCIATION_ASSIGN);
         return baseClass;
@@ -103,7 +108,7 @@ static void ZD_ffi_closure_func(ffi_cif *cif, void *ret, void **args, void *user
         ++argCount;
     };
     printf("参数个数：-------- %zd\n", argCount);
-    printf("方法签名：%s\n", mapedTypeEncoding);
+    printf("精简后的方法签名：%s\n", mapedTypeEncoding);
     
     // 打印参数
     NSUInteger beginIndex = 2;
@@ -148,7 +153,27 @@ static void ZD_ffi_closure_func(ffi_cif *cif, void *ret, void **args, void *user
         }
     }
     else {
-        ffi_call(cif, FFI_FN(info->_originalIMP), ret, args);
+        BOOL isMsgForward = FFI_FN(info->_originalIMP) == _objc_msgForward
+    #if !defined(__arm64__)
+        || FFI_FN(info->_originalIMP) == _objc_msgForward_stret
+    #endif
+        ;
+        // 参考stinger的思路
+        if (isMsgForward) {
+            NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:methodSignature];
+            for (NSInteger i = 0; i < methodSignature.numberOfArguments; ++i) {
+                [invocation setArgument:args[i] atIndex:i];
+            }
+            if ([invocation respondsToSelector:@selector(invokeUsingIMP:)]) {
+                [invocation invokeUsingIMP:info->_originalIMP];
+            }
+            if (ret && methodSignature.methodReturnLength > 0) {
+                [invocation getReturnValue:ret];
+            }
+        }
+        else {
+            ffi_call(cif, FFI_FN(info->_originalIMP), ret, args);
+        }
     }
     
     // after
@@ -218,16 +243,14 @@ ZDFfiHookInfo *ZD_CoreHookFunc(id self, Method method, ZDHookOption option, id c
         }
 
         //替换IMP实现
-        Class hookClass = [willBeHookedClass class];
+        Class hookClass = willBeHookedClass;
         SEL aSelector = method_getName(method);
         const char *typeEncoding = method_getTypeEncoding(method);
         if (!class_addMethod(hookClass, aSelector, newIMP, typeEncoding)) {
-            // 如果方法添加失败而且是KVO类，说明此方法已经被KVO处理过，返回不做处理，避免crash
             if ([NSStringFromClass(hookClass) hasPrefix:ZD_KVO_SubclassPrefix]) {
-                printf("⚠️ 此方法：[%s %s] 被KVO处理过，不处理\n", NSStringFromClass(hookClass).UTF8String, NSStringFromSelector(aSelector).UTF8String);
+                NSCAssert(NO, @"暂不支持hook被KVO过的属性");
                 return nil;
             }
-            
             IMP originIMP = class_replaceMethod(hookClass, aSelector, newIMP, typeEncoding);
             //IMP originIMP = method_setImplementation(method, newIMP);
             if (hookInfo->_originalIMP != originIMP) {
