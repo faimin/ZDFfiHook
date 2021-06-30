@@ -21,12 +21,11 @@
 #import "ZDFfiHookInfo.h"
 #import "ZDFfiHookKit.h"
 #import "ffi.h"
+#import "fficonfig.h"
 #import "ffitarget.h"
-#import "ffitarget_arm64.h"
-#import "ffitarget_armv7.h"
-#import "ffitarget_x86_64.h"
 #import "ffi_arm64.h"
 #import "ffi_armv7.h"
+#import "ffi_i386.h"
 #import "ffi_x86_64.h"
 
 FOUNDATION_EXPORT double ZDFfiHookKitVersionNumber;
