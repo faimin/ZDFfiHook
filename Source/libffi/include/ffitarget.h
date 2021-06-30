@@ -24,9 +24,7 @@
 #endif
 #ifdef __arm__
 
-#if __has_include(<ffitarget_armv7k.h>)
 #include <ffitarget_armv7k.h>
-#endif
 
 
 #endif

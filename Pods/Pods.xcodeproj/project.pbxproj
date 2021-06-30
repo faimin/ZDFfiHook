@@ -7,68 +7,68 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		003FD7D0C76B9438948146D8CDF70BC7 /* sysv_armv7k.S in Sources */ = {isa = PBXBuildFile; fileRef = D49AB53853E5E8C1BEB2401507CF9DAF /* sysv_armv7k.S */; };
-		0055C3185B5BAC147D6628ABC7104FA4 /* tramp.h in Headers */ = {isa = PBXBuildFile; fileRef = 504A23ECD7339C52B7F3B7B32232D7C8 /* tramp.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		003FD7D0C76B9438948146D8CDF70BC7 /* sysv_armv7k.S in Sources */ = {isa = PBXBuildFile; fileRef = 741B46EE40EC044A465D22A4E1E89807 /* sysv_armv7k.S */; };
 		009FBA4A725440DE96F4ECB0922E5628 /* Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FAA20F20E90AD4BE2178679BDAB384F /* Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests-dummy.m */; };
-		0B28C8B0DD583A7BD2F9F7761B21DCA0 /* ffitarget_armv7.h in Headers */ = {isa = PBXBuildFile; fileRef = DEFD51762B53023797474F8832AF2736 /* ffitarget_armv7.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		19D3026FF9F2B00AABCFCF168C1AA6F2 /* ZDFfiHookInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = B3D0349CAAA8239DAA2002192517E1B4 /* ZDFfiHookInfo.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		0D2484D34E4A288CE52C5BC52A41B44C /* fficonfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 39D5AE09A8B1E38584C11B01B53B0911 /* fficonfig.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		11D3650E98152716092D43470B5EE4B8 /* ffitarget_i386.h in Headers */ = {isa = PBXBuildFile; fileRef = E90BCDC5F336E3CAA694653F9032A76F /* ffitarget_i386.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		1777C4C8E9E44BBB3C2DC5ADCD0010CD /* ZDFfiHookKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DE5F8D273EF382921FEA4C2C20B5D86 /* ZDFfiHookKit.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		191A58AFFCBC2688E553C322CAEEDD39 /* ZDFfiDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = FC29B206A8AD163A1C47E76CC482FD0F /* ZDFfiDefine.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		19D9061F99D71554210DD5E2BAFE3B5B /* Aspects.h in Headers */ = {isa = PBXBuildFile; fileRef = 325E1DE4DCB4C534D06ABCD63E2F8B15 /* Aspects.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		22F4BED643633CDC07365A2495B99563 /* ZDFfiHookKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DE5F8D273EF382921FEA4C2C20B5D86 /* ZDFfiHookKit.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		237065017568BF6A5FD25E5476117550 /* ffi64_x86_64.c in Sources */ = {isa = PBXBuildFile; fileRef = 4F2DD32B05E0B1EEC5AC4F2854F03864 /* ffi64_x86_64.c */; };
-		2C04156477E4B5EB794808C1DAD082DE /* ffi_common.h in Headers */ = {isa = PBXBuildFile; fileRef = EFD9A38D7B01DA75A15CEAFC7A845B79 /* ffi_common.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		2FA7CC788135EEBD60E403222D878572 /* sysv_i386.S in Sources */ = {isa = PBXBuildFile; fileRef = 4B14F6FB56CCD45E9A798F752FEE2D4F /* sysv_i386.S */; };
-		316AD680EFC057A960F379F64A1D2F0F /* internal64.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A6065B49AF235FC69CBF38BBA670F99 /* internal64.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		31857FF1339973EE7F9BB34F95E84BA7 /* ZDFfiDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = FC29B206A8AD163A1C47E76CC482FD0F /* ZDFfiDefine.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		3403256A8B41805E8D3ECDE80BE5C9A5 /* NSObject+ZDFfiHook.h in Headers */ = {isa = PBXBuildFile; fileRef = D05DC64B3C66B94E4684F2CAF7157786 /* NSObject+ZDFfiHook.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		39D4A667A3FD4924D2C70C5703775470 /* ffi_armv7k.c in Sources */ = {isa = PBXBuildFile; fileRef = 79469E53E92D27EA5EB1ED34A13D0BE0 /* ffi_armv7k.c */; };
-		39FC9467F12E4692C5A933E9B53F1FF7 /* tramp.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A1661DF72862574AE06CBB6ADD3B965 /* tramp.c */; };
+		1C31E90A1A264CF950897A28A4EEB297 /* NSObject+ZDFfiHook.h in Headers */ = {isa = PBXBuildFile; fileRef = D05DC64B3C66B94E4684F2CAF7157786 /* NSObject+ZDFfiHook.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		1FA4F82B75E76962A4A3C815729E8A4A /* ZDFfiHook-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 39A1F5EE34EE7A248BB84D19DB6E5219 /* ZDFfiHook-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		237065017568BF6A5FD25E5476117550 /* ffi64_x86_64.c in Sources */ = {isa = PBXBuildFile; fileRef = DF9A2B81134845429B6506226F4D15B7 /* ffi64_x86_64.c */; };
+		2FA7CC788135EEBD60E403222D878572 /* sysv_i386.S in Sources */ = {isa = PBXBuildFile; fileRef = DBAFC8AB699CC5669E5EDA28861A749D /* sysv_i386.S */; };
+		39D4A667A3FD4924D2C70C5703775470 /* ffi_armv7k.c in Sources */ = {isa = PBXBuildFile; fileRef = 7A9207F8F98E10978CDF39B6ECF482C9 /* ffi_armv7k.c */; };
+		39FC9467F12E4692C5A933E9B53F1FF7 /* tramp.c in Sources */ = {isa = PBXBuildFile; fileRef = 55B19E2A43B77171810B8E4B9280A3CB /* tramp.c */; };
 		3AF17343CCFAB6AFCF0BC73F380108B3 /* Aspects.m in Sources */ = {isa = PBXBuildFile; fileRef = B30E78E83656B249A2C505F8BD77F4D6 /* Aspects.m */; };
-		4222F8C073459BC5361DBD4CB11A05C2 /* ffi_arm64.c in Sources */ = {isa = PBXBuildFile; fileRef = D12E0398FF53565BDF563C241C7233EC /* ffi_arm64.c */; };
+		4222F8C073459BC5361DBD4CB11A05C2 /* ffi_arm64.c in Sources */ = {isa = PBXBuildFile; fileRef = A6BC3C70F40AB0FB34B289314AEEC45E /* ffi_arm64.c */; };
+		45CEDEFE390FC184E8F99C757F6A8657 /* ffi.h in Headers */ = {isa = PBXBuildFile; fileRef = 4313D94812A4BE8ED92A7FF2FE80AD9D /* ffi.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		4B9A2BE7E9F6028054DFE4830E87C667 /* ffitarget.h in Headers */ = {isa = PBXBuildFile; fileRef = E650477DDE3E66A14B97CA69887DF878 /* ffitarget.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		4D2E8F7E6E31AB71E36A62C83FCE3F73 /* NSObject+ZDAutoFree.m in Sources */ = {isa = PBXBuildFile; fileRef = 299964CB437FA770D2B48026607CB5F2 /* NSObject+ZDAutoFree.m */; };
-		51F88BDBE16DD41A54D723094C8BA432 /* ffitarget_i386.h in Headers */ = {isa = PBXBuildFile; fileRef = 5392A3D42879FF4D18DDFF501C265CB6 /* ffitarget_i386.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		5456AA7397338E4CA4290D7C16FB8C0C /* prep_cif.c in Sources */ = {isa = PBXBuildFile; fileRef = 3A8CEA1C8C4D6F51653865531454CAD3 /* prep_cif.c */; };
-		57BD54399092F0C821062827E22C349A /* raw_api.c in Sources */ = {isa = PBXBuildFile; fileRef = A7EF62E29ADFAFDA0BE54BC0CD5FCEE8 /* raw_api.c */; };
+		4DFA65E4C614FDE75E010E90D9C7CED5 /* NSObject+ZDAutoFree.h in Headers */ = {isa = PBXBuildFile; fileRef = E05BEAEBA5DC7E8B632E253649995CE5 /* NSObject+ZDAutoFree.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		4E31665F1F7FDD0698BFAE79635B0A9D /* ffitarget_armv7k.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D89B97CCE4CF9D8C45C67CFFAF067E0 /* ffitarget_armv7k.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		50AD686441168928C42106E6480E1A16 /* ZDFfiHook.h in Headers */ = {isa = PBXBuildFile; fileRef = B778E2A203BD8B8DF38B451DCB941217 /* ZDFfiHook.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		5456AA7397338E4CA4290D7C16FB8C0C /* prep_cif.c in Sources */ = {isa = PBXBuildFile; fileRef = D014601A4C51CD14FBB9B078FE91DDD5 /* prep_cif.c */; };
+		57BD54399092F0C821062827E22C349A /* raw_api.c in Sources */ = {isa = PBXBuildFile; fileRef = 6BF8346A22FD663A701023F41AB8AB61 /* raw_api.c */; };
 		5B3647B18BDB4396BBBBB2E059C06A37 /* Pods-ZDFfiHookDemoTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 312B5C77020150601E1BA4E3F65EC9F4 /* Pods-ZDFfiHookDemoTests-dummy.m */; };
-		5C33559B5E93FBF3F63577BF4450246F /* ffiw64_x86_64.c in Sources */ = {isa = PBXBuildFile; fileRef = 22FE76DEE3C613984878F4AA5BDA60FA /* ffiw64_x86_64.c */; };
-		640476790A12EC414E8602E3268B1C78 /* ffi_armv7.c in Sources */ = {isa = PBXBuildFile; fileRef = 421B8E9915F6692645285C6C4F962302 /* ffi_armv7.c */; };
+		5C33559B5E93FBF3F63577BF4450246F /* ffiw64_x86_64.c in Sources */ = {isa = PBXBuildFile; fileRef = 16A7EB9093A1F7E8DCD242BE223C626B /* ffiw64_x86_64.c */; };
+		5F9EDA5703D19B592A469F27903782E8 /* fficonfig_x86_64.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F1E81574C1F9F5B296F62E6742F1EB6 /* fficonfig_x86_64.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		61E6AC1A2EE06D9F7070AF603768889F /* ZDFfiFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 85E1F8942E4DA575F5BC8F77F643F61D /* ZDFfiFunctions.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		640476790A12EC414E8602E3268B1C78 /* ffi_armv7.c in Sources */ = {isa = PBXBuildFile; fileRef = C996EA2DDFE18731E7CEABD9CB0D77CB /* ffi_armv7.c */; };
 		650093E139B354971C7897348255394D /* ZDFfiFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = DC97166AFA538843391BEAF37A849CF7 /* ZDFfiFunctions.m */; };
-		684C96E5EF481DFF78A77AE6EB787F10 /* sysv_armv7.S in Sources */ = {isa = PBXBuildFile; fileRef = B544C17B0AC0C513F29CE5E04B0B5C3A /* sysv_armv7.S */; };
-		6CC5897ED961E63B066976A82AB05A84 /* ffi_i386.h in Headers */ = {isa = PBXBuildFile; fileRef = 82FB925796825E4DE4E67E04B2B3A80F /* ffi_i386.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		684C96E5EF481DFF78A77AE6EB787F10 /* sysv_armv7.S in Sources */ = {isa = PBXBuildFile; fileRef = 0AF8A6D5810D9E202C30608B230101DB /* sysv_armv7.S */; };
+		68C8B3892FEAC87E98C21A225AA219A5 /* ffitarget_armv7.h in Headers */ = {isa = PBXBuildFile; fileRef = 5ADC06AC888195E48664F28457A6778C /* ffitarget_armv7.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		6CE61B1AED44DE44CEEDB543CFE5B3E1 /* ffi_armv7k.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A222043AA0FAF672CD70770FFE8CBF9 /* ffi_armv7k.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		6E0AE3F4E1ED7F6191A321E3DFD617CE /* ZDFfiHookInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E252E5E3BD12A04000052AC22B0E3B /* ZDFfiHookInfo.m */; };
-		70BC4C7274687C2158643F42FB5E8F09 /* fficonfig_arm64.h in Headers */ = {isa = PBXBuildFile; fileRef = 66A968D332CF9D6E02C0EAA69DD85836 /* fficonfig_arm64.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		79F34811FFCBE3A610BCBC97EBE36B83 /* asmnames.h in Headers */ = {isa = PBXBuildFile; fileRef = CBC4B9D0AC7900397C3CF965E6334E32 /* asmnames.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		7A5BE9C9D79299CF92D3F9ECB107A105 /* ffi.h in Headers */ = {isa = PBXBuildFile; fileRef = 0650A06B1B664652206BE47AED46174D /* ffi.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		7CAE9AE7927AF7FDA4448CA7DBC1971A /* ffitarget_x86_64.h in Headers */ = {isa = PBXBuildFile; fileRef = 548D2EE207A0A69BBA10EC802A0142D0 /* ffitarget_x86_64.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		80157B531F2B5A38A337D89EF0326953 /* ZDFfiHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 938494F1E3FC98DF5AA4A975E80953E7 /* ZDFfiHook.m */; };
-		82E80EFB723434D2AEBAFB77829015FD /* NSObject+ZDAutoFree.h in Headers */ = {isa = PBXBuildFile; fileRef = E05BEAEBA5DC7E8B632E253649995CE5 /* NSObject+ZDAutoFree.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		876F39954A105582B1A2B72A3BBD78BD /* ffi_armv7k.h in Headers */ = {isa = PBXBuildFile; fileRef = 5560C4711ECEE24894F21DBC68C22695 /* ffi_armv7k.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		885668CFB12C825032492D15EAA51994 /* ffitarget_x86_64.h in Headers */ = {isa = PBXBuildFile; fileRef = CEABFF1FA8524F946AC4CD3670DEC2D9 /* ffitarget_x86_64.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		8B5BAD163C7341EC9CCBB44156D7FB54 /* fficonfig_x86_64.h in Headers */ = {isa = PBXBuildFile; fileRef = 499C979FB581CBE976989F41B2F6A057 /* fficonfig_x86_64.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		960CD861AE36ED23F776EFEA19274119 /* sysv_arm64.S in Sources */ = {isa = PBXBuildFile; fileRef = D17F15A9DBC36508C3434D3B7C819C9E /* sysv_arm64.S */; };
+		8195C298041525C61291278342D428C1 /* fficonfig_armv7k.h in Headers */ = {isa = PBXBuildFile; fileRef = 5CC48EA886DF788ED38C29D7580E3093 /* fficonfig_armv7k.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		81B4869D4200BF0009988966DC487A0F /* ffi_i386.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B309D5CA668A8B90CA4DD9F1C089498 /* ffi_i386.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		8999FE794EA81F94FBA4C8A735440155 /* ffitarget_arm64.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D540AC37C4230A186463AFF09AC721A /* ffitarget_arm64.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		8AE6CCF46F913D12FC41026ED05A95E3 /* ffi_common.h in Headers */ = {isa = PBXBuildFile; fileRef = 22AFF82F1B535B9131EF21EAC25E1F56 /* ffi_common.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		948775C0768E7370AA12194D758BF02C /* ffi_x86_64.h in Headers */ = {isa = PBXBuildFile; fileRef = 1595884400602200A7444E2A7952968D /* ffi_x86_64.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		960CD861AE36ED23F776EFEA19274119 /* sysv_arm64.S in Sources */ = {isa = PBXBuildFile; fileRef = 115336915E23BE795937228245E566CA /* sysv_arm64.S */; };
 		9877490F83B059AF5BAE7C3948286C1F /* ZDFfiHook-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CC325F5F0F3B27A76AC1ED08EC3C05 /* ZDFfiHook-dummy.m */; };
+		9BF598A6327B642F06DFC2098BF4BB89 /* internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E1294E32BF333DA1AC1BF1534A53877 /* internal.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9C8A974A9A256D6C1DB78FCE72378BFB /* fficonfig_armv7.h in Headers */ = {isa = PBXBuildFile; fileRef = C137230AEEDB701926C1D9A6168EC80E /* fficonfig_armv7.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9DAD71245BE30C5FCA61DC11C72DD18A /* ffi_cfi.h in Headers */ = {isa = PBXBuildFile; fileRef = A70D5539A630EB9101F4730DE015E0DE /* ffi_cfi.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9E7EAC25073173C2EC65320C3A302DD1 /* fficonfig_arm64.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E6412A011B0F18FA83EFB4A739EC050 /* fficonfig_arm64.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		9F974141A7D9CE3DB1E2E670A15138D6 /* Pods-ZDFfiHookDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 774B438A7360AE7F8E36E28F7B38B0E8 /* Pods-ZDFfiHookDemo-dummy.m */; };
-		A2EF0F00EFBECDB1D1E14538EDD55EA7 /* closures.c in Sources */ = {isa = PBXBuildFile; fileRef = 1CB1F42ACCF604A2236505EF17F1CB3D /* closures.c */; };
-		A34ADE4859CA13F0538EF808394BCB61 /* fficonfig_armv7.h in Headers */ = {isa = PBXBuildFile; fileRef = B52496C51C68CA22629BB64C465813AA /* fficonfig_armv7.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A2EF0F00EFBECDB1D1E14538EDD55EA7 /* closures.c in Sources */ = {isa = PBXBuildFile; fileRef = 445B3B1283ADF24E03FB73CDC26C091D /* closures.c */; };
 		A4F1A846656F111BDCD421D7C91CFDC1 /* NSObject+ZDFfiHook.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CAC84E7C46E518388565A09191A5C8 /* NSObject+ZDFfiHook.m */; };
-		A7358092ABFD679748DB99AD70985A7E /* ffi_arm64.h in Headers */ = {isa = PBXBuildFile; fileRef = E155C47F33ECF6B290DF4E579599B8D3 /* ffi_arm64.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		ABAA49B8EAF6700A2513DE1A04ABF341 /* ffitarget.h in Headers */ = {isa = PBXBuildFile; fileRef = 410EB37A6C3B8A14B737F7BA5FA551DC /* ffitarget.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		AC50C987004B9FA5240689A7D2739570 /* ZDFfiFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 85E1F8942E4DA575F5BC8F77F643F61D /* ZDFfiFunctions.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		B4DE5052EF9F94548AECDAE87181188B /* ffitarget_armv7k.h in Headers */ = {isa = PBXBuildFile; fileRef = 34373646B7A7996B1946DEEAA9807944 /* ffitarget_armv7k.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		B561AFDC35DA02CB61D33E1611318FBB /* ZDFfiHook.h in Headers */ = {isa = PBXBuildFile; fileRef = B778E2A203BD8B8DF38B451DCB941217 /* ZDFfiHook.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		BF0D51A46BEC1320C1D4CC5E5B5A33D5 /* ZDFfiHook-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 39A1F5EE34EE7A248BB84D19DB6E5219 /* ZDFfiHook-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		C5C50FC713FD0C6C9D4FA8C99880B5ED /* win64_x86_64.S in Sources */ = {isa = PBXBuildFile; fileRef = 9DC41E12042D41A271FBD25AEBA47EF0 /* win64_x86_64.S */; };
-		CD09A3FE08B377072E6E5E66A121FD92 /* ffi_armv7.h in Headers */ = {isa = PBXBuildFile; fileRef = E8EEACFEDBA8517A5CDF23EE1E69B04E /* ffi_armv7.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		CEDAE1277962310CA59D4E2690253B83 /* unix64_x86_64.S in Sources */ = {isa = PBXBuildFile; fileRef = 1D3FE0844BB59AC08261848AF1843DB0 /* unix64_x86_64.S */; };
-		D293174193556B9025B5CB25FE47C37E /* fficonfig_i386.h in Headers */ = {isa = PBXBuildFile; fileRef = E85C6D119A066567064CFA00C7963B0C /* fficonfig_i386.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		D3B9C1FF4BBAF9A16DCAC3A395717E83 /* internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 91957CF803F6D5470CCFC684E8C5F9BC /* internal.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		E17F23FA43F7641C0BE008FFF2F8D089 /* dlmalloc.c in Sources */ = {isa = PBXBuildFile; fileRef = 418730E0D007A4E7F19D04A41AC79C3A /* dlmalloc.c */; };
-		E292D1ADD360CF0122E06D12D4055D33 /* ffi_x86_64.h in Headers */ = {isa = PBXBuildFile; fileRef = C3553A3FB3C2401724E0CE3A81829FCA /* ffi_x86_64.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		E652FCD9AB9CFB2FA418A9C7C5339F60 /* fficonfig_armv7k.h in Headers */ = {isa = PBXBuildFile; fileRef = F0C60352E57BD08525B06C063C058F77 /* fficonfig_armv7k.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		E83C453411FCE2D80D6927A68D480127 /* fficonfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 5346896B5D560DD2C79870ADF6174853 /* fficonfig.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		E9D548F4A1183BB4026F8B13E69EA568 /* ffi_cfi.h in Headers */ = {isa = PBXBuildFile; fileRef = 106ADEE90DE5522008BE8F912A9CDDAF /* ffi_cfi.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B97D4D2C945F51264B24A405D21F751D /* ZDFfiHookInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = B3D0349CAAA8239DAA2002192517E1B4 /* ZDFfiHookInfo.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C5C50FC713FD0C6C9D4FA8C99880B5ED /* win64_x86_64.S in Sources */ = {isa = PBXBuildFile; fileRef = A762A734BDC4BB8E87C3A4CA6A542FF7 /* win64_x86_64.S */; };
+		CEDAE1277962310CA59D4E2690253B83 /* unix64_x86_64.S in Sources */ = {isa = PBXBuildFile; fileRef = CB2A9826E9643A16587C6E4946746C73 /* unix64_x86_64.S */; };
+		D4C7FC61F6E72A5CF57525253FD87C55 /* asmnames.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C8D49DFAD75FD1CACDE16C1D85EDCA3 /* asmnames.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		DDA5D876B881E8BAA766728896464E93 /* internal64.h in Headers */ = {isa = PBXBuildFile; fileRef = C77D292D32D67218E271DD61A07A7823 /* internal64.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E17F23FA43F7641C0BE008FFF2F8D089 /* dlmalloc.c in Sources */ = {isa = PBXBuildFile; fileRef = 21E60A735A0C55DBA9A7D08D75195D51 /* dlmalloc.c */; };
+		E5D4CF6236E6277236B07EB9DBFB6505 /* ffi_arm64.h in Headers */ = {isa = PBXBuildFile; fileRef = 86242EAA0D833CECE28F9800AB82DFBF /* ffi_arm64.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		ED3669B16BA9603B4764FE727594C2F7 /* Aspects-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 294023A17A64B93731AC48F5311B08E1 /* Aspects-dummy.m */; };
-		F2D2844D0AC3C87C91B9948CBF0DDDA1 /* ffi_i386.c in Sources */ = {isa = PBXBuildFile; fileRef = 288F5497C40299A8E109D033E0D3C96D /* ffi_i386.c */; };
-		F348C52CBCC49F3FEF292F6B8D7A3B73 /* ffitarget_arm64.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B051D68626B4EB572F8C45F96B98491 /* ffitarget_arm64.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F3B70CF599EADF16BA6C3F9B5DCF8897 /* types.c in Sources */ = {isa = PBXBuildFile; fileRef = 246909BD68344A39C24437FBCDF597CF /* types.c */; };
+		EFE1D7D87321A82DCE43A3D9EA0CCC91 /* tramp.h in Headers */ = {isa = PBXBuildFile; fileRef = 459B0BB02BFC8E4EFC21CFE25696C184 /* tramp.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F2D2844D0AC3C87C91B9948CBF0DDDA1 /* ffi_i386.c in Sources */ = {isa = PBXBuildFile; fileRef = E8ED9679C9B17D6DD5978EB85FD40E67 /* ffi_i386.c */; };
+		F3B70CF599EADF16BA6C3F9B5DCF8897 /* types.c in Sources */ = {isa = PBXBuildFile; fileRef = D3384A664C17A02425C61C0EDE82B2EE /* types.c */; };
+		F4E1C1F9802BFE977687BFF89554C265 /* fficonfig_i386.h in Headers */ = {isa = PBXBuildFile; fileRef = 45FE0A063EF1ED79B59FD575E80499E2 /* fficonfig_i386.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		FFE97B3680746B34834E7F36EFCEA886 /* ffi_armv7.h in Headers */ = {isa = PBXBuildFile; fileRef = 55979EA76CCBEFDC698355D1D46C22EE /* ffi_armv7.h */; settings = {ATTRIBUTES = (Project, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,92 +117,92 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0650A06B1B664652206BE47AED46174D /* ffi.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ffi.h; sourceTree = "<group>"; };
+		0AF8A6D5810D9E202C30608B230101DB /* sysv_armv7.S */ = {isa = PBXFileReference; includeInIndex = 1; path = sysv_armv7.S; sourceTree = "<group>"; };
 		0B9F578B2431A1C6B1C36A60AE6A0A56 /* libPods-ZDFfiHookDemo-ZDFfiHookDemoUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-ZDFfiHookDemo-ZDFfiHookDemoUITests.a"; path = "libPods-ZDFfiHookDemo-ZDFfiHookDemoUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		106ADEE90DE5522008BE8F912A9CDDAF /* ffi_cfi.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ffi_cfi.h; sourceTree = "<group>"; };
-		1CB1F42ACCF604A2236505EF17F1CB3D /* closures.c */ = {isa = PBXFileReference; includeInIndex = 1; path = closures.c; sourceTree = "<group>"; };
-		1D3FE0844BB59AC08261848AF1843DB0 /* unix64_x86_64.S */ = {isa = PBXFileReference; includeInIndex = 1; path = unix64_x86_64.S; sourceTree = "<group>"; };
-		22FE76DEE3C613984878F4AA5BDA60FA /* ffiw64_x86_64.c */ = {isa = PBXFileReference; includeInIndex = 1; path = ffiw64_x86_64.c; sourceTree = "<group>"; };
-		246909BD68344A39C24437FBCDF597CF /* types.c */ = {isa = PBXFileReference; includeInIndex = 1; path = types.c; sourceTree = "<group>"; };
+		115336915E23BE795937228245E566CA /* sysv_arm64.S */ = {isa = PBXFileReference; includeInIndex = 1; path = sysv_arm64.S; sourceTree = "<group>"; };
+		1595884400602200A7444E2A7952968D /* ffi_x86_64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ffi_x86_64.h; sourceTree = "<group>"; };
+		16A7EB9093A1F7E8DCD242BE223C626B /* ffiw64_x86_64.c */ = {isa = PBXFileReference; includeInIndex = 1; path = ffiw64_x86_64.c; sourceTree = "<group>"; };
+		1A222043AA0FAF672CD70770FFE8CBF9 /* ffi_armv7k.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ffi_armv7k.h; sourceTree = "<group>"; };
+		21E60A735A0C55DBA9A7D08D75195D51 /* dlmalloc.c */ = {isa = PBXFileReference; includeInIndex = 1; path = dlmalloc.c; sourceTree = "<group>"; };
+		22AFF82F1B535B9131EF21EAC25E1F56 /* ffi_common.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ffi_common.h; sourceTree = "<group>"; };
 		288B5109C528A3B6C6D1FFA375D5BCC9 /* Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		288F5497C40299A8E109D033E0D3C96D /* ffi_i386.c */ = {isa = PBXFileReference; includeInIndex = 1; path = ffi_i386.c; sourceTree = "<group>"; };
 		294023A17A64B93731AC48F5311B08E1 /* Aspects-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Aspects-dummy.m"; sourceTree = "<group>"; };
 		299964CB437FA770D2B48026607CB5F2 /* NSObject+ZDAutoFree.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+ZDAutoFree.m"; path = "Source/NSObject+ZDAutoFree.m"; sourceTree = "<group>"; };
-		2A6065B49AF235FC69CBF38BBA670F99 /* internal64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = internal64.h; sourceTree = "<group>"; };
 		2C2B91D163D8D88FC20ACEE612FAE26D /* Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2C8D49DFAD75FD1CACDE16C1D85EDCA3 /* asmnames.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = asmnames.h; sourceTree = "<group>"; };
 		30CC325F5F0F3B27A76AC1ED08EC3C05 /* ZDFfiHook-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ZDFfiHook-dummy.m"; sourceTree = "<group>"; };
 		312B5C77020150601E1BA4E3F65EC9F4 /* Pods-ZDFfiHookDemoTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ZDFfiHookDemoTests-dummy.m"; sourceTree = "<group>"; };
 		31C9818A83F6A2C8EE59DDBA2D353C93 /* Pods-ZDFfiHookDemoTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ZDFfiHookDemoTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		325E1DE4DCB4C534D06ABCD63E2F8B15 /* Aspects.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Aspects.h; sourceTree = "<group>"; };
-		34373646B7A7996B1946DEEAA9807944 /* ffitarget_armv7k.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ffitarget_armv7k.h; sourceTree = "<group>"; };
 		343F8A2FA17267A93E60EC75682C41A1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		39A1F5EE34EE7A248BB84D19DB6E5219 /* ZDFfiHook-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZDFfiHook-umbrella.h"; sourceTree = "<group>"; };
+		39D5AE09A8B1E38584C11B01B53B0911 /* fficonfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = fficonfig.h; sourceTree = "<group>"; };
 		3A3DFA53CAEAEB2D6C276156207E8537 /* Pods-ZDFfiHookDemoTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ZDFfiHookDemoTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		3A8CEA1C8C4D6F51653865531454CAD3 /* prep_cif.c */ = {isa = PBXFileReference; includeInIndex = 1; path = prep_cif.c; sourceTree = "<group>"; };
-		410EB37A6C3B8A14B737F7BA5FA551DC /* ffitarget.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ffitarget.h; sourceTree = "<group>"; };
-		418730E0D007A4E7F19D04A41AC79C3A /* dlmalloc.c */ = {isa = PBXFileReference; includeInIndex = 1; path = dlmalloc.c; sourceTree = "<group>"; };
-		421B8E9915F6692645285C6C4F962302 /* ffi_armv7.c */ = {isa = PBXFileReference; includeInIndex = 1; path = ffi_armv7.c; sourceTree = "<group>"; };
-		499C979FB581CBE976989F41B2F6A057 /* fficonfig_x86_64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = fficonfig_x86_64.h; sourceTree = "<group>"; };
-		4B14F6FB56CCD45E9A798F752FEE2D4F /* sysv_i386.S */ = {isa = PBXFileReference; includeInIndex = 1; path = sysv_i386.S; sourceTree = "<group>"; };
+		4313D94812A4BE8ED92A7FF2FE80AD9D /* ffi.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ffi.h; sourceTree = "<group>"; };
+		445B3B1283ADF24E03FB73CDC26C091D /* closures.c */ = {isa = PBXFileReference; includeInIndex = 1; path = closures.c; sourceTree = "<group>"; };
+		459B0BB02BFC8E4EFC21CFE25696C184 /* tramp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = tramp.h; sourceTree = "<group>"; };
+		45FE0A063EF1ED79B59FD575E80499E2 /* fficonfig_i386.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = fficonfig_i386.h; sourceTree = "<group>"; };
 		4D952ED0F761C0BA1CCED14714F20D7D /* Aspects-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Aspects-prefix.pch"; sourceTree = "<group>"; };
-		4F2DD32B05E0B1EEC5AC4F2854F03864 /* ffi64_x86_64.c */ = {isa = PBXFileReference; includeInIndex = 1; path = ffi64_x86_64.c; sourceTree = "<group>"; };
-		504A23ECD7339C52B7F3B7B32232D7C8 /* tramp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = tramp.h; sourceTree = "<group>"; };
-		5346896B5D560DD2C79870ADF6174853 /* fficonfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = fficonfig.h; sourceTree = "<group>"; };
-		5392A3D42879FF4D18DDFF501C265CB6 /* ffitarget_i386.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ffitarget_i386.h; sourceTree = "<group>"; };
-		5560C4711ECEE24894F21DBC68C22695 /* ffi_armv7k.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ffi_armv7k.h; sourceTree = "<group>"; };
+		4E1294E32BF333DA1AC1BF1534A53877 /* internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = internal.h; sourceTree = "<group>"; };
+		548D2EE207A0A69BBA10EC802A0142D0 /* ffitarget_x86_64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ffitarget_x86_64.h; sourceTree = "<group>"; };
+		55979EA76CCBEFDC698355D1D46C22EE /* ffi_armv7.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ffi_armv7.h; sourceTree = "<group>"; };
+		55B19E2A43B77171810B8E4B9280A3CB /* tramp.c */ = {isa = PBXFileReference; includeInIndex = 1; path = tramp.c; sourceTree = "<group>"; };
 		5614FC705A17F97DE4B5E67782B3E449 /* Aspects.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Aspects.release.xcconfig; sourceTree = "<group>"; };
-		5A1661DF72862574AE06CBB6ADD3B965 /* tramp.c */ = {isa = PBXFileReference; includeInIndex = 1; path = tramp.c; sourceTree = "<group>"; };
+		5ADC06AC888195E48664F28457A6778C /* ffitarget_armv7.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ffitarget_armv7.h; sourceTree = "<group>"; };
+		5B309D5CA668A8B90CA4DD9F1C089498 /* ffi_i386.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ffi_i386.h; sourceTree = "<group>"; };
+		5CC48EA886DF788ED38C29D7580E3093 /* fficonfig_armv7k.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = fficonfig_armv7k.h; sourceTree = "<group>"; };
+		5D540AC37C4230A186463AFF09AC721A /* ffitarget_arm64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ffitarget_arm64.h; sourceTree = "<group>"; };
 		5E9FF887E1CDD62EECA4E9954C9A997F /* Pods-ZDFfiHookDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZDFfiHookDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		616A27B776EEBFF2781D567590AD2C62 /* Pods-ZDFfiHookDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ZDFfiHookDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
 		618D517A4DCA886A6D4D0BEAB51D0813 /* Aspects.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Aspects.debug.xcconfig; sourceTree = "<group>"; };
-		66A968D332CF9D6E02C0EAA69DD85836 /* fficonfig_arm64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = fficonfig_arm64.h; sourceTree = "<group>"; };
+		6BF8346A22FD663A701023F41AB8AB61 /* raw_api.c */ = {isa = PBXFileReference; includeInIndex = 1; path = raw_api.c; sourceTree = "<group>"; };
 		6FC4A2BF2C9951FB5C2E93B671188E36 /* Pods-ZDFfiHookDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZDFfiHookDemo.release.xcconfig"; sourceTree = "<group>"; };
+		741B46EE40EC044A465D22A4E1E89807 /* sysv_armv7k.S */ = {isa = PBXFileReference; includeInIndex = 1; path = sysv_armv7k.S; sourceTree = "<group>"; };
 		774B438A7360AE7F8E36E28F7B38B0E8 /* Pods-ZDFfiHookDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ZDFfiHookDemo-dummy.m"; sourceTree = "<group>"; };
-		79469E53E92D27EA5EB1ED34A13D0BE0 /* ffi_armv7k.c */ = {isa = PBXFileReference; includeInIndex = 1; path = ffi_armv7k.c; sourceTree = "<group>"; };
-		7B051D68626B4EB572F8C45F96B98491 /* ffitarget_arm64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ffitarget_arm64.h; sourceTree = "<group>"; };
-		82FB925796825E4DE4E67E04B2B3A80F /* ffi_i386.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ffi_i386.h; sourceTree = "<group>"; };
+		7A9207F8F98E10978CDF39B6ECF482C9 /* ffi_armv7k.c */ = {isa = PBXFileReference; includeInIndex = 1; path = ffi_armv7k.c; sourceTree = "<group>"; };
+		7E6412A011B0F18FA83EFB4A739EC050 /* fficonfig_arm64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = fficonfig_arm64.h; sourceTree = "<group>"; };
+		7F1E81574C1F9F5B296F62E6742F1EB6 /* fficonfig_x86_64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = fficonfig_x86_64.h; sourceTree = "<group>"; };
 		85E1F8942E4DA575F5BC8F77F643F61D /* ZDFfiFunctions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZDFfiFunctions.h; path = Source/ZDFfiFunctions.h; sourceTree = "<group>"; };
+		86242EAA0D833CECE28F9800AB82DFBF /* ffi_arm64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ffi_arm64.h; sourceTree = "<group>"; };
 		8FAA20F20E90AD4BE2178679BDAB384F /* Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests-dummy.m"; sourceTree = "<group>"; };
-		91957CF803F6D5470CCFC684E8C5F9BC /* internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = internal.h; sourceTree = "<group>"; };
 		938494F1E3FC98DF5AA4A975E80953E7 /* ZDFfiHook.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZDFfiHook.m; path = Source/ZDFfiHook.m; sourceTree = "<group>"; };
 		9808BF74538141204E4EB5B49809FE77 /* libAspects.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libAspects.a; path = libAspects.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D89B97CCE4CF9D8C45C67CFFAF067E0 /* ffitarget_armv7k.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ffitarget_armv7k.h; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9DC41E12042D41A271FBD25AEBA47EF0 /* win64_x86_64.S */ = {isa = PBXFileReference; includeInIndex = 1; path = win64_x86_64.S; sourceTree = "<group>"; };
 		9DE5F8D273EF382921FEA4C2C20B5D86 /* ZDFfiHookKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZDFfiHookKit.h; path = Source/ZDFfiHookKit.h; sourceTree = "<group>"; };
 		9F0CBDEAA40C9763623CC7FE1A081FDB /* Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		A7EF62E29ADFAFDA0BE54BC0CD5FCEE8 /* raw_api.c */ = {isa = PBXFileReference; includeInIndex = 1; path = raw_api.c; sourceTree = "<group>"; };
+		A6BC3C70F40AB0FB34B289314AEEC45E /* ffi_arm64.c */ = {isa = PBXFileReference; includeInIndex = 1; path = ffi_arm64.c; sourceTree = "<group>"; };
+		A70D5539A630EB9101F4730DE015E0DE /* ffi_cfi.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ffi_cfi.h; sourceTree = "<group>"; };
+		A762A734BDC4BB8E87C3A4CA6A542FF7 /* win64_x86_64.S */ = {isa = PBXFileReference; includeInIndex = 1; path = win64_x86_64.S; sourceTree = "<group>"; };
 		B30E78E83656B249A2C505F8BD77F4D6 /* Aspects.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Aspects.m; sourceTree = "<group>"; };
 		B3CDCCDE187AD8AB9C3B45103D1AB300 /* Pods-ZDFfiHookDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZDFfiHookDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B3D0349CAAA8239DAA2002192517E1B4 /* ZDFfiHookInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZDFfiHookInfo.h; path = Source/ZDFfiHookInfo.h; sourceTree = "<group>"; };
-		B52496C51C68CA22629BB64C465813AA /* fficonfig_armv7.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = fficonfig_armv7.h; sourceTree = "<group>"; };
-		B544C17B0AC0C513F29CE5E04B0B5C3A /* sysv_armv7.S */ = {isa = PBXFileReference; includeInIndex = 1; path = sysv_armv7.S; sourceTree = "<group>"; };
 		B778E2A203BD8B8DF38B451DCB941217 /* ZDFfiHook.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZDFfiHook.h; path = Source/ZDFfiHook.h; sourceTree = "<group>"; };
 		BC6FEBF123CB454D4F7BDA176F470BCB /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		C0E252E5E3BD12A04000052AC22B0E3B /* ZDFfiHookInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZDFfiHookInfo.m; path = Source/ZDFfiHookInfo.m; sourceTree = "<group>"; };
+		C137230AEEDB701926C1D9A6168EC80E /* fficonfig_armv7.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = fficonfig_armv7.h; sourceTree = "<group>"; };
 		C2CE90A21A81D349E542B37B9F994A11 /* libPods-ZDFfiHookDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-ZDFfiHookDemo.a"; path = "libPods-ZDFfiHookDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C3553A3FB3C2401724E0CE3A81829FCA /* ffi_x86_64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ffi_x86_64.h; sourceTree = "<group>"; };
-		CBC4B9D0AC7900397C3CF965E6334E32 /* asmnames.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = asmnames.h; sourceTree = "<group>"; };
-		CEABFF1FA8524F946AC4CD3670DEC2D9 /* ffitarget_x86_64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ffitarget_x86_64.h; sourceTree = "<group>"; };
+		C77D292D32D67218E271DD61A07A7823 /* internal64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = internal64.h; sourceTree = "<group>"; };
+		C996EA2DDFE18731E7CEABD9CB0D77CB /* ffi_armv7.c */ = {isa = PBXFileReference; includeInIndex = 1; path = ffi_armv7.c; sourceTree = "<group>"; };
+		CB2A9826E9643A16587C6E4946746C73 /* unix64_x86_64.S */ = {isa = PBXFileReference; includeInIndex = 1; path = unix64_x86_64.S; sourceTree = "<group>"; };
+		D014601A4C51CD14FBB9B078FE91DDD5 /* prep_cif.c */ = {isa = PBXFileReference; includeInIndex = 1; path = prep_cif.c; sourceTree = "<group>"; };
 		D05DC64B3C66B94E4684F2CAF7157786 /* NSObject+ZDFfiHook.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+ZDFfiHook.h"; path = "Source/NSObject+ZDFfiHook.h"; sourceTree = "<group>"; };
-		D12E0398FF53565BDF563C241C7233EC /* ffi_arm64.c */ = {isa = PBXFileReference; includeInIndex = 1; path = ffi_arm64.c; sourceTree = "<group>"; };
-		D17F15A9DBC36508C3434D3B7C819C9E /* sysv_arm64.S */ = {isa = PBXFileReference; includeInIndex = 1; path = sysv_arm64.S; sourceTree = "<group>"; };
-		D49AB53853E5E8C1BEB2401507CF9DAF /* sysv_armv7k.S */ = {isa = PBXFileReference; includeInIndex = 1; path = sysv_armv7k.S; sourceTree = "<group>"; };
+		D3384A664C17A02425C61C0EDE82B2EE /* types.c */ = {isa = PBXFileReference; includeInIndex = 1; path = types.c; sourceTree = "<group>"; };
 		D4CAC84E7C46E518388565A09191A5C8 /* NSObject+ZDFfiHook.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+ZDFfiHook.m"; path = "Source/NSObject+ZDFfiHook.m"; sourceTree = "<group>"; };
 		D9E5756EB4565F919FB8D02F9F8627F2 /* ZDFfiHook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ZDFfiHook.debug.xcconfig; sourceTree = "<group>"; };
 		DA73C789B96AD5F7B1CBF87ECBC6255A /* ZDFfiHook.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ZDFfiHook.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		DBAFC8AB699CC5669E5EDA28861A749D /* sysv_i386.S */ = {isa = PBXFileReference; includeInIndex = 1; path = sysv_i386.S; sourceTree = "<group>"; };
 		DC97166AFA538843391BEAF37A849CF7 /* ZDFfiFunctions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZDFfiFunctions.m; path = Source/ZDFfiFunctions.m; sourceTree = "<group>"; };
-		DEFD51762B53023797474F8832AF2736 /* ffitarget_armv7.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ffitarget_armv7.h; sourceTree = "<group>"; };
+		DF9A2B81134845429B6506226F4D15B7 /* ffi64_x86_64.c */ = {isa = PBXFileReference; includeInIndex = 1; path = ffi64_x86_64.c; sourceTree = "<group>"; };
 		E05BEAEBA5DC7E8B632E253649995CE5 /* NSObject+ZDAutoFree.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+ZDAutoFree.h"; path = "Source/NSObject+ZDAutoFree.h"; sourceTree = "<group>"; };
-		E155C47F33ECF6B290DF4E579599B8D3 /* ffi_arm64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ffi_arm64.h; sourceTree = "<group>"; };
 		E340D2AE70414D917C696906339DA28C /* Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		E85C6D119A066567064CFA00C7963B0C /* fficonfig_i386.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = fficonfig_i386.h; sourceTree = "<group>"; };
-		E8EEACFEDBA8517A5CDF23EE1E69B04E /* ffi_armv7.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ffi_armv7.h; sourceTree = "<group>"; };
+		E650477DDE3E66A14B97CA69887DF878 /* ffitarget.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ffitarget.h; sourceTree = "<group>"; };
+		E8ED9679C9B17D6DD5978EB85FD40E67 /* ffi_i386.c */ = {isa = PBXFileReference; includeInIndex = 1; path = ffi_i386.c; sourceTree = "<group>"; };
+		E90BCDC5F336E3CAA694653F9032A76F /* ffitarget_i386.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ffitarget_i386.h; sourceTree = "<group>"; };
 		EA686DBCF7726ADA12A0C2814B05FA79 /* ZDFfiHook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ZDFfiHook.release.xcconfig; sourceTree = "<group>"; };
 		EA8690B360C633A1EC92151A4AC28DAB /* ZDFfiHook.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ZDFfiHook.modulemap; sourceTree = "<group>"; };
 		EC2EEC091EF685E9156C24402F5A4AED /* libPods-ZDFfiHookDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-ZDFfiHookDemoTests.a"; path = "libPods-ZDFfiHookDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EFD9A38D7B01DA75A15CEAFC7A845B79 /* ffi_common.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ffi_common.h; sourceTree = "<group>"; };
 		F00A226B61181BF4EFF2F5B3D7D270AB /* libZDFfiHook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libZDFfiHook.a; path = libZDFfiHook.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		F0C60352E57BD08525B06C063C058F77 /* fficonfig_armv7k.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = fficonfig_armv7k.h; sourceTree = "<group>"; };
 		F3176F3605892F9C82F7844EB1881328 /* Pods-ZDFfiHookDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ZDFfiHookDemo-acknowledgements.plist"; sourceTree = "<group>"; };
 		FC29B206A8AD163A1C47E76CC482FD0F /* ZDFfiDefine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZDFfiDefine.h; path = Source/ZDFfiDefine.h; sourceTree = "<group>"; };
 		FF930CD893D992517B46D0DC2D0FB4BF /* Pods-ZDFfiHookDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZDFfiHookDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -331,26 +331,27 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4E3F7CC822B019786FAC9FEC2818A5E5 /* zd_libffi */ = {
+		37AB3C20B96AE36F8F8A16CE8E90BBE7 /* include */ = {
 			isa = PBXGroup;
 			children = (
-				6039BD2FB34B11911F347113B1A64EF5 /* include */,
-				6E992B4F2CC4F9BAFDA2B43957FED562 /* src */,
-			);
-			name = zd_libffi;
-			sourceTree = "<group>";
-		};
-		6039BD2FB34B11911F347113B1A64EF5 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				0650A06B1B664652206BE47AED46174D /* ffi.h */,
-				E155C47F33ECF6B290DF4E579599B8D3 /* ffi_arm64.h */,
-				E8EEACFEDBA8517A5CDF23EE1E69B04E /* ffi_armv7.h */,
-				5560C4711ECEE24894F21DBC68C22695 /* ffi_armv7k.h */,
-				82FB925796825E4DE4E67E04B2B3A80F /* ffi_i386.h */,
-				C3553A3FB3C2401724E0CE3A81829FCA /* ffi_x86_64.h */,
-				5346896B5D560DD2C79870ADF6174853 /* fficonfig.h */,
-				410EB37A6C3B8A14B737F7BA5FA551DC /* ffitarget.h */,
+				4313D94812A4BE8ED92A7FF2FE80AD9D /* ffi.h */,
+				86242EAA0D833CECE28F9800AB82DFBF /* ffi_arm64.h */,
+				55979EA76CCBEFDC698355D1D46C22EE /* ffi_armv7.h */,
+				1A222043AA0FAF672CD70770FFE8CBF9 /* ffi_armv7k.h */,
+				5B309D5CA668A8B90CA4DD9F1C089498 /* ffi_i386.h */,
+				1595884400602200A7444E2A7952968D /* ffi_x86_64.h */,
+				39D5AE09A8B1E38584C11B01B53B0911 /* fficonfig.h */,
+				7E6412A011B0F18FA83EFB4A739EC050 /* fficonfig_arm64.h */,
+				C137230AEEDB701926C1D9A6168EC80E /* fficonfig_armv7.h */,
+				5CC48EA886DF788ED38C29D7580E3093 /* fficonfig_armv7k.h */,
+				45FE0A063EF1ED79B59FD575E80499E2 /* fficonfig_i386.h */,
+				7F1E81574C1F9F5B296F62E6742F1EB6 /* fficonfig_x86_64.h */,
+				E650477DDE3E66A14B97CA69887DF878 /* ffitarget.h */,
+				5D540AC37C4230A186463AFF09AC721A /* ffitarget_arm64.h */,
+				5ADC06AC888195E48664F28457A6778C /* ffitarget_armv7.h */,
+				9D89B97CCE4CF9D8C45C67CFFAF067E0 /* ffitarget_armv7k.h */,
+				E90BCDC5F336E3CAA694653F9032A76F /* ffitarget_i386.h */,
+				548D2EE207A0A69BBA10EC802A0142D0 /* ffitarget_x86_64.h */,
 			);
 			name = include;
 			path = Source/libffi/include;
@@ -362,49 +363,39 @@
 				714EF5B73922E7B23608EBEF57186CD4 /* hook */,
 				023683E6EF9F956E6B056B352218E3D8 /* Pod */,
 				A63547DB8206CC8B66A749E62F478CCE /* Support Files */,
-				4E3F7CC822B019786FAC9FEC2818A5E5 /* zd_libffi */,
+				AABD482388BCFDF0D695F36465C26B6B /* zd_libffi */,
 			);
 			name = ZDFfiHook;
 			path = ..;
 			sourceTree = "<group>";
 		};
-		6E992B4F2CC4F9BAFDA2B43957FED562 /* src */ = {
+		619CA124A984C5CDC2A159B49B4D976A /* src */ = {
 			isa = PBXGroup;
 			children = (
-				CBC4B9D0AC7900397C3CF965E6334E32 /* asmnames.h */,
-				1CB1F42ACCF604A2236505EF17F1CB3D /* closures.c */,
-				418730E0D007A4E7F19D04A41AC79C3A /* dlmalloc.c */,
-				4F2DD32B05E0B1EEC5AC4F2854F03864 /* ffi64_x86_64.c */,
-				D12E0398FF53565BDF563C241C7233EC /* ffi_arm64.c */,
-				421B8E9915F6692645285C6C4F962302 /* ffi_armv7.c */,
-				79469E53E92D27EA5EB1ED34A13D0BE0 /* ffi_armv7k.c */,
-				106ADEE90DE5522008BE8F912A9CDDAF /* ffi_cfi.h */,
-				EFD9A38D7B01DA75A15CEAFC7A845B79 /* ffi_common.h */,
-				288F5497C40299A8E109D033E0D3C96D /* ffi_i386.c */,
-				66A968D332CF9D6E02C0EAA69DD85836 /* fficonfig_arm64.h */,
-				B52496C51C68CA22629BB64C465813AA /* fficonfig_armv7.h */,
-				F0C60352E57BD08525B06C063C058F77 /* fficonfig_armv7k.h */,
-				E85C6D119A066567064CFA00C7963B0C /* fficonfig_i386.h */,
-				499C979FB581CBE976989F41B2F6A057 /* fficonfig_x86_64.h */,
-				7B051D68626B4EB572F8C45F96B98491 /* ffitarget_arm64.h */,
-				DEFD51762B53023797474F8832AF2736 /* ffitarget_armv7.h */,
-				34373646B7A7996B1946DEEAA9807944 /* ffitarget_armv7k.h */,
-				5392A3D42879FF4D18DDFF501C265CB6 /* ffitarget_i386.h */,
-				CEABFF1FA8524F946AC4CD3670DEC2D9 /* ffitarget_x86_64.h */,
-				22FE76DEE3C613984878F4AA5BDA60FA /* ffiw64_x86_64.c */,
-				91957CF803F6D5470CCFC684E8C5F9BC /* internal.h */,
-				2A6065B49AF235FC69CBF38BBA670F99 /* internal64.h */,
-				3A8CEA1C8C4D6F51653865531454CAD3 /* prep_cif.c */,
-				A7EF62E29ADFAFDA0BE54BC0CD5FCEE8 /* raw_api.c */,
-				D17F15A9DBC36508C3434D3B7C819C9E /* sysv_arm64.S */,
-				B544C17B0AC0C513F29CE5E04B0B5C3A /* sysv_armv7.S */,
-				D49AB53853E5E8C1BEB2401507CF9DAF /* sysv_armv7k.S */,
-				4B14F6FB56CCD45E9A798F752FEE2D4F /* sysv_i386.S */,
-				5A1661DF72862574AE06CBB6ADD3B965 /* tramp.c */,
-				504A23ECD7339C52B7F3B7B32232D7C8 /* tramp.h */,
-				246909BD68344A39C24437FBCDF597CF /* types.c */,
-				1D3FE0844BB59AC08261848AF1843DB0 /* unix64_x86_64.S */,
-				9DC41E12042D41A271FBD25AEBA47EF0 /* win64_x86_64.S */,
+				2C8D49DFAD75FD1CACDE16C1D85EDCA3 /* asmnames.h */,
+				445B3B1283ADF24E03FB73CDC26C091D /* closures.c */,
+				21E60A735A0C55DBA9A7D08D75195D51 /* dlmalloc.c */,
+				DF9A2B81134845429B6506226F4D15B7 /* ffi64_x86_64.c */,
+				A6BC3C70F40AB0FB34B289314AEEC45E /* ffi_arm64.c */,
+				C996EA2DDFE18731E7CEABD9CB0D77CB /* ffi_armv7.c */,
+				7A9207F8F98E10978CDF39B6ECF482C9 /* ffi_armv7k.c */,
+				A70D5539A630EB9101F4730DE015E0DE /* ffi_cfi.h */,
+				22AFF82F1B535B9131EF21EAC25E1F56 /* ffi_common.h */,
+				E8ED9679C9B17D6DD5978EB85FD40E67 /* ffi_i386.c */,
+				16A7EB9093A1F7E8DCD242BE223C626B /* ffiw64_x86_64.c */,
+				4E1294E32BF333DA1AC1BF1534A53877 /* internal.h */,
+				C77D292D32D67218E271DD61A07A7823 /* internal64.h */,
+				D014601A4C51CD14FBB9B078FE91DDD5 /* prep_cif.c */,
+				6BF8346A22FD663A701023F41AB8AB61 /* raw_api.c */,
+				115336915E23BE795937228245E566CA /* sysv_arm64.S */,
+				0AF8A6D5810D9E202C30608B230101DB /* sysv_armv7.S */,
+				741B46EE40EC044A465D22A4E1E89807 /* sysv_armv7k.S */,
+				DBAFC8AB699CC5669E5EDA28861A749D /* sysv_i386.S */,
+				55B19E2A43B77171810B8E4B9280A3CB /* tramp.c */,
+				459B0BB02BFC8E4EFC21CFE25696C184 /* tramp.h */,
+				D3384A664C17A02425C61C0EDE82B2EE /* types.c */,
+				CB2A9826E9643A16587C6E4946746C73 /* unix64_x86_64.S */,
+				A762A734BDC4BB8E87C3A4CA6A542FF7 /* win64_x86_64.S */,
 			);
 			name = src;
 			path = Source/libffi/src;
@@ -448,6 +439,15 @@
 			);
 			name = "Support Files";
 			path = "Pods/Target Support Files/ZDFfiHook";
+			sourceTree = "<group>";
+		};
+		AABD482388BCFDF0D695F36465C26B6B /* zd_libffi */ = {
+			isa = PBXGroup;
+			children = (
+				37AB3C20B96AE36F8F8A16CE8E90BBE7 /* include */,
+				619CA124A984C5CDC2A159B49B4D976A /* src */,
+			);
+			name = zd_libffi;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -519,42 +519,42 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CAF8303C43EC5A869F184B1A1BEC87C7 /* Headers */ = {
+		F7FED9374BEE383ADD00D0357C1D8A36 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79F34811FFCBE3A610BCBC97EBE36B83 /* asmnames.h in Headers */,
-				7A5BE9C9D79299CF92D3F9ECB107A105 /* ffi.h in Headers */,
-				A7358092ABFD679748DB99AD70985A7E /* ffi_arm64.h in Headers */,
-				CD09A3FE08B377072E6E5E66A121FD92 /* ffi_armv7.h in Headers */,
-				876F39954A105582B1A2B72A3BBD78BD /* ffi_armv7k.h in Headers */,
-				E9D548F4A1183BB4026F8B13E69EA568 /* ffi_cfi.h in Headers */,
-				2C04156477E4B5EB794808C1DAD082DE /* ffi_common.h in Headers */,
-				6CC5897ED961E63B066976A82AB05A84 /* ffi_i386.h in Headers */,
-				E292D1ADD360CF0122E06D12D4055D33 /* ffi_x86_64.h in Headers */,
-				E83C453411FCE2D80D6927A68D480127 /* fficonfig.h in Headers */,
-				70BC4C7274687C2158643F42FB5E8F09 /* fficonfig_arm64.h in Headers */,
-				A34ADE4859CA13F0538EF808394BCB61 /* fficonfig_armv7.h in Headers */,
-				E652FCD9AB9CFB2FA418A9C7C5339F60 /* fficonfig_armv7k.h in Headers */,
-				D293174193556B9025B5CB25FE47C37E /* fficonfig_i386.h in Headers */,
-				8B5BAD163C7341EC9CCBB44156D7FB54 /* fficonfig_x86_64.h in Headers */,
-				ABAA49B8EAF6700A2513DE1A04ABF341 /* ffitarget.h in Headers */,
-				F348C52CBCC49F3FEF292F6B8D7A3B73 /* ffitarget_arm64.h in Headers */,
-				0B28C8B0DD583A7BD2F9F7761B21DCA0 /* ffitarget_armv7.h in Headers */,
-				B4DE5052EF9F94548AECDAE87181188B /* ffitarget_armv7k.h in Headers */,
-				51F88BDBE16DD41A54D723094C8BA432 /* ffitarget_i386.h in Headers */,
-				885668CFB12C825032492D15EAA51994 /* ffitarget_x86_64.h in Headers */,
-				D3B9C1FF4BBAF9A16DCAC3A395717E83 /* internal.h in Headers */,
-				316AD680EFC057A960F379F64A1D2F0F /* internal64.h in Headers */,
-				82E80EFB723434D2AEBAFB77829015FD /* NSObject+ZDAutoFree.h in Headers */,
-				3403256A8B41805E8D3ECDE80BE5C9A5 /* NSObject+ZDFfiHook.h in Headers */,
-				0055C3185B5BAC147D6628ABC7104FA4 /* tramp.h in Headers */,
-				31857FF1339973EE7F9BB34F95E84BA7 /* ZDFfiDefine.h in Headers */,
-				AC50C987004B9FA5240689A7D2739570 /* ZDFfiFunctions.h in Headers */,
-				BF0D51A46BEC1320C1D4CC5E5B5A33D5 /* ZDFfiHook-umbrella.h in Headers */,
-				B561AFDC35DA02CB61D33E1611318FBB /* ZDFfiHook.h in Headers */,
-				19D3026FF9F2B00AABCFCF168C1AA6F2 /* ZDFfiHookInfo.h in Headers */,
-				22F4BED643633CDC07365A2495B99563 /* ZDFfiHookKit.h in Headers */,
+				D4C7FC61F6E72A5CF57525253FD87C55 /* asmnames.h in Headers */,
+				45CEDEFE390FC184E8F99C757F6A8657 /* ffi.h in Headers */,
+				E5D4CF6236E6277236B07EB9DBFB6505 /* ffi_arm64.h in Headers */,
+				FFE97B3680746B34834E7F36EFCEA886 /* ffi_armv7.h in Headers */,
+				6CE61B1AED44DE44CEEDB543CFE5B3E1 /* ffi_armv7k.h in Headers */,
+				9DAD71245BE30C5FCA61DC11C72DD18A /* ffi_cfi.h in Headers */,
+				8AE6CCF46F913D12FC41026ED05A95E3 /* ffi_common.h in Headers */,
+				81B4869D4200BF0009988966DC487A0F /* ffi_i386.h in Headers */,
+				948775C0768E7370AA12194D758BF02C /* ffi_x86_64.h in Headers */,
+				0D2484D34E4A288CE52C5BC52A41B44C /* fficonfig.h in Headers */,
+				9E7EAC25073173C2EC65320C3A302DD1 /* fficonfig_arm64.h in Headers */,
+				9C8A974A9A256D6C1DB78FCE72378BFB /* fficonfig_armv7.h in Headers */,
+				8195C298041525C61291278342D428C1 /* fficonfig_armv7k.h in Headers */,
+				F4E1C1F9802BFE977687BFF89554C265 /* fficonfig_i386.h in Headers */,
+				5F9EDA5703D19B592A469F27903782E8 /* fficonfig_x86_64.h in Headers */,
+				4B9A2BE7E9F6028054DFE4830E87C667 /* ffitarget.h in Headers */,
+				8999FE794EA81F94FBA4C8A735440155 /* ffitarget_arm64.h in Headers */,
+				68C8B3892FEAC87E98C21A225AA219A5 /* ffitarget_armv7.h in Headers */,
+				4E31665F1F7FDD0698BFAE79635B0A9D /* ffitarget_armv7k.h in Headers */,
+				11D3650E98152716092D43470B5EE4B8 /* ffitarget_i386.h in Headers */,
+				7CAE9AE7927AF7FDA4448CA7DBC1971A /* ffitarget_x86_64.h in Headers */,
+				9BF598A6327B642F06DFC2098BF4BB89 /* internal.h in Headers */,
+				DDA5D876B881E8BAA766728896464E93 /* internal64.h in Headers */,
+				4DFA65E4C614FDE75E010E90D9C7CED5 /* NSObject+ZDAutoFree.h in Headers */,
+				1C31E90A1A264CF950897A28A4EEB297 /* NSObject+ZDFfiHook.h in Headers */,
+				EFE1D7D87321A82DCE43A3D9EA0CCC91 /* tramp.h in Headers */,
+				191A58AFFCBC2688E553C322CAEEDD39 /* ZDFfiDefine.h in Headers */,
+				61E6AC1A2EE06D9F7070AF603768889F /* ZDFfiFunctions.h in Headers */,
+				1FA4F82B75E76962A4A3C815729E8A4A /* ZDFfiHook-umbrella.h in Headers */,
+				50AD686441168928C42106E6480E1A16 /* ZDFfiHook.h in Headers */,
+				B97D4D2C945F51264B24A405D21F751D /* ZDFfiHookInfo.h in Headers */,
+				1777C4C8E9E44BBB3C2DC5ADCD0010CD /* ZDFfiHookKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,7 +565,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EA03503816234A37C6A1EA46674277C0 /* Build configuration list for PBXNativeTarget "ZDFfiHook" */;
 			buildPhases = (
-				CAF8303C43EC5A869F184B1A1BEC87C7 /* Headers */,
+				F7FED9374BEE383ADD00D0357C1D8A36 /* Headers */,
 				CA8A7324EF4A79AB4639ED6646F101BA /* Sources */,
 				5944A886259A6ACD639C6150AE7BB422 /* Frameworks */,
 			);
