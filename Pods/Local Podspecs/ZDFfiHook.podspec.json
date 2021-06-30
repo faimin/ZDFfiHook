@@ -17,11 +17,26 @@
     "git": "https://github.com/faimin/ZDFfiHook.git",
     "tag": "0.0.1"
   },
-  "source_files": "Source/*.{h,m}",
+  "module_name": "ZDFfiHookKit",
+  "pod_target_xcconfig": {
+    "DEFINES_MODULE": "YES"
+  },
   "public_header_files": "Source/{NSObject+ZDFfiHook,ZDFfiDefine,ZDFfiHookKit}.h",
-  "dependencies": {
-    "libffi-core": [
+  "subspecs": [
+    {
+      "name": "hook",
+      "source_files": "Source/*.{h,m}",
+      "exclude_files": "Source/libffi/*",
+      "dependencies": {
+        "ZDFfiHook/zd_libffi": [
 
-    ]
-  }
+        ]
+      }
+    },
+    {
+      "name": "zd_libffi",
+      "source_files": "Source/libffi/**/*",
+      "public_header_files": "Source/libffi/include/*.h"
+    }
+  ]
 }

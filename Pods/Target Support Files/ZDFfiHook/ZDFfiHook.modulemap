@@ -1,4 +1,4 @@
-module ZDFfiHook {
+module ZDFfiHookKit {
   umbrella header "ZDFfiHook-umbrella.h"
 
   export *

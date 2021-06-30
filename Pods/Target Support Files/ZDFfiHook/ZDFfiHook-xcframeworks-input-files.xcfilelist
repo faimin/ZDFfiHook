@@ -1,0 +1,2 @@
+${PODS_ROOT}/Target Support Files/ZDFfiHook/ZDFfiHook-xcframeworks.sh
+${PODS_ROOT}/../Source/xcframework/ffi.xcframework
