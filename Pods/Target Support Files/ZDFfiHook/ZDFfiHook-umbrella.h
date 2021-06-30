@@ -25,6 +25,7 @@
 #import "ffitarget.h"
 #import "ffi_arm64.h"
 #import "ffi_armv7.h"
+#import "ffi_armv7k.h"
 #import "ffi_i386.h"
 #import "ffi_x86_64.h"
 
