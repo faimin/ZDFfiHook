@@ -8,7 +8,6 @@ target 'ZDFfiHookDemo' do
   # Pods for ZDFfiHook
   # pod 'libffi-core'
   pod 'ZDFfiHook', :path => './ZDFfiHook.podspec'
-  #pod 'Libffi_iOS_Framework'
   pod 'Aspects'
 
   target 'ZDFfiHookDemoTests' do

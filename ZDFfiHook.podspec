@@ -23,24 +23,14 @@ Pod::Spec.new do |spec|
     :git => "https://github.com/faimin/ZDFfiHook.git",
     :tag => "#{spec.version}"
   }
-  spec.module_name = 'ZDFfiHookKit'
+  spec.module_name = 'ZDFfiHook'
   #spec.preserve_path = 'Source/module.modulemap', "Source/ZDFfiHookKit.h"
   #spec.module_map = 'Source/module.modulemap'
   spec.pod_target_xcconfig = {
     'DEFINES_MODULE' => 'YES'
   }
-
-  spec.subspec "hook" do |s|
-    s.source_files = "Source/*.{h,m}"
-    s.exclude_files = "Source/libffi/*"
-    spec.public_header_files = "Source/{NSObject+ZDFfiHook,ZDFfiDefine,ZDFfiHookKit}.h"
-    #s.vendored_frameworks = "Source/xcframework/ffi.xcframework"
-    #s.dependency 'Libffi_iOS_Framework'
-    s.dependency "ZDFfiHook/zd_libffi"
-  end 
-
-  spec.subspec "zd_libffi" do |ffi|
-    ffi.source_files = "Source/libffi/**/*"
-    ffi.public_header_files = "Source/libffi/include/*.h"
-  end
+  spec.source_files = "Source/*.{h,m}"
+  spec.public_header_files = "Source/{NSObject+ZDFfiHook,ZDFfiDefine,ZDFfiHookKit}.h"
+  spec.dependency "ZDLibffi"
+  
 end

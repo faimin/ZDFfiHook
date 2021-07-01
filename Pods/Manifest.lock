@@ -1,11 +1,8 @@
 PODS:
   - Aspects (1.4.1)
   - ZDFfiHook (0.0.1):
-    - ZDFfiHook/hook (= 0.0.1)
-    - ZDFfiHook/zd_libffi (= 0.0.1)
-  - ZDFfiHook/hook (0.0.1):
-    - ZDFfiHook/zd_libffi
-  - ZDFfiHook/zd_libffi (0.0.1)
+    - ZDLibffi
+  - ZDLibffi (0.0.2)
 
 DEPENDENCIES:
   - Aspects
@@ -14,6 +11,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Aspects
+    - ZDLibffi
 
 EXTERNAL SOURCES:
   ZDFfiHook:
@@ -21,8 +19,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
-  ZDFfiHook: 1e17f5f40f63eb8bf62138cca925ecfd8c490238
+  ZDFfiHook: 1b1bec29575b249c676da1bfdea6f70677171e56
+  ZDLibffi: 143d60dae0dc43c81276d2e0cbf690e1cf25a208
 
-PODFILE CHECKSUM: 5253a51f24b5e48ceab5a72e2835bdd79102e331
+PODFILE CHECKSUM: 06145ed2c474736c7a909dcaa9abaced23d00628
 
 COCOAPODS: 1.10.1
