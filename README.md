@@ -5,7 +5,7 @@
 
 ## 原理：
 
-`libffi`根据`Method`动态生成一个新的`NewIMP`，然后`libffi`再把这个`NewIMP`与一个`C`函数做关联，接着通过`OC`的方法交换（这里需要保存原始的`IMP`）把`Method`的`IMP`替换为`libffi`生成的`NewIMP`，这样当`OC`方法执行时会走到关联的`C`函数中，在这里我们可以控制原`OC`方法的执行时机来达到`hook`的目的。
+`libffi`根据`Method`动态生成一个新的`NewIMP`，接着`libffi`把这个`NewIMP`与一个`C`函数做关联，然后通过`OC`的方法交换（这里需要保存原始的`IMP`）把`Method`的`IMP`替换为`libffi`生成的`NewIMP`，这样当`OC`方法执行时会走到关联的`C`函数中，在这里我们可以控制原`OC`方法的执行时机来达到`hook`的目的。
 
 
 ## 用法
