@@ -30,7 +30,7 @@ Pod::Spec.new do |spec|
     'DEFINES_MODULE' => 'YES'
   }
   spec.source_files = "Source/*.{h,m}"
-  spec.public_header_files = "Source/{NSObject+ZDFfiHook,ZDFfiDefine,ZDFfiHookKit}.h"
+  spec.public_header_files = "Source/{NSObject+ZDFfiHook,ZDFfiDefine,ZDFfiHook}.h"
   spec.dependency "ZDLibffi"
   
 end

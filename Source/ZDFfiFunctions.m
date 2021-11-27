@@ -14,7 +14,7 @@
 /// 或者是`__block`关键词包装的变量，block的结构里面有copy和dispose函数，因为这两种变量都是属于内存管理的范畴的；
 /// 其他场景下的block就未必有copy和dispose函数。
 /// 所以这里是通过flag判断是否有签名，以及是否有copy和dispose函数，然后通过地址偏移找到signature的。
-/// quote: https://github.com/apple/swift-corelibs-libdispatch/blob/master/src/BlocksRuntime/runtime.c
+/// quote: https://github.com/apple/swift-corelibs-libdispatch/blob/main/src/BlocksRuntime/runtime.c
 const char *ZDFfi_BlockSignatureTypes(id block) {
     if (!block) return NULL;
     

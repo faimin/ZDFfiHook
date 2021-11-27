@@ -1,6 +1,6 @@
 //
 //  ZDFfiDefine.h
-//  ZDLibffiDemo
+//  ZDLibffi
 //
 //  Created by Zero.D.Saber on 2019/12/12.
 //  Copyright © 2019 Zero.D.Saber. All rights reserved.
@@ -14,6 +14,7 @@
 
 // http://clang.llvm.org/docs/Block-ABI-Apple.html#high-level
 // https://opensource.apple.com/source/libclosure/libclosure-67/Block_private.h.auto.html
+// https://github.com/apple/swift-corelibs-libdispatch/blob/main/src/BlocksRuntime/Block_private.h
 // Values for Block_layout->flags to describe block objects
 typedef NS_OPTIONS(NSUInteger, ZDBlockDescriptionFlags) {
     BLOCK_DEALLOCATING =      (0x0001),  // runtime

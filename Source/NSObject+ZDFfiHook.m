@@ -8,7 +8,7 @@
 
 #import "NSObject+ZDFfiHook.h"
 #import <objc/runtime.h>
-#import "ZDFfiHook.h"
+#import "ZDFfiHookCore.h"
 
 @interface ZD_AVOID_ALL_LOAD_FLAG_FOR_CATEGORY_NSObject_ZDFfiHook : NSObject @end
 @implementation ZD_AVOID_ALL_LOAD_FLAG_FOR_CATEGORY_NSObject_ZDFfiHook @end

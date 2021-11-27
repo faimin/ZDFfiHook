@@ -22,7 +22,7 @@
     "DEFINES_MODULE": "YES"
   },
   "source_files": "Source/*.{h,m}",
-  "public_header_files": "Source/{NSObject+ZDFfiHook,ZDFfiDefine,ZDFfiHookKit}.h",
+  "public_header_files": "Source/{NSObject+ZDFfiHook,ZDFfiDefine,ZDFfiHook}.h",
   "dependencies": {
     "ZDLibffi": [
 

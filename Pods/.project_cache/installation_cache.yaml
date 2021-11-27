@@ -1,0 +1,75 @@
+BUILD_CONFIGURATIONS:
+  Debug: :debug
+  Release: :release
+CACHE_KEYS:
+  Aspects:
+    BUILD_SETTINGS_CHECKSUM:
+      Aspects:
+        :debug: 04e572857470e471c06bbc15d1c29904
+        :release: 04e572857470e471c06bbc15d1c29904
+    CHECKSUM: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
+    PROJECT_NAME: Aspects
+    SPECS:
+      - Aspects (1.4.1)
+  Pods-ZDFfiHookDemo:
+    BUILD_SETTINGS_CHECKSUM:
+      Debug: c5ececbfdabb298afa461ab5883969d6
+      Release: c5ececbfdabb298afa461ab5883969d6
+  Pods-ZDFfiHookDemo-ZDFfiHookDemoUITests:
+    BUILD_SETTINGS_CHECKSUM:
+      Debug: c5ececbfdabb298afa461ab5883969d6
+      Release: c5ececbfdabb298afa461ab5883969d6
+  Pods-ZDFfiHookDemoTests:
+    BUILD_SETTINGS_CHECKSUM:
+      Debug: 443febd0a72f330d3250b818ca86b291
+      Release: 443febd0a72f330d3250b818ca86b291
+  ZDFfiHook:
+    BUILD_SETTINGS_CHECKSUM:
+      ZDFfiHook:
+        :debug: 4e1983928a7b0fd4e48d0dcedb7a4c68
+        :release: 4e1983928a7b0fd4e48d0dcedb7a4c68
+    CHECKSUM: 24c626034dfe7181104b03c0b3c84120a00a4aab
+    FILES:
+      - "../LICENSE"
+      - "../README.md"
+      - "../Source/NSObject+ZDAutoFree.h"
+      - "../Source/NSObject+ZDAutoFree.m"
+      - "../Source/NSObject+ZDFfiHook.h"
+      - "../Source/NSObject+ZDFfiHook.m"
+      - "../Source/ZDFfiDefine.h"
+      - "../Source/ZDFfiFunctions.h"
+      - "../Source/ZDFfiFunctions.m"
+      - "../Source/ZDFfiHook.h"
+      - "../Source/ZDFfiHookCore.h"
+      - "../Source/ZDFfiHookCore.m"
+      - "../Source/ZDFfiHookInfo.h"
+      - "../Source/ZDFfiHookInfo.m"
+    PROJECT_NAME: ZDFfiHook
+    SPECS:
+      - ZDFfiHook (0.0.1)
+  ZDLibffi:
+    BUILD_SETTINGS_CHECKSUM:
+      ZDLibffi:
+        :debug: e9d67a988e2e6cfdeb4190b7dec37481
+        :release: e9d67a988e2e6cfdeb4190b7dec37481
+    CHECKSUM: 6d5bebe675e0856c3703a501c3c83897c67c1ffc
+    PROJECT_NAME: ZDLibffi
+    SPECS:
+      - ZDLibffi (0.0.3)
+INSTALLATION_OPTIONS:
+  clean: true
+  deduplicate_targets: true
+  deterministic_uuids: true
+  disable_input_output_paths: true
+  generate_multiple_pod_projects: true
+  incremental_installation: true
+  integrate_targets: true
+  lock_pod_sources: true
+  preserve_pod_file_structure: true
+  share_schemes_for_development_pods: false
+  skip_pods_project_generation: false
+  warn_for_multiple_pod_sources: true
+  warn_for_unused_master_specs_repo: true
+OBJECT_VERSION: 50
+PLUGINS:
+  {}

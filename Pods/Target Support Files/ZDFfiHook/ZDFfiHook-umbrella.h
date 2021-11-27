@@ -12,7 +12,7 @@
 
 #import "NSObject+ZDFfiHook.h"
 #import "ZDFfiDefine.h"
-#import "ZDFfiHookKit.h"
+#import "ZDFfiHook.h"
 
 FOUNDATION_EXPORT double ZDFfiHookVersionNumber;
 FOUNDATION_EXPORT const unsigned char ZDFfiHookVersionString[];

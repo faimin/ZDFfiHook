@@ -1,19 +1,16 @@
-//
-//  ZDFfiHook.h
-//  ZDFfiHook
-//
-//  Created by Zero.D.Saber on 2019/12/20.
-//  Copyright © 2019 Zero.D.Saber. All rights reserved.
-//
+#ifndef ZDFfiHook_h
+#define ZDFfiHook_h
 
-#import <Foundation/Foundation.h>
-#import <objc/runtime.h>
-#import "ZDFfiHookInfo.h"
+#if __has_include(<ZDFfiHook/ZDFfiDefine.h>)
+#import <ZDFfiHook/ZDFfiDefine.h>
+#elif __has_include("ZDFfiDefine.h")
+#import "ZDFfiDefine.h"
+#endif
 
-NS_ASSUME_NONNULL_BEGIN
+#if __has_include(<ZDFfiHook/NSObject+ZDFfiHook.h>)
+#import <ZDFfiHook/NSObject+ZDFfiHook.h>
+#elif __has_include("NSObject+ZDFfiHook.h")
+#import "NSObject+ZDFfiHook.h"
+#endif
 
-FOUNDATION_EXPORT ZDFfiHookInfo *ZD_CoreHookFunc(id obj, Method method, ZDHookOption option, id callback);
-
-FOUNDATION_EXPORT BOOL ZD_RemoveHookTokenFunc(id self, ZDFfiHookInfo *token);
-
-NS_ASSUME_NONNULL_END
+#endif

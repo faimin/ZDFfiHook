@@ -7,7 +7,7 @@
 //
 
 #import "ZDViewController.h"
-#import <ZDFfiHook/NSObject+ZDFfiHook.h>
+#import <ZDFfiHook/ZDFfiHook.h>
 #import "AController.h"
 
 @interface ZDViewController ()
@@ -46,7 +46,7 @@
 }
 
 - (IBAction)push:(UIButton *)sender {
-    self.aController.view.backgroundColor = UIColor.redColor;
+    self.aController.view.backgroundColor = UIColor.orangeColor;
     [self.navigationController pushViewController:self.aController animated:YES];
 }
 
