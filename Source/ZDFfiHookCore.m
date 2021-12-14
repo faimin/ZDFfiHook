@@ -103,9 +103,16 @@ static void ZD_ffi_closure_func(ffi_cif *cif, void *ret, void **args, void *user
     
 #if DEBUG
     const char *mapedTypeEncoding = ZDFfi_ReduceBlockSignatureCodingType(info.typeEncoding).UTF8String;
-    NSUInteger argCount = 0;
-    while (mapedTypeEncoding[argCount]) {
-        ++argCount;
+    NSUInteger argCount = 0, index = 0;
+    while (true) {
+        char c = mapedTypeEncoding[index++];
+        if (!c) {
+            break;
+        }
+        
+        if (c == ':') {
+            ++argCount;
+        }
     };
     printf("参数个数：-------- %zd\n", argCount);
     printf("精简后的方法签名：%s\n", mapedTypeEncoding);
