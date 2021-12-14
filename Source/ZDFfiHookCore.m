@@ -49,21 +49,28 @@ static Class ZD_CreateDynamicSubClass(id self) {
     Class statedClass = [self class];
     Class baseClass = object_getClass(self);
     
-    //NSString *baseClassName = NSStringFromClass(baseClass);
-    //if ([baseClassName hasPrefix:ZD_KVO_SubclassPrefix]) {
     if (baseClass != statedClass) {
         objc_setAssociatedObject(self, ZD_SubclassAssociationKey, baseClass, OBJC_ASSOCIATION_ASSIGN);
         return baseClass;
     }
     
-    const char *subClassName = [ZD_FFI_SubclassPrefix stringByAppendingString:NSStringFromClass(baseClass)].UTF8String;
+    NSString *baseClassName = NSStringFromClass(baseClass);
+    const char *subClassName = [ZD_FFI_SubclassPrefix stringByAppendingString:baseClassName].UTF8String;
     Class subClass = objc_getClass(subClassName);
     if (!subClass) {
-        subClass = objc_allocateClassPair(baseClass, subClassName, 0);
+        size_t extraBytes = 0x68;
+        subClass = objc_allocateClassPair(baseClass, subClassName, extraBytes);
         {
             ZD_SwizzleGetClass(subClass, statedClass);
         }
         objc_registerClassPair(subClass);
+        
+        BOOL isKVOClass = [baseClassName hasPrefix:ZD_KVO_SubclassPrefix];
+        if (isKVOClass) {
+            uint64_t *dst = object_getIndexedIvars(subClass);
+            uint64_t *src = object_getIndexedIvars(baseClass);
+            memcpy(dst, src, extraBytes);
+        }
     }
     object_setClass(self, subClass);
     objc_setAssociatedObject(self, ZD_SubclassAssociationKey, subClass, OBJC_ASSOCIATION_ASSIGN);
