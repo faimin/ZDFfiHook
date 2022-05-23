@@ -81,7 +81,7 @@ typedef NS_OPTIONS(NSInteger, ZDHookOption) {
     ZDHookOption_Default            = 1 << 0,
     ZDHookOption_After              = ZDHookOption_Default,// Called after the original implementation
     ZDHookOption_Instead            = 1 << 1,        // Will replace the original implementation.
-    ZDHookOption_Befor              = 1 << 2,        // Called before the original implementation.
+    ZDHookOption_Before             = 1 << 2,        // Called before the original implementation.
     //ZDHookOption_AutoRemoval        = 1 << 3,        // Will remove the hook after the first execution.
 };
 

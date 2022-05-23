@@ -41,7 +41,7 @@ API：
         NSLog(@"~~~~~后hook");
     }];
 
-    [self.class zd_hookInstanceMethod:@selector(exeA:b:c:) option:ZDHookOption_Befor callback:^(NSInteger a, NSString *b, id c){
+    [self.class zd_hookInstanceMethod:@selector(exeA:b:c:) option:ZDHookOption_Before callback:^(NSInteger a, NSString *b, id c){
         NSLog(@"~~~~~~先hook");
     }];
 

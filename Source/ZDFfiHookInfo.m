@@ -80,7 +80,7 @@
     }
     
     switch (callbackInfo.option) {
-        case ZDHookOption_Befor: {
+        case ZDHookOption_Before: {
             self.beforeCallbacks = [(self.beforeCallbacks ?: @[]) arrayByAddingObject:callbackInfo];
         } break;
         case ZDHookOption_Instead: {
@@ -106,7 +106,7 @@
         }
     };
     switch (callbackInfo.option) {
-        case ZDHookOption_Befor: {
+        case ZDHookOption_Before: {
             block(NSStringFromSelector(@selector(beforeCallbacks)));
         } break;
         case ZDHookOption_Instead: {
