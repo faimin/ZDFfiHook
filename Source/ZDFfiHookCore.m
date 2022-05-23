@@ -49,10 +49,10 @@ static Class ZD_CreateDynamicSubClass(id self) {
     Class statedClass = [self class];
     Class baseClass = object_getClass(self);
     
-    if (baseClass != statedClass) {
-        objc_setAssociatedObject(self, ZD_SubclassAssociationKey, baseClass, OBJC_ASSOCIATION_ASSIGN);
-        return baseClass;
-    }
+//    if (baseClass != statedClass) {
+//        objc_setAssociatedObject(self, ZD_SubclassAssociationKey, baseClass, OBJC_ASSOCIATION_ASSIGN);
+//        return baseClass;
+//    }
     
     NSString *baseClassName = NSStringFromClass(baseClass);
     const char *subClassName = [ZD_FFI_SubclassPrefix stringByAppendingString:baseClassName].UTF8String;
@@ -265,10 +265,10 @@ ZDFfiHookInfo *ZD_CoreHookFunc(id self, Method method, ZDHookOption option, id c
         const char *typeEncoding = method_getTypeEncoding(method);
         // add method，or else replace the exists method's imp
         if (!class_addMethod(hookClass, aSelector, newIMP, typeEncoding)) {
-            if ([NSStringFromClass(hookClass) hasPrefix:ZD_KVO_SubclassPrefix]) {
-                NSCAssert(NO, @"暂不支持hook被KVO过的属性方法，请先hook再KVO");
-                return nil;
-            }
+//            if ([NSStringFromClass(hookClass) hasPrefix:ZD_KVO_SubclassPrefix]) {
+//                NSCAssert(NO, @"暂不支持hook被KVO过的属性方法，请先hook再KVO");
+//                return nil;
+//            }
             //IMP originIMP = class_replaceMethod(hookClass, aSelector, newIMP, typeEncoding);
             IMP originIMP = method_setImplementation(method, newIMP);
             if (hookInfo->_originalIMP != originIMP) {

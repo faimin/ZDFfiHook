@@ -54,14 +54,14 @@
     
     self.model.name = @"小明";
     
-    {
-        [self.model zd_hookInstanceMethod:@selector(setName:) option:ZDHookOption_After callback:^(NSString *name){
-            NSLog(@"hooked name = %@", name);
-        }];
-        
-        Class cls1 = object_getClass(self.model);
-        printf("真实class1 = %s\n", object_getClassName(cls1));
-    }
+//    {
+//        [self.model zd_hookInstanceMethod:@selector(setName:) option:ZDHookOption_After callback:^(NSString *name){
+//            NSLog(@"hooked name = %@", name);
+//        }];
+//
+//        Class cls1 = object_getClass(self.model);
+//        printf("真实class1 = %s\n", object_getClassName(cls1));
+//    }
     
     {
         // KVO
@@ -76,6 +76,15 @@
         [self.model zd_hookInstanceMethod:@selector(setAge:) option:ZDHookOption_After callback:^(NSInteger age){
             NSLog(@"hooked age = %zd", age);
         }];
+        
+        {
+            [self.model zd_hookInstanceMethod:@selector(setName:) option:ZDHookOption_After callback:^(NSString *name){
+                NSLog(@"hooked name = %@", name);
+            }];
+            
+            Class cls1 = object_getClass(self.model);
+            printf("先KVO再hook => 真实class = %s\n", object_getClassName(cls1));
+        }
         
         Class cls2 = object_getClass(self.model);
         printf("真实class2 = %s\n", object_getClassName(cls2));
