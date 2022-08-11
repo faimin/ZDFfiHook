@@ -152,33 +152,34 @@ ffi_type *ZDFfi_ffiTypeFromTypeEncoding(const char *type) {
     if (strcmp(type, "@?") == 0) { // block
         return &ffi_type_pointer;
     }
+    
     const char *c = type;
     switch (c[0]) {
-        case 'v':
+        case _C_VOID:
             return &ffi_type_void;
-        case 'c':
+        case _C_CHR:
             return &ffi_type_schar;
-        case 'C':
+        case _C_UCHR:
             return &ffi_type_uchar;
-        case 's':
+        case _C_SHT:
             return &ffi_type_sshort;
-        case 'S':
+        case _C_USHT:
             return &ffi_type_ushort;
-        case 'i':
+        case _C_INT:
             return &ffi_type_sint;
-        case 'I':
+        case _C_UINT:
             return &ffi_type_uint;
-        case 'l':
+        case _C_LNG:
             return &ffi_type_slong;
-        case 'L':
+        case _C_ULNG:
             return &ffi_type_ulong;
-        case 'q':
+        case _C_LNG_LNG:
             return &ffi_type_sint64;
-        case 'Q':
+        case _C_ULNG_LNG:
             return &ffi_type_uint64;
-        case 'f':
+        case _C_FLT:
             return &ffi_type_float;
-        case 'd':
+        case _C_DBL:
             return &ffi_type_double;
         case 'F':
 #if CGFLOAT_IS_DOUBLE
@@ -186,19 +187,16 @@ ffi_type *ZDFfi_ffiTypeFromTypeEncoding(const char *type) {
 #else
             return &ffi_type_float;
 #endif
-        case 'B':
+        case _C_BOOL:
             return &ffi_type_uint8;
-        case '@':
-            return &ffi_type_pointer;
-        case ':':
+        case _C_SEL:
             return &ffi_type_schar;
-        case '^':
+        case _C_ID:
+        case _C_PTR:
+        case _C_CLASS:
+        case _C_CHARPTR:
             return &ffi_type_pointer;
-        case '#':
-            return &ffi_type_pointer;
-        case '*':
-            return &ffi_type_pointer;
-        case '{':
+        case _C_STRUCT_B:
         default: {
             printf("not support the type: %s", c);
         } break;
