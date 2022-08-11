@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (BOOL)zd_removeHookToken:(ZDFfiHookInfo *)token;
 
-/// normaly don't need remove instance hook manually, it will auto remove at dealloc
+/// normally don't need remove instance hook manually, it will auto remove at dealloc
 - (BOOL)zd_removeHookToken:(ZDFfiHookInfo *)token;
 
 @end
