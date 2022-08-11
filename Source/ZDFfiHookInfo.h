@@ -22,19 +22,19 @@ NS_ASSUME_NONNULL_BEGIN
     void *_originalIMP;
     void *_newIMP;
 }
-@property (nonatomic) Method method;
-@property (nonatomic) const char *typeEncoding;
-@property (nonatomic, weak) id obj;
-@property (nonatomic, strong) NSMethodSignature *signature;
-@property (nonatomic, assign) BOOL isBlock;
+@property (nonatomic, readonly) Method method;
+@property (nonatomic, readonly) const char *typeEncoding;
+@property (nonatomic, weak, readonly) id obj;
+@property (nonatomic, strong, readonly) NSMethodSignature *signature;
+@property (nonatomic, assign, readonly) BOOL isBlock;
 
 @property (nonatomic, copy) NSArray<T> *beforeCallbacks;
 @property (nonatomic, copy) NSArray<T> *insteadCallbacks;
 @property (nonatomic, copy) NSArray<T> *afterCallbacks;
 
 // callback专属属性
-@property (nonatomic, strong) id callback;
-@property (nonatomic, assign) ZDHookOption option;
+@property (nonatomic, strong, readonly) id callback;
+@property (nonatomic, assign, readonly) ZDHookOption option;
 
 
 // 处理正常对象的

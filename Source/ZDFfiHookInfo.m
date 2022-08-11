@@ -34,20 +34,22 @@
     }
     
     ZDFfiHookInfo *model = [[ZDFfiHookInfo alloc] init];
-    model.isBlock = [obj isKindOfClass:objc_lookUpClass("NSBlock")];
-    model.obj = obj;
-    model.method = method;
+    model->_isBlock = [obj isKindOfClass:objc_lookUpClass("NSBlock")];
+    model->_obj = obj;
+    model->_method = method;
     {
         const char *typeEncoding = model.isBlock ? ZDFfi_ReduceBlockSignatureCodingType(ZDFfi_BlockSignatureTypes(obj)).UTF8String : method_getTypeEncoding(method);
         NSMethodSignature *signature = [NSMethodSignature signatureWithObjCTypes:typeEncoding];
-        model.signature = signature;
-        model.typeEncoding = typeEncoding;
+        model->_signature = signature;
+        model->_typeEncoding = typeEncoding;
         
         model->_originalIMP = model.isBlock ? ZDFfi_BlockInvokeIMP(obj) : (void *)method_getImplementation(method);
     }
-//    if (callback) {
-//        model.callbackInfo = [self infoWithObject:callback method:NULL option:ZDHookOption_After callback:nil];
-//    }
+    /*
+    if (callback) {
+        model.callbackInfo = [self infoWithObject:callback method:NULL option:ZDHookOption_After callback:nil];
+    }
+    */
     
     return model;
 }
@@ -58,15 +60,15 @@
     }
     
     ZDFfiHookInfo *model = [[ZDFfiHookInfo alloc] init];
-    model.isBlock = [callback isKindOfClass:objc_lookUpClass("NSBlock")];
-    model.callback = callback;
-    model.option = option;
-    model.method = method;
+    model->_isBlock = [callback isKindOfClass:objc_lookUpClass("NSBlock")];
+    model->_callback = callback;
+    model->_option = option;
+    model->_method = method;
     if (model.isBlock) {
         const char *typeEncoding = ZDFfi_ReduceBlockSignatureCodingType(ZDFfi_BlockSignatureTypes(callback)).UTF8String;
         NSMethodSignature *signature = [NSMethodSignature signatureWithObjCTypes:typeEncoding];
-        model.signature = signature;
-        model.typeEncoding = typeEncoding;
+        model->_signature = signature;
+        model->_typeEncoding = typeEncoding;
         
         model->_originalIMP = ZDFfi_BlockInvokeIMP(callback);
     }
