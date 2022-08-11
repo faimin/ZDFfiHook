@@ -40,7 +40,9 @@ NS_ASSUME_NONNULL_BEGIN
 // 处理正常对象的
 + (instancetype)infoWithObject:(id)obj method:(Method _Nullable)method;
 // 解析callBack回调的
-+ (instancetype)infoWithCallback:(id)callback option:(ZDHookOption)option method:(Method)method;
++ (instancetype)infoWithCallback:(id)callback
+                          option:(ZDHookOption)option
+                          method:(Method)method;
 
 // 增删callbackModel
 - (void)addHookInfo:(T)callbackInfo;

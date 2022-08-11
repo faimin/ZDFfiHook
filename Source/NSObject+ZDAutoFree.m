@@ -27,9 +27,7 @@
 @implementation ZDWrapSelf
 
 - (instancetype)initWithBlock:(void(^)(id unsafeSelf))deallocBlock realTarget:(id)realTarget {
-    self = [super init];
-    if (self) {
-        //属性设为readonly,并用指针指向方式,是参照RACDynamicSignal中的写法
+    if (self = [super init]) {
         self->_deallocBlock = [deallocBlock copy];
         self->_realTarget = realTarget;
     }
@@ -54,16 +52,13 @@
         return;
     }
     
-    @autoreleasepool {
-        NSMutableArray *blocks = objc_getAssociatedObject(self, _cmd);
-        if (!blocks) {
-            blocks = [[NSMutableArray alloc] init];
-            objc_setAssociatedObject(self, _cmd, blocks, OBJC_ASSOCIATION_RETAIN);
-        }
-        ZDWrapSelf *blockExecutor = [[ZDWrapSelf alloc] initWithBlock:deallocBlock realTarget:self];
-        /// 原理: 当self释放时,它所绑定的属性也自动会释放
-        [blocks addObject:blockExecutor];
+    NSMutableArray<ZDWrapSelf *> *blocks = objc_getAssociatedObject(self, _cmd);
+    if (!blocks) {
+        blocks = [[NSMutableArray alloc] init];
+        objc_setAssociatedObject(self, _cmd, blocks, OBJC_ASSOCIATION_RETAIN);
     }
+    ZDWrapSelf *blockExecutor = [[ZDWrapSelf alloc] initWithBlock:deallocBlock realTarget:self];
+    [blocks addObject:blockExecutor];
 }
 
 @end

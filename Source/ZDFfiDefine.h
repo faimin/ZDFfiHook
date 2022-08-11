@@ -13,7 +13,6 @@
 #pragma mark -
 
 // http://clang.llvm.org/docs/Block-ABI-Apple.html#high-level
-// https://opensource.apple.com/source/libclosure/libclosure-67/Block_private.h.auto.html
 // https://github.com/apple/swift-corelibs-libdispatch/blob/main/src/BlocksRuntime/Block_private.h
 // Values for Block_layout->flags to describe block objects
 typedef NS_OPTIONS(NSUInteger, ZDBlockDescriptionFlags) {
