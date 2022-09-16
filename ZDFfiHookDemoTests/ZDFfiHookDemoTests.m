@@ -78,9 +78,10 @@
         }];
         
         {
-            [self.model zd_hookInstanceMethod:@selector(setName:) option:ZDHookOption_After callback:^(NSString *name){
-                NSLog(@"hooked name = %@", name);
-            }];
+            // 再次hook name属性就会发生crash
+//            [self.model zd_hookInstanceMethod:@selector(setName:) option:ZDHookOption_After callback:^(NSString *name){
+//                NSLog(@"hooked name = %@", name);
+//            }];
             
             Class cls1 = object_getClass(self.model);
             printf("先KVO再hook => 真实class = %s\n", object_getClassName(cls1));
