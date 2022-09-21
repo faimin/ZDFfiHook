@@ -58,6 +58,7 @@ static Class ZD_CreateDynamicSubClass(id self) {
     const char *subClassName = [ZD_FFI_SubclassPrefix stringByAppendingString:baseClassName].UTF8String;
     Class subClass = objc_getClass(subClassName);
     if (!subClass) {
+        // https://juejin.cn/post/6855129007928082446
         size_t extraBytes = 0x68;
         subClass = objc_allocateClassPair(baseClass, subClassName, extraBytes);
         {
