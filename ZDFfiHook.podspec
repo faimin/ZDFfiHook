@@ -18,7 +18,8 @@ Pod::Spec.new do |spec|
   spec.author       = { "faimin" => "fuxianchao@gmail.com" }
   spec.requires_arc = true
   spec.prefix_header_file = false
-  spec.platform     = :ios, "9.0"
+  spec.ios.deployment_target = '10.0'
+  spec.osx.deployment_target = '10.12'
   spec.source       = {
     :git => "https://github.com/faimin/ZDFfiHook.git",
     :tag => "#{spec.version}"
@@ -31,6 +32,6 @@ Pod::Spec.new do |spec|
   }
   spec.source_files = "Source/*.{h,m}"
   spec.public_header_files = "Source/{NSObject+ZDFfiHook,ZDFfiDefine,ZDFfiHook}.h"
-  spec.dependency "ZDLibffi"
-  
+  spec.dependency "ZDLibffi", ">= 0.0.3", "!= 0.343.0"
+
 end
