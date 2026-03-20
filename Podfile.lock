@@ -1,6 +1,6 @@
 PODS:
   - Aspects (1.4.1)
-  - ZDFfiHook (0.0.1):
+  - ZDFfiHook (0.0.2):
     - "ZDLibffi (!= 0.343.0, >= 0.0.3)"
   - ZDLibffi (0.352.1)
 
@@ -21,7 +21,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
-  ZDFfiHook: a476c4e8b206a639379ef4f14843e31714f1de1b
+  ZDFfiHook: 739f2406fba0ec1bf9a277006917e2a67e5821d6
   ZDLibffi: 0dd187d1787baadd9d6f230467771aa8757c4560
 
 PODFILE CHECKSUM: 407b5b34fd456ef6fceb255df44af422eda8bb78
