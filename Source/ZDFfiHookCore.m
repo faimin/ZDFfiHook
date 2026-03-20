@@ -253,10 +253,12 @@ ZDFfiHookInfo *ZD_CoreHookFunc(id self, Method method, ZDHookOption option, id c
         const char *typeEncoding = method_getTypeEncoding(method);
         // add method，or else replace the exists method's imp
         if (!class_addMethod(hookClass, aSelector, newIMP, typeEncoding)) {
+            /*
             if ([NSStringFromClass(hookClass) hasPrefix:ZD_KVO_SubclassPrefix]) {
                 NSCAssert(NO, @"暂不支持hook被KVO过的属性方法，请先hook再KVO");
                 return nil;
             }
+            */
             //IMP originIMP = class_replaceMethod(hookClass, aSelector, newIMP, typeEncoding);
             IMP originIMP = method_setImplementation(method, newIMP);
             if (hookInfo->_originalIMP != originIMP) {

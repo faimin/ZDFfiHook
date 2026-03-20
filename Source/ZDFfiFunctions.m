@@ -190,7 +190,7 @@ ffi_type *ZDFfi_ffiTypeFromTypeEncoding(const char *type) {
         case _C_BOOL:
             return &ffi_type_uint8;
         case _C_SEL:
-            return &ffi_type_schar;
+            return &ffi_type_pointer;
         case _C_ID:
         case _C_PTR:
         case _C_CLASS:
@@ -205,4 +205,3 @@ ffi_type *ZDFfi_ffiTypeFromTypeEncoding(const char *type) {
     NSCAssert(NO, @"can't match a ffi_type of %s", type);
     return NULL;
 }
-
