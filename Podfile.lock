@@ -1,17 +1,19 @@
 PODS:
   - Aspects (1.4.1)
   - ZDFfiHook (0.0.1):
-    - ZDLibffi
-  - ZDLibffi (0.0.3)
+    - "ZDLibffi (!= 0.343.0, >= 0.0.3)"
+  - ZDLibffi (0.352.1)
 
 DEPENDENCIES:
   - Aspects
   - ZDFfiHook (from `./ZDFfiHook.podspec`)
+  - ZDLibffi (= 0.352.1)
 
 SPEC REPOS:
+  https://github.com/KuaiLiao/KLSpecs.git:
+    - ZDLibffi
   trunk:
     - Aspects
-    - ZDLibffi
 
 EXTERNAL SOURCES:
   ZDFfiHook:
@@ -19,9 +21,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
-  ZDFfiHook: d1a8f79e1a6c5ec6ab905578769fe36503208202
-  ZDLibffi: 6d5bebe675e0856c3703a501c3c83897c67c1ffc
+  ZDFfiHook: a476c4e8b206a639379ef4f14843e31714f1de1b
+  ZDLibffi: 0dd187d1787baadd9d6f230467771aa8757c4560
 
-PODFILE CHECKSUM: 9b08b66425058bfda7b668643e405d1e2771c830
+PODFILE CHECKSUM: 407b5b34fd456ef6fceb255df44af422eda8bb78
 
 COCOAPODS: 1.16.2

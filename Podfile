@@ -1,5 +1,8 @@
+source 'https://cdn.cocoapods.org'
+source 'https://github.com/KuaiLiao/KLSpecs.git'
+
 # Uncomment the next line to define a global platform for your project
-platform :ios, '9.0'
+platform :ios, '10.0'
 
 #install! 'cocoapods',
 #         :generate_multiple_pod_projects => true,
@@ -15,6 +18,7 @@ target 'ZDFfiHookDemo' do
   # pod 'libffi-core'
   pod 'ZDFfiHook', :path => './ZDFfiHook.podspec'
   pod 'Aspects'
+  pod 'ZDLibffi', '0.352.1'
 
   target 'ZDFfiHookDemoTests' do
     inherit! :search_paths

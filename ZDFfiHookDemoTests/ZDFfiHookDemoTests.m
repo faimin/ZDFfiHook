@@ -55,15 +55,6 @@
     self.model.name = @"小明";
     
     {
-        [self.model zd_hookInstanceMethod:@selector(setName:) option:ZDHookOption_After callback:^(NSString *name){
-            NSLog(@"hooked name = %@", name);
-        }];
-        
-        Class cls1 = object_getClass(self.model);
-        printf("真实class1 = %s\n", object_getClassName(cls1));
-    }
-    
-    {
         // KVO
         [self.model addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew context:nil];
         
@@ -72,9 +63,20 @@
     }
     
     {
+        [self.model zd_hookInstanceMethod:@selector(setName:) option:ZDHookOption_After callback:^(NSString *name){
+            NSLog(@"hooked name = %@", name);
+            XCTAssertTrue([name isEqualToString:@"小黑"]);
+        }];
+        
+        Class cls1 = object_getClass(self.model);
+        printf("真实class1 = %s\n", object_getClassName(cls1));
+    }
+    
+    {
 #if TestKVO
         [self.model zd_hookInstanceMethod:@selector(setAge:) option:ZDHookOption_After callback:^(NSInteger age){
             NSLog(@"hooked age = %zd", age);
+            XCTAssertEqual(age, 19);
         }];
         
         Class cls2 = object_getClass(self.model);
