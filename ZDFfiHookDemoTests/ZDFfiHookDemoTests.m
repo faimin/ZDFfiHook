@@ -106,6 +106,29 @@
     self.model.name = @"小明";
 }
 
+- (void)testCallbackSignatureMismatchShouldAssertBeforeFFICall {
+#if DEBUG
+    __unused ZDFfiHookInfo *token = [self.model zd_hookInstanceMethod:@selector(setAge:)
+                                                                option:ZDHookOption_After
+                                                              callback:^NSInteger(NSInteger age) {
+        return age;
+    }];
+    XCTAssertNotNil(token);
+    
+    NSException *capturedException = nil;
+    @try {
+        self.model.age = 18;
+    } @catch (NSException *exception) {
+        capturedException = exception;
+    }
+    
+    XCTAssertNotNil(capturedException);
+    XCTAssertEqualObjects(capturedException.name, NSInternalInconsistencyException);
+    XCTAssertTrue([capturedException.reason containsString:@"callback"]);
+    XCTAssertTrue([capturedException.reason containsString:@"ffi_call"]);
+#endif
+}
+
 - (void)testPerformanceExample {
     // This is an example of a performance test case.
     [self measureBlock:^{
