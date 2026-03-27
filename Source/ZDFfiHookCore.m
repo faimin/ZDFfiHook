@@ -93,6 +93,134 @@ static Class ZD_CreateDynamicSubClassIfNeed(id self, Method *method, BOOL *hooke
     return aSubClass;
 }
 
+#pragma mark - Signature Validation
+
+static NSString *ZD_NormalizedTypeEncoding(const char *typeEncoding) {
+    if (!typeEncoding) {
+        return nil;
+    }
+    
+    const char *normalizedType = typeEncoding;
+    while (*normalizedType == 'r' || *normalizedType == 'n' || *normalizedType == 'N' ||
+           *normalizedType == 'o' || *normalizedType == 'O' || *normalizedType == 'R' ||
+           *normalizedType == 'V') {
+        normalizedType++;
+    }
+    
+    if (*normalizedType == '\0') {
+        return nil;
+    }
+    return ZDFfi_ReduceBlockSignatureCodingType(normalizedType);
+}
+
+#if DEBUG
+FOUNDATION_EXPORT NSString *ZD_TestOnlyNormalizedTypeEncoding(const char *typeEncoding) {
+    return ZD_NormalizedTypeEncoding(typeEncoding);
+}
+#endif
+
+static NSString *ZD_NormalizedMethodSignatureEncoding(NSMethodSignature *signature) {
+    if (!signature) {
+        return nil;
+    }
+    
+    NSMutableString *encoding = [NSMutableString string];
+    NSString *returnType = ZD_NormalizedTypeEncoding(signature.methodReturnType);
+    if (returnType.length > 0) {
+        [encoding appendString:returnType];
+    }
+    
+    for (NSUInteger i = 0; i < signature.numberOfArguments; ++i) {
+        NSString *argType = ZD_NormalizedTypeEncoding([signature getArgumentTypeAtIndex:i]);
+        if (argType.length > 0) {
+            [encoding appendString:argType];
+        }
+    }
+    return encoding.copy;
+}
+
+static NSString *ZD_ExpectedCallbackEncoding(NSMethodSignature *methodSignature) {
+    if (!methodSignature) {
+        return nil;
+    }
+    
+    NSMutableString *encoding = [NSMutableString stringWithString:@"v@?"];
+    for (NSUInteger i = 2; i < methodSignature.numberOfArguments; ++i) {
+        NSString *argType = ZD_NormalizedTypeEncoding([methodSignature getArgumentTypeAtIndex:i]);
+        if (argType.length > 0) {
+            [encoding appendString:argType];
+        }
+    }
+    return encoding.copy;
+}
+
+static BOOL ZD_ValidateCallbackSignatureForFFICall(NSMethodSignature *methodSignature,
+                                                   NSMethodSignature *callbackSignature,
+                                                   NSString * _Nullable * _Nullable expectedEncodingOut,
+                                                   NSString * _Nullable * _Nullable actualEncodingOut,
+                                                   NSString * _Nullable * _Nullable reasonOut) {
+    NSString *expectedEncoding = ZD_ExpectedCallbackEncoding(methodSignature);
+    NSString *actualEncoding = ZD_NormalizedMethodSignatureEncoding(callbackSignature);
+    if (expectedEncodingOut) {
+        *expectedEncodingOut = expectedEncoding;
+    }
+    if (actualEncodingOut) {
+        *actualEncodingOut = actualEncoding;
+    }
+    
+    if (!methodSignature || !callbackSignature) {
+        if (reasonOut) {
+            *reasonOut = @"无法解析方法签名或 callback 闭包签名。";
+        }
+        return NO;
+    }
+    
+    NSString *callbackReturnType = ZD_NormalizedTypeEncoding(callbackSignature.methodReturnType);
+    if (![callbackReturnType isEqualToString:@"v"]) {
+        if (reasonOut) {
+            *reasonOut = [NSString stringWithFormat:@"返回值不匹配：callback 必须返回 void(v)，实际返回 `%@`。", callbackReturnType ?: @"(null)"];
+        }
+        return NO;
+    }
+    
+    NSUInteger expectedArgCount = methodSignature.numberOfArguments - 1; // block 的第 0 个参数是自己
+    NSUInteger actualArgCount = callbackSignature.numberOfArguments;
+    if (actualArgCount != expectedArgCount) {
+        if (reasonOut) {
+            *reasonOut = [NSString stringWithFormat:@"参数个数不匹配：期望 `%lu`，实际 `%lu`。",
+                          (unsigned long)expectedArgCount,
+                          (unsigned long)actualArgCount];
+        }
+        return NO;
+    }
+    
+    NSString *callbackBlockSelfType = ZD_NormalizedTypeEncoding([callbackSignature getArgumentTypeAtIndex:0]);
+    if (![callbackBlockSelfType isEqualToString:@"@?"]) {
+        if (reasonOut) {
+            *reasonOut = [NSString stringWithFormat:@"callback 第 0 个参数必须是 block 自身(@?)，实际为 `%@`。", callbackBlockSelfType ?: @"(null)"];
+        }
+        return NO;
+    }
+    
+    for (NSUInteger callbackArgIndex = 1; callbackArgIndex < actualArgCount; ++callbackArgIndex) {
+        NSUInteger methodArgIndex = callbackArgIndex + 1;
+        NSString *expectedArgType = ZD_NormalizedTypeEncoding([methodSignature getArgumentTypeAtIndex:methodArgIndex]);
+        NSString *actualArgType = ZD_NormalizedTypeEncoding([callbackSignature getArgumentTypeAtIndex:callbackArgIndex]);
+        if (![expectedArgType isEqualToString:actualArgType]) {
+            if (reasonOut) {
+                *reasonOut = [NSString stringWithFormat:@"参数类型不匹配：callback 第 `%lu` 个参数应为 `%@`（对应被 hook 方法第 `%lu` 个参数），实际为 `%@`。",
+                              (unsigned long)callbackArgIndex,
+                              expectedArgType ?: @"(null)",
+                              (unsigned long)methodArgIndex,
+                              actualArgType ?: @"(null)"];
+            }
+            return NO;
+        }
+    }
+    
+    return YES;
+}
+
 #pragma mark - Core Func
 
 // 转发的IMP函数
@@ -135,6 +263,17 @@ static void ZD_ffi_closure_func(ffi_cif *cif, void *ret, void **args, void *user
             callbackArgs[i - 1] = args[i];
         }
          */
+        NSString *expectedEncoding = nil;
+        NSString *actualEncoding = nil;
+        NSString *reason = nil;
+        BOOL valid = ZD_ValidateCallbackSignatureForFFICall(methodSignature, callbackInfo.signature, &expectedEncoding, &actualEncoding, &reason);
+        if (!valid) {
+            NSString *selectorName = callbackInfo.method ? NSStringFromSelector(method_getName(callbackInfo.method)) : @"(unknown)";
+            NSCAssert(NO, @"[ZDFfiHook] callback signature mismatch before ffi_call.\nselector: %@\nexpected callback signature: %@\nactual callback signature: %@\nreason: %@\n要求: callback 必须是 `void (^...)(...)` 且参数类型与被 hook 方法(去除 self/_cmd)一致。", selectorName, expectedEncoding ?: @"(null)", actualEncoding ?: @"(null)", reason ?: @"(unknown)");
+            free(callbackArgs);
+            return;
+        }
+
         IMP blockIMP = callbackInfo->_originalIMP;
         // 根据 cif模版，函数指针，返回值指针，函数参数 调用这个函数
         ffi_call(callbackInfo->_cif, FFI_FN(blockIMP), NULL, callbackArgs);

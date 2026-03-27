@@ -13,6 +13,10 @@
 
 #define TestKVO (1)
 
+#if DEBUG
+FOUNDATION_EXPORT NSString *ZD_TestOnlyNormalizedTypeEncoding(const char *typeEncoding);
+#endif
+
 @interface ZDFfiHookDemoTests : XCTestCase
 @property (nonatomic, strong) ZDModelTests *model;
 @end
@@ -104,6 +108,37 @@
     printf("真实class2 = %s\n", object_getClassName(cls2));
     
     self.model.name = @"小明";
+}
+
+- (void)testCallbackSignatureMismatchShouldAssertBeforeFFICall {
+#if DEBUG
+    __unused ZDFfiHookInfo *token = [self.model zd_hookInstanceMethod:@selector(setAge:)
+                                                                option:ZDHookOption_After
+                                                              callback:^NSInteger(NSInteger age) {
+        return age;
+    }];
+    XCTAssertNotNil(token);
+    
+    NSException *capturedException = nil;
+    @try {
+        self.model.age = 18;
+    } @catch (NSException *exception) {
+        capturedException = exception;
+    }
+    
+    XCTAssertNotNil(capturedException);
+    XCTAssertEqualObjects(capturedException.name, NSInternalInconsistencyException);
+    XCTAssertTrue([capturedException.reason containsString:@"callback"]);
+    XCTAssertTrue([capturedException.reason containsString:@"ffi_call"]);
+#endif
+}
+
+- (void)testNormalizedTypeEncodingShouldDropLayoutOnlyEncoding {
+#if DEBUG
+    NSString *normalizedType = ZD_TestOnlyNormalizedTypeEncoding("16");
+    XCTAssertNotNil(normalizedType);
+    XCTAssertEqual(normalizedType.length, 0);
+#endif
 }
 
 - (void)testPerformanceExample {
