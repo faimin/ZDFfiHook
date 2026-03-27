@@ -13,6 +13,10 @@
 
 #define TestKVO (1)
 
+#if DEBUG
+FOUNDATION_EXPORT NSString *ZD_TestOnlyNormalizedTypeEncoding(const char *typeEncoding);
+#endif
+
 @interface ZDFfiHookDemoTests : XCTestCase
 @property (nonatomic, strong) ZDModelTests *model;
 @end
@@ -126,6 +130,14 @@
     XCTAssertEqualObjects(capturedException.name, NSInternalInconsistencyException);
     XCTAssertTrue([capturedException.reason containsString:@"callback"]);
     XCTAssertTrue([capturedException.reason containsString:@"ffi_call"]);
+#endif
+}
+
+- (void)testNormalizedTypeEncodingShouldDropLayoutOnlyEncoding {
+#if DEBUG
+    NSString *normalizedType = ZD_TestOnlyNormalizedTypeEncoding("16");
+    XCTAssertNotNil(normalizedType);
+    XCTAssertEqual(normalizedType.length, 0);
 #endif
 }
 

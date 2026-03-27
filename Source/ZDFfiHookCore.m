@@ -107,15 +107,17 @@ static NSString *ZD_NormalizedTypeEncoding(const char *typeEncoding) {
         normalizedType++;
     }
     
-    NSString *reducedType = ZDFfi_ReduceBlockSignatureCodingType(normalizedType);
-    if (reducedType.length > 0) {
-        return reducedType;
-    }
     if (*normalizedType == '\0') {
         return nil;
     }
-    return [NSString stringWithUTF8String:normalizedType];
+    return ZDFfi_ReduceBlockSignatureCodingType(normalizedType);
 }
+
+#if DEBUG
+FOUNDATION_EXPORT NSString *ZD_TestOnlyNormalizedTypeEncoding(const char *typeEncoding) {
+    return ZD_NormalizedTypeEncoding(typeEncoding);
+}
+#endif
 
 static NSString *ZD_NormalizedMethodSignatureEncoding(NSMethodSignature *signature) {
     if (!signature) {
